@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
+import React, { useEffect } from 'react';
+import styled from 'styled-components';
 
 const Contactpage = () => {
   useEffect(() => {
@@ -10,28 +10,15 @@ const Contactpage = () => {
     <Contact>
       <Container>
         <Design>
-          <h1
-            data-aos="fade-left"
-            data-aos-delay="1000"
-            data-aos-duration="1000"
-          >
+          <h1 data-aos='fade-left' data-aos-delay='1000' data-aos-duration='1000'>
             Let's Discuss
           </h1>
-          <h2
-            data-aos="fade-right"
-            data-aos-delay="1000"
-            data-aos-duration="1000"
-          >
+          <h2 data-aos='fade-right' data-aos-delay='1000' data-aos-duration='1000'>
             &lt;Contact /&gt;
           </h2>
         </Design>
-        <img
-          data-aos="zoom-in"
-          data-aos-duration="2000"
-          src="/images/pose/pose_m12.png"
-          alt=""
-        />
-        <span>
+        <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m12.png' alt='' />
+        {/* <span>
           <a
             href="https://drive.google.com/file/d/1r5z5b76Gd1xCsxYzIGasYC8snlVN8fpw/view?usp=sharing"
             target="_blan"
@@ -39,20 +26,20 @@ const Contactpage = () => {
             <i class="iconify" data-icon="mdi:file-account"></i>
             Resume
           </a>
-        </span>
+        </span> */}
         <span>
-          <a href="https://github.com/shivam327" target="_blan">
-            <i class="fab fa-github"></i> GitHub
+          <a href='https://github.com/shivam327' target='_blan'>
+            <i class='fab fa-github'></i> GitHub
           </a>
         </span>
         <span>
-          <a href="https://www.linkedin.com/in/thakershivam/" target="_blan">
-            <i class="fab fa-linkedin"></i> LinkedIn
+          <a href='https://www.linkedin.com/in/thakershivam/' target='_blan'>
+            <i class='fab fa-linkedin'></i> LinkedIn
           </a>
         </span>
         <span>
-          <a href={"mailto: shivamthaker1999@gmail.com"}>
-            <i class="fas fa-envelope"></i> Mail
+          <a href={'mailto: shivamthaker1999@gmail.com'}>
+            <i class='fas fa-envelope'></i> Mail
           </a>
         </span>
       </Container>
