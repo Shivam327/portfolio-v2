@@ -53,9 +53,9 @@ const Humburger = ({ state, setState }) => {
           <Info>
             <h3>Social Links</h3>
             <Social>
-              <a href='https://drive.google.com/drive/folders/1ZRzn0ND5c0DgHFPcAgkfpRDqvmeD_SX-?usp=sharing' target='_blan'>
+              {/* <a href='#' target='_blan'>
                 <i class='far fa-file'></i>
-              </a>
+              </a> */}
               <a href='https://www.linkedin.com/in/thakershivam/' target='_blan'>
                 <i className='fab fa-linkedin-in'></i>
               </a>
