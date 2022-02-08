@@ -126,7 +126,7 @@ const Aboutpage = () => {
           <BG style={{ backgroundColor: '#E5F1F8', top: '10%', left: '57%' }}></BG>
         </Design2>
         <h4 data-aos='fade-left' data-aos-duration='1000'>
-          There’s nothing Good than enjpying more than developing good WebApps and Software for Industry. I believe that people should do things they
+          There’s nothing Good than enjoying more than developing good WebApps and Software for Industry. I believe that people should do things they
           are good at or in which their <span style={{ color: 'crimson' }}>Hearts </span>
           lie. That's why I choose <span style={{ color: '#31c48c' }}>Software development</span> as my career.
         </h4>
