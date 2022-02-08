@@ -64,12 +64,12 @@ const Homepage = () => {
           </h2>
         </Design>
         <h3 data-aos='fade-up' data-aos-delay='300' data-aos-duration='1000'>
-          I am a full-stack creative developer based in Mumbai, India. I am a<span> Computer Science</span> undergraduate from Mumbai University and
-          also did some coursework in UI/UX and SEO.
+          I am a full-stack creative developer based in Mumbai, India. I am a<span> Computer Science</span> undergraduate from Mumbai University.
+          {/* and also did some coursework in UI/UX and SEO. */}
         </h3>
         <h4 data-aos='fade-up' data-aos-delay='450' data-aos-duration='1000'>
-          I enjoy using Skills to empower people to achive their goals. My development stack is focused on building incredible fast websites and
-          WebApps with delightful interactions.
+          I enjoy using My Skills to empower people to achieve goals. My development stack is focused on building Scalable & incredible fast websites
+          and WebApps with delightful interactions.
         </h4>
         <Circle data-aos='zoom-in' data-aos-delay='300' data-aos-duration='1000'>
           <Link to='/about'>
@@ -188,8 +188,7 @@ const Homepage = () => {
       <Container3>
         <Wrapper>
           <h1 data-aos='fade-in' data-aos-duration='2000'>
-            I’m available from <span>October</span> for freelance projects.
-            <span>Let’s work together</span> to create something worth sharing.
+            I’m currently working with <span>Bellex</span>.<span>Let’s work together</span> to create something worth sharing.
           </h1>
           <BG
             data-aos='zoom-in'

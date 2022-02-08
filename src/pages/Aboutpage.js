@@ -1,201 +1,114 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import "aos/dist/aos.css";
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import 'aos/dist/aos.css';
 
 const Aboutpage = () => {
   const [time, setTime] = useState(1000);
 
   useEffect(() => {
     // window.scrollTo(0, 0)
-    if (window.location.pathname === "/") {
+    if (window.location.pathname === '/') {
       setTime(100);
     }
-    document.title = "Shivam Thaker -- About";
+    document.title = 'Shivam Thaker -- About';
   }, []);
 
   return (
     <About>
       <Container>
         <Design>
-          <h1
-            data-aos="fade-left"
-            data-aos-delay={time}
-            data-aos-duration="1000"
-          >
+          <h1 data-aos='fade-left' data-aos-delay={time} data-aos-duration='1000'>
             Shivam Thaker
           </h1>
-          <h2
-            data-aos="fade-right"
-            data-aos-delay={time}
-            data-aos-duration="1000"
-          >
+          <h2 data-aos='fade-right' data-aos-delay={time} data-aos-duration='1000'>
             &lt;About /&gt;
           </h2>
         </Design>
-        <img
-          data-aos="zoom-in"
-          data-aos-duration="2000"
-          src="/images/pose/pose_m12.png"
-          alt=""
-        />
-        <h3 data-aos="fade-up" data-aos-delay={time} data-aos-duration="1000">
+        <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m12.png' alt='' />
+        <h3 data-aos='fade-up' data-aos-delay={time} data-aos-duration='1000'>
           I am a Full-stack creative developer based in Mumbai,
-          <span> India</span>. I am a Computer Science graduate and did some
-          coursework to the awesome world of designing digital interfaces and
-          products.
+          <span> India</span>. I am a Computer Science graduate and did some coursework to the SEO.
         </h3>
-        <h4 data-aos="fade-up" data-aos-delay={time} data-aos-duration="1000">
-          I enjoy using my skill-set to empower people to accomplish their
-          goals. My development stack is focused on performance & accessibility
-          with delightful interactions. I create lighting fast WebApps and
-          Websites using <span>MERN</span> Stack with the help of ReactJS.
+        <h4 data-aos='fade-up' data-aos-delay={time} data-aos-duration='1000'>
+          I enjoy using my skill-set to empower people to accomplish their goals. My development stack is focused on performance & accessibility with
+          delightful interactions.
+          {/* I create lighting fast WebApps and Websites using <span>MERN</span> Stack with the help of ReactJS. */}
         </h4>
         <BG
           style={{
-            backgroundColor: "rgb(248,224,142, 0.3)",
-            top: "10%",
-            left: "55%",
+            backgroundColor: 'rgb(248,224,142, 0.3)',
+            top: '10%',
+            left: '55%',
           }}
         ></BG>
       </Container>
 
       <Container>
         <Design2>
-          <h1
-            data-aos="fade-left"
-            data-aos-delay="100"
-            data-aos-duration="1000"
-          >
+          <h1 data-aos='fade-left' data-aos-delay='100' data-aos-duration='1000'>
             ToolBox
           </h1>
-          <h2
-            data-aos="fade-right"
-            data-aos-delay="100"
-            data-aos-duration="1000"
-          >
+          <h2 data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000'>
             TECH
           </h2>
-          <img src="/images/pose/pose_m14.png" alt="" />
-          <BG
-            style={{ backgroundColor: "#E5F1F8", top: "10%", left: "57%" }}
-          ></BG>
+          <img src='/images/pose/pose_m14.png' alt='' />
+          <BG style={{ backgroundColor: '#E5F1F8', top: '10%', left: '57%' }}></BG>
         </Design2>
         <ToolBox>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="3500"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/html5.svg" alt="" />
+          <Circle data-aos='zoom-in' data-aos-delay='3500' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/html5.svg' alt='' />
             <span>HTML</span>
           </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="3700"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/css.svg" alt="" />
+          <Circle data-aos='zoom-in' data-aos-delay='3700' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/css.svg' alt='' />
             <span>CSS</span>
           </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="3900"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/sass.svg" alt="" />
+          <Circle data-aos='zoom-in' data-aos-delay='3900' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/sass.svg' alt='' />
             <span>SASS</span>
           </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="3700"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/react.svg" alt="" />
+          <Circle data-aos='zoom-in' data-aos-delay='3700' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/react.svg' alt='' />
             <span>REACT</span>
           </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="3700"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/redux.svg" alt="" />
+          <Circle data-aos='zoom-in' data-aos-delay='3700' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/redux.svg' alt='' />
             <span>REDUX</span>
           </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="4100"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/nodejs.svg" alt="" />
+          <Circle data-aos='zoom-in' data-aos-delay='4100' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/nodejs.svg' alt='' />
             <span>NODEJS</span>
           </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="4100"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/expressjs.svg" alt="" />
+          <Circle data-aos='zoom-in' data-aos-delay='4100' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/expressjs.svg' alt='' />
             <span>EXPRESSJS</span>
           </Circle>
-          {/* <Circle
-            data-aos="zoom-in"
-            data-aos-delay="4300"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/shopify.svg" alt="" />
-            <span>SHOPIFY</span>
-          </Circle> */}
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="4500"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/javascript.svg" alt="" />
+          <Circle data-aos='zoom-in' data-aos-delay='4500' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/javascript.svg' alt='' />
             <span>JS</span>
           </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="4700"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/mongodb.svg" alt="" />
+          <Circle data-aos='zoom-in' data-aos-delay='4700' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/mongodb.svg' alt='' />
             <span>MONGODB</span>
           </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="4700"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/nextjs.svg" alt="" />
+          {/* <Circle data-aos='zoom-in' data-aos-delay='4700' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/nextjs.svg' alt='' />
             <span>NEXTJS</span>
-          </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="4900"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/getbootstrap.svg" alt="" />
+          </Circle> */}
+          <Circle data-aos='zoom-in' data-aos-delay='4900' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/getbootstrap.svg' alt='' />
             <span>BOOTSTRAP</span>
           </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="5500"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/firebase.svg" alt="" />
+          <Circle data-aos='zoom-in' data-aos-delay='5200' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/nestjs.svg' alt='' />
+            <span>NestJS</span>
+          </Circle>
+          <Circle data-aos='zoom-in' data-aos-delay='5500' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/laravel.svg' alt='' />
+            <span>Laravel</span>
+          </Circle>
+          <Circle data-aos='zoom-in' data-aos-delay='5700' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/firebase.svg' alt='' />
             <span>Firebase</span>
           </Circle>
         </ToolBox>
@@ -203,45 +116,25 @@ const Aboutpage = () => {
 
       <Container>
         <Design2>
-          <h1
-            data-aos="fade-left"
-            data-aos-delay="100"
-            data-aos-duration="1000"
-          >
+          <h1 data-aos='fade-left' data-aos-delay='100' data-aos-duration='1000'>
             Why me?
           </h1>
-          <h2
-            data-aos="fade-right"
-            data-aos-delay="100"
-            data-aos-duration="1000"
-          >
+          <h2 data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000'>
             About Me
           </h2>
-          <img src="/images/pose/pose_m22.png" alt="" />
-          <BG
-            style={{ backgroundColor: "#E5F1F8", top: "10%", left: "57%" }}
-          ></BG>
+          <img src='/images/pose/pose_m22.png' alt='' />
+          <BG style={{ backgroundColor: '#E5F1F8', top: '10%', left: '57%' }}></BG>
         </Design2>
-        <h4 data-aos="fade-left" data-aos-duration="1000">
-          There’s nothing Good than enjoy more than developing good websites and
-          webApps for Cool people's. I believe that people should do things they
-          are good at or in which their{" "}
-          <span style={{ color: "crimson" }}>Hearts</span>
-          lie. That's why I choose{" "}
-          <span style={{ color: "#31c48c" }}>Web development</span> as my
-          career.
+        <h4 data-aos='fade-left' data-aos-duration='1000'>
+          There’s nothing Good than enjpying more than developing good WebApps and Software for Industry. I believe that people should do things they
+          are good at or in which their <span style={{ color: 'crimson' }}>Hearts </span>
+          lie. That's why I choose <span style={{ color: '#31c48c' }}>Software development</span> as my career.
         </h4>
-        <h4
-          data-aos="fade-right"
-          data-aos-duration="1000"
-          style={{ marginBottom: "2rem" }}
-        >
-          I’ve spent many years trying to perfect what I do and while I’ll never
-          be perfect, I do my best to come close.
+        <h4 data-aos='fade-right' data-aos-duration='1000' style={{ marginBottom: '2rem' }}>
+          I’ve spent many years trying to perfect what I do and while I’ll never be perfect, I do my best to come close.
         </h4>
-        <h3 data-aos="fade-left" data-aos-duration="1000">
-          If you’ve got a project you’d like to work on with me just get in
-          touch and we can get to work!
+        <h3 data-aos='fade-left' data-aos-duration='1000'>
+          If you’ve got a project you’d like to work on with me just get in touch and we can get to work!
         </h3>
       </Container>
     </About>
