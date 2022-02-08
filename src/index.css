@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  color: #31c48c;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: 62.5%;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+  background-color: #f2efe7;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 1rem;
+  background-color: #191919;
+}
+
+:root {
+  --red: #f44336;
+  --lightRed: #feecea;
+  --dark: #191919;
+  --yellow: #f8e08e;
+  --darkYellow: #f8d76a;
+  --green: #31c48c;
+  --white: #f2efe7;
+  --blue: royalBlue;
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 30%;
+  }
+}
