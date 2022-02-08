@@ -1,30 +1,30 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Contactbar = () => {
   return (
     <Bar>
-      <a
+      {/* <a
         href="https://drive.google.com/file/d/1r5z5b76Gd1xCsxYzIGasYC8snlVN8fpw/view?usp=sharing"
         target="_blan"
       >
         <Circle style={{ backgroundColor: "#FEECEA" }}>
           <img src="/images/resume.png" alt="" />{" "}
         </Circle>
-      </a>
-      <a href="https://www.linkedin.com/in/thakershivam/" target="_blan">
-        <Circle style={{ backgroundColor: "#E5F1F8" }}>
-          <img src="/images/linkedin.svg" alt="" />
+      </a> */}
+      <a href='https://www.linkedin.com/in/thakershivam/' target='_blan'>
+        <Circle style={{ backgroundColor: '#E5F1F8' }}>
+          <img src='/images/linkedin.svg' alt='' />
         </Circle>
       </a>
-      <a href="https://github.com/shivam327" target="_blan">
-        <Circle style={{ backgroundColor: "rgba(0,0,0,0.2)" }}>
-          <img src="/images/github.png" alt="" />
+      <a href='https://github.com/shivam327' target='_blan'>
+        <Circle style={{ backgroundColor: 'rgba(0,0,0,0.2)' }}>
+          <img src='/images/github.png' alt='' />
         </Circle>
       </a>
-      <a href={"mailto: shivamthaker1999@gmail.com"}>
-        <Circle style={{ backgroundColor: "#FEECEA" }}>
-          <img src="/images/mail.svg" alt="" />
+      <a href={'mailto: shivamthaker1999@gmail.com'}>
+        <Circle style={{ backgroundColor: '#FEECEA' }}>
+          <img src='/images/mail.svg' alt='' />
         </Circle>
       </a>
     </Bar>

@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import PROJECTS_DATA from "../projects.data";
-import styled from "styled-components";
-import { isMobile } from "react-device-detect";
-import Moreproject from "../components/Moreproject";
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import PROJECTS_DATA from '../projects.data';
+import styled from 'styled-components';
+import { isMobile } from 'react-device-detect';
+import Moreproject from '../components/Moreproject';
 
 const Projectpage = () => {
   const { id } = useParams();
@@ -21,10 +21,10 @@ const Projectpage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     setProject(PROJECTS_DATA.find((e) => e.id === Number(id)));
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [id]);
 
@@ -33,8 +33,8 @@ const Projectpage = () => {
       <Container>
         <LeftHero>
           <h3
-            data-aos="fade-in"
-            data-aos-duration="1000"
+            data-aos='fade-in'
+            data-aos-duration='1000'
             style={{
               transform: `translateX(${offesetY * 0.5}px)`,
             }}
@@ -42,17 +42,17 @@ const Projectpage = () => {
             {project && project.name}
           </h3>
           <img
-            data-aos="fade-in"
-            data-aos-duration="1000"
+            data-aos='fade-in'
+            data-aos-duration='1000'
             src={project && project.image}
-            alt=""
+            alt=''
             style={{
               transform: `translateX(-${offesetY * 0.8}px)`,
             }}
           />
           <h2
-            data-aos="fade-in"
-            data-aos-duration="1000"
+            data-aos='fade-in'
+            data-aos-duration='1000'
             style={{
               transform: `translateX(${offesetY * 0.5}px)`,
             }}
@@ -63,16 +63,16 @@ const Projectpage = () => {
       </Container>
 
       <Container>
-        <h1 data-aos="fade-in" data-aos-duration="1000">
+        <h1 data-aos='fade-in' data-aos-duration='1000'>
           {project && project.name}
         </h1>
-        <h2 data-aos="fade-in" data-aos-duration="1000">
+        <h2 data-aos='fade-in' data-aos-duration='1000'>
           {project && project.desc}
         </h2>
         <ProjectContact>
           <div>
             <h1>Website Link</h1>
-            <a href={project && project.link} target="_blanc">
+            <a href={project && project.link} target='_blanc'>
               <h2>{project && project.link}</h2>
             </a>
           </div>
@@ -85,14 +85,9 @@ const Projectpage = () => {
         <Tech>
           {project &&
             project.tech.map((t) => (
-              <Circle
-                key={t.id}
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-                style={{ backgroundColor: "#E5F1F8" }}
-              >
+              <Circle key={t.id} data-aos='zoom-in' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
                 <i className={t.class}></i>
-                <img src={t.class} alt="" />
+                <img src={t.class} alt='' />
                 <span>{t.name}</span>
               </Circle>
             ))}
@@ -100,58 +95,40 @@ const Projectpage = () => {
       </Container>
       <Container>
         <h2>
-          It was a fun project to work on. There were almost no constraints (eg.
-          colors, typography, etc.). The communication went very smooth, from
-          initial discovery to branding and through the final revisions and
-          delivery.
+          It was a fun project to work on. There were almost no constraints (eg. colors, typography, etc.). The communication went very smooth, from
+          initial discovery to branding and through the final revisions and delivery.
         </h2>
         <h1>&lt; More Works /&gt;</h1>
         <Row>
           <Col>
             <BG
               style={{
-                backgroundColor: "rgb(0,0,0, 0.2)",
-                top: "10%",
-                left: "-15%",
+                backgroundColor: 'rgb(0,0,0, 0.2)',
+                top: '10%',
+                left: '-15%',
               }}
             ></BG>
-            <img src="/images/pose/pose_m14.png" alt="" />
+            <img src='/images/pose/pose_m14.png' alt='' />
           </Col>
           <Col>
-            <Link to="/project/1">
-              <Moreproject name="Dev.to Clone" id={1} />
+            <Link to='/project/1'>
+              <Moreproject name='Dev.to Clone' id={1} />
             </Link>
-            <hr
-              data-aos="fade-right"
-              data-aos-delay="100"
-              data-aos-duration="1000"
-            />
-            <Link to="/project/6">
-              <Moreproject name="Portfolio 2019" id={6} />
+            <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
+            <Link to='/project/6'>
+              <Moreproject name='Portfolio 2019' id={6} />
             </Link>
-            <hr
-              data-aos="fade-right"
-              data-aos-delay="100"
-              data-aos-duration="1000"
-            />
-            <Link to="/project/8">
-              <Moreproject name="Bankist" id={8} />
+            <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
+            <Link to='/project/8'>
+              <Moreproject name='Bankist' id={8} />
             </Link>
-            <hr
-              data-aos="fade-right"
-              data-aos-delay="100"
-              data-aos-duration="1000"
-            />
-            <Link to="/project/5">
-              <Moreproject name="Netflix Clone" id={5} />
+            <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
+            <Link to='/project/5'>
+              <Moreproject name='Netflix Clone' id={5} />
             </Link>
-            <hr
-              data-aos="fade-right"
-              data-aos-delay="100"
-              data-aos-duration="1000"
-            />
-            <Link to="/project/2">
-              <Moreproject name="TrackerX" id={2} />
+            <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
+            <Link to='/project/2'>
+              <Moreproject name='TrackerX' id={2} />
             </Link>
           </Col>
         </Row>
@@ -227,7 +204,7 @@ const LeftHero = styled.div`
 
   & > h3 {
     position: absolute;
-    font-family: "Dela Gothic One", cursive;
+    font-family: 'Dela Gothic One', cursive;
     text-transform: uppercase;
     font-size: 15rem;
     z-index: -2;
@@ -239,7 +216,7 @@ const LeftHero = styled.div`
 
   & > h2 {
     position: absolute;
-    font-family: "Dela Gothic One", cursive;
+    font-family: 'Dela Gothic One', cursive;
     text-transform: uppercase;
     font-size: 15rem;
     -webkit-text-stroke-width: 1px;
