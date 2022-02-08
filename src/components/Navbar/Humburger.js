@@ -1,9 +1,9 @@
-import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import React, { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-import { staggerReveal, staggerRevealClose } from "./Animations";
+import { staggerReveal, staggerRevealClose } from './Animations';
 
 const Humburger = ({ state, setState }) => {
   // Create varibles of our dom nodes
@@ -18,19 +18,16 @@ const Humburger = ({ state, setState }) => {
       // If menu is closed and we want to open it.
       staggerRevealClose(reveal3, reveal2, reveal1);
       // Set menu to display none
-      gsap.to(menuLayer, { duration: 1.5, css: { display: "none" } });
-    } else if (
-      state.clicked === true ||
-      (state.clicked === true && state.initial === null)
-    ) {
+      gsap.to(menuLayer, { duration: 1.5, css: { display: 'none' } });
+    } else if (state.clicked === true || (state.clicked === true && state.initial === null)) {
       // setState({ color: "#f2efe7" })
       // Set menu to display block
-      gsap.to(menuLayer, { duration: 0, css: { display: "block" } });
+      gsap.to(menuLayer, { duration: 0, css: { display: 'block' } });
       //Allow menu to have height of 100%
       gsap.to([reveal1, reveal2, reveal3], {
         duration: 0,
         opacity: 1,
-        height: "100%",
+        height: '100%',
       });
       staggerReveal(reveal1, reveal2, reveal3);
     }
@@ -38,47 +35,35 @@ const Humburger = ({ state, setState }) => {
 
   return (
     <Burger ref={(el) => (menuLayer = el)}>
-      <div
-        ref={(el) => (reveal1 = el)}
-        className="menu-secondary-background-color"
-      ></div>
-      <div
-        ref={(el) => (reveal2 = el)}
-        className="menu-tertiary-background-color"
-      ></div>
-      <div ref={(el) => (reveal3 = el)} className="menu-layer">
+      <div ref={(el) => (reveal1 = el)} className='menu-secondary-background-color'></div>
+      <div ref={(el) => (reveal2 = el)} className='menu-tertiary-background-color'></div>
+      <div ref={(el) => (reveal3 = el)} className='menu-layer'>
         <Container>
           <ul>
             <li>
-              <Link to="/work">&lt;Works /&gt;</Link>
+              <Link to='/work'>&lt;Works /&gt;</Link>
             </li>
             <li>
-              <Link to="/about">&lt;About Me /&gt;</Link>
+              <Link to='/about'>&lt;About Me /&gt;</Link>
             </li>
             <li>
-              <Link to="/contact">&lt;Contact Me /&gt;</Link>
+              <Link to='/contact'>&lt;Contact Me /&gt;</Link>
             </li>
           </ul>
           <Info>
             <h3>Social Links</h3>
             <Social>
-              <a
-                href="https://drive.google.com/file/d/1r5z5b76Gd1xCsxYzIGasYC8snlVN8fpw/view?usp=sharing"
-                target="_blan"
-              >
-                <i class="far fa-file"></i>
+              <a href='https://drive.google.com/drive/folders/1ZRzn0ND5c0DgHFPcAgkfpRDqvmeD_SX-?usp=sharing' target='_blan'>
+                <i class='far fa-file'></i>
               </a>
-              <a
-                href="https://www.linkedin.com/in/thakershivam/"
-                target="_blan"
-              >
-                <i className="fab fa-linkedin-in"></i>
+              <a href='https://www.linkedin.com/in/thakershivam/' target='_blan'>
+                <i className='fab fa-linkedin-in'></i>
               </a>
-              <a href="https://github.com/shivam327" target="_blan">
-                <i className="fab fa-github"></i>
+              <a href='https://github.com/shivam327' target='_blan'>
+                <i className='fab fa-github'></i>
               </a>
-              <a href={"mailto: shivamthaker1999@gmail.com"}>
-                <i className="fas fa-envelope"></i>
+              <a href={'mailto: shivamthaker1999@gmail.com'}>
+                <i className='fas fa-envelope'></i>
               </a>
             </Social>
           </Info>
