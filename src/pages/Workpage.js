@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
-import Moreproject from "../components/Moreproject";
-import { Link } from "react-router-dom";
+/* eslint-disable no-unused-vars */
+import React, { useEffect } from 'react';
+import styled from 'styled-components';
+import Moreproject from '../components/Moreproject';
+import { Link } from 'react-router-dom';
 
 const Workpage = () => {
   useEffect(() => {
@@ -12,30 +13,16 @@ const Workpage = () => {
     <Work>
       <Container>
         <Design>
-          <h1
-            data-aos="fade-left"
-            data-aos-delay="1000"
-            data-aos-duration="1000"
-          >
+          <h1 data-aos='fade-left' data-aos-delay='1000' data-aos-duration='1000'>
             Projects
           </h1>
-          <h2
-            data-aos="fade-right"
-            data-aos-delay="1000"
-            data-aos-duration="1000"
-          >
+          <h2 data-aos='fade-right' data-aos-delay='1000' data-aos-duration='1000'>
             &lt;Work /&gt;
           </h2>
         </Design>
-        <img
-          data-aos="zoom-in"
-          data-aos-duration="2000"
-          src="/images/pose/pose_m19.png"
-          alt=""
-        />
-        <h3 data-aos="fade-up" data-aos-delay="2000" data-aos-duration="1000">
-          A collection of front-end, full-stack Coding. These are a mix of
-          practice and side projects.
+        <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m19.png' alt='' />
+        <h3 data-aos='fade-up' data-aos-delay='2000' data-aos-duration='1000'>
+          A collection of front-end, full-stack Coding. These are a mix of practice and side projects.
         </h3>
       </Container>
 
@@ -103,9 +90,9 @@ const Workpage = () => {
       </Container> */}
       <BG
         style={{
-          backgroundColor: "rgb(49,196,140, 0.2)",
-          top: "10%",
-          left: "55%",
+          backgroundColor: 'rgb(49,196,140, 0.2)',
+          top: '10%',
+          left: '55%',
         }}
       ></BG>
     </Work>

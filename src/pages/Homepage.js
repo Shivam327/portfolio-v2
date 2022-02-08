@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import Aos from "aos";
-import { isMobile } from "react-device-detect";
-import Project from "../components/Project";
-import { Link } from "react-router-dom";
-import Button from "../components/Button";
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import Aos from 'aos';
+import { isMobile } from 'react-device-detect';
+// import Project from "../components/Project";
+import { Link } from 'react-router-dom';
+import Button from '../components/Button';
 
 const Homepage = () => {
   const [offesetY, setOffsetY] = useState(0);
@@ -19,82 +20,59 @@ const Homepage = () => {
 
   useEffect(() => {
     if (isMobile) return;
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
       if (isMobile) return;
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   useEffect(() => {
     // window.scrollTo(0, 0)
     Aos.init({ duration: 2000 });
-    document.title = "Shivam Thaker Portfolio";
+    document.title = 'Shivam Thaker Portfolio';
   }, []);
 
   return (
     <Home>
       <Container>
         <LeftHero>
-          <h2 data-aos="flip-up" data-aos-duration="1000">
+          <h2 data-aos='flip-up' data-aos-duration='1000'>
             HEY, I'M
           </h2>
-          <h1 data-aos="flip-up" data-aos-delay="500" data-aos-duration="1000">
+          <h1 data-aos='flip-up' data-aos-delay='500' data-aos-duration='1000'>
             SHIVAM THAKER
           </h1>
-          <h3 data-aos="flip-up" data-aos-delay="1000" data-aos-duration="1000">
+          <h3 data-aos='flip-up' data-aos-delay='1000' data-aos-duration='1000'>
             A Full-Stack developer from
-            <span style={{ color: "orange" }}> India</span>.
+            <span style={{ color: 'orange' }}> India</span>.
           </h3>
           {/* <Button text="Contact" /> */}
-          <BG
-            style={{ backgroundColor: "#FEECEA" }}
-            data-aos="zoom-in"
-            data-aos-duration="2000"
-          ></BG>
-          <img
-            data-aos="zoom-in"
-            data-aos-duration="2000"
-            src="/images/pose/pose_m18.png"
-            alt=""
-          />
+          <BG style={{ backgroundColor: '#FEECEA' }} data-aos='zoom-in' data-aos-duration='2000'></BG>
+          <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m18.png' alt='' />
         </LeftHero>
       </Container>
 
       <ContainerA>
         <Design>
-          <h1
-            data-aos="fade-left"
-            data-aos-delay="100"
-            data-aos-duration="1000"
-          >
+          <h1 data-aos='fade-left' data-aos-delay='100' data-aos-duration='1000'>
             Shivam Thaker
           </h1>
-          <h2
-            data-aos="fade-right"
-            data-aos-delay="100"
-            data-aos-duration="1000"
-          >
+          <h2 data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000'>
             &lt;About /&gt;
           </h2>
         </Design>
-        <h3 data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-          I am a full-stack creative developer based in Mumbai, India. I am a
-          <span> Computer Science</span> undergraduate from Mumbai University
-          and also did some coursework in UI/UX and SEO.
+        <h3 data-aos='fade-up' data-aos-delay='300' data-aos-duration='1000'>
+          I am a full-stack creative developer based in Mumbai, India. I am a<span> Computer Science</span> undergraduate from Mumbai University and
+          also did some coursework in UI/UX and SEO.
         </h3>
-        <h4 data-aos="fade-up" data-aos-delay="450" data-aos-duration="1000">
-          I enjoy using Skills to empower people to achive their goals. My
-          development stack is focused on building incredible fast websites and
+        <h4 data-aos='fade-up' data-aos-delay='450' data-aos-duration='1000'>
+          I enjoy using Skills to empower people to achive their goals. My development stack is focused on building incredible fast websites and
           WebApps with delightful interactions.
         </h4>
-        <Circle
-          data-aos="zoom-in"
-          data-aos-delay="300"
-          data-aos-duration="1000"
-        >
-          <Link to="/about">
+        <Circle data-aos='zoom-in' data-aos-delay='300' data-aos-duration='1000'>
+          <Link to='/about'>
             <h2>Learn More</h2>
           </Link>
         </Circle>
@@ -200,12 +178,8 @@ const Homepage = () => {
             </Link>
           </Col>
         </Row> */}
-        <Circle
-          data-aos="zoom-in"
-          data-aos-delay="300"
-          data-aos-duration="1000"
-        >
-          <Link to="/work">
+        <Circle data-aos='zoom-in' data-aos-delay='300' data-aos-duration='1000'>
+          <Link to='/work'>
             <h2>View All</h2>
           </Link>
         </Circle>
@@ -213,27 +187,22 @@ const Homepage = () => {
 
       <Container3>
         <Wrapper>
-          <h1 data-aos="fade-in" data-aos-duration="2000">
+          <h1 data-aos='fade-in' data-aos-duration='2000'>
             I’m available from <span>October</span> for freelance projects.
             <span>Let’s work together</span> to create something worth sharing.
           </h1>
           <BG
-            data-aos="zoom-in"
-            data-aos-duration="2000"
+            data-aos='zoom-in'
+            data-aos-duration='2000'
             style={{
-              backgroundColor: "rgb(49,196,140, 0.2)",
-              top: "15%",
-              left: "60%",
+              backgroundColor: 'rgb(49,196,140, 0.2)',
+              top: '15%',
+              left: '60%',
             }}
           ></BG>
-          <img
-            data-aos="zoom-in"
-            data-aos-duration="2000"
-            src="/images/pose/pose_m13.png"
-            alt=""
-          />
-          <Link to="/contact">
-            <Button text="Connect Now" color="var(--green)" />
+          <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m13.png' alt='' />
+          <Link to='/contact'>
+            <Button text='Connect Now' color='var(--green)' />
           </Link>
         </Wrapper>
       </Container3>
@@ -529,21 +498,21 @@ const LeftHero = styled.div`
     font-size: 3rem;
     background-color: var(--dark);
     color: #fff;
-    font-family: "Otomanopee One", sans-serif;
+    font-family: 'Otomanopee One', sans-serif;
     padding: 0.1rem 1rem;
     margin: 1rem 0;
-    font-family: "Dela Gothic One", cursive;
+    font-family: 'Dela Gothic One', cursive;
   }
 
   & > h2 {
     font-size: 2rem;
-    font-family: "Otomanopee One", sans-serif;
-    font-family: "Dela Gothic One", cursive;
+    font-family: 'Otomanopee One', sans-serif;
+    font-family: 'Dela Gothic One', cursive;
     margin: 1rem 0;
   }
 
   & > h3 {
-    font-family: "Dela Gothic One", cursive;
+    font-family: 'Dela Gothic One', cursive;
     text-transform: uppercase;
     font-size: 7rem;
     max-width: 70%;
