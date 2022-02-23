@@ -111,6 +111,14 @@ const Aboutpage = () => {
             <img src='/images/firebase.svg' alt='' />
             <span>Firebase</span>
           </Circle>
+          <Circle data-aos='zoom-in' data-aos-delay='5800' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/docker.svg' alt='' />
+            <span>Docker</span>
+          </Circle>
+          <Circle data-aos='zoom-in' data-aos-delay='5900' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+            <img src='/images/kubernetes.svg' alt='' />
+            <span>Kubernetes</span>
+          </Circle>
         </ToolBox>
       </Container>
 
