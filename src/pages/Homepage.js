@@ -188,7 +188,10 @@ const Homepage = () => {
       <Container3>
         <Wrapper>
           <h1 data-aos='fade-in' data-aos-duration='2000'>
-            I’m currently working with <span>Bellex</span>.So,<span>Let’s work together</span> to create something worth sharing.
+            I’m currently working with <span>Bellex</span>.
+          </h1>
+          <h1 data-aos='fade-in' data-aos-duration='2000'>
+            <span>Let’s work together</span> to create something worth sharing.
           </h1>
           <BG
             data-aos='zoom-in'
