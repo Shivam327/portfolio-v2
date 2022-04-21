@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/fc60afea-1b06-43d5-b6dd-327e94cb084d/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/shivam-thaker-portfolio",
+  "appService.deploySubpath": "build"
+}
