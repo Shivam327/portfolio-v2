@@ -12,11 +12,9 @@ const Loader = () => {
   return (
     <Load>
       <BG style={{ backgroundColor: '#FEECEA', top: '50%', left: '70%' }}></BG>
-      <h1 style={{ color: 'orange' }} data-aos='fade-down'>
-        वसुधैव कुटुम्बकम् 🙏
-      </h1>
+
       <h1 style={{ color: 'orange' }} data-aos='fade-up'>
-        Namaste 🙏
+        वसुधैव कुटुम्बकम् 🙏
       </h1>
 
       <BG
