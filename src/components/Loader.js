@@ -1,33 +1,33 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
-import Aos from "aos";
+import React, { useEffect } from 'react';
+import styled from 'styled-components';
+import Aos from 'aos';
 
 const Loader = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     Aos.init({ duration: 1000 });
-    document.title = "Shivam Thaker Portfolio";
+    document.title = 'Shivam Thaker Portfolio';
   }, []);
 
   return (
     <Load>
-      <BG style={{ backgroundColor: "#FEECEA", top: "50%", left: "70%" }}></BG>
-      <h1 style={{ color: "orange" }} data-aos="fade-up">
-        Namaste 🙏
+      <BG style={{ backgroundColor: '#FEECEA', top: '50%', left: '70%' }}></BG>
+      <h1 style={{ color: 'orange' }} data-aos='fade-up'>
+        Namaste 🙏 वसुधैव कुटुम्बकम्
       </h1>
 
       <BG
         style={{
-          backgroundColor: "rgb(248,224,142, 0.3)",
-          top: "15%",
-          left: "-15%",
+          backgroundColor: 'rgb(248,224,142, 0.3)',
+          top: '15%',
+          left: '-15%',
         }}
       ></BG>
       <BG
         style={{
-          backgroundColor: "rgb(49,196,140, 0.2)",
-          top: "-40%",
-          left: "35%",
+          backgroundColor: 'rgb(49,196,140, 0.2)',
+          top: '-40%',
+          left: '35%',
         }}
       ></BG>
     </Load>
