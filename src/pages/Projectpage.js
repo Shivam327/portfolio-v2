@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import PROJECTS_DATA from '../projects.data';
 import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
@@ -7,6 +7,7 @@ import Moreproject from '../components/Moreproject';
 
 const Projectpage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [project, setProject] = useState();
   const [offesetY, setOffsetY] = useState(0);
 
@@ -20,13 +21,26 @@ const Projectpage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    setProject(PROJECTS_DATA.find((e) => e.id === Number(id)));
+    const foundProject = PROJECTS_DATA.find((e) => e.id === Number(id));
+    
+    if (!foundProject) {
+      // Redirect to 404 or home if project not found
+      navigate('/');
+      return;
+    }
+    
+    setProject(foundProject);
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [id]);
+  }, [id, navigate]);
+
+  // Show loading or redirect if no project
+  if (!project) {
+    return null;
+  }
 
   return (
     <Home>

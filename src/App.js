@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Homepage from './pages/Homepage';
 import Workpage from './pages/Workpage';
@@ -11,8 +11,10 @@ import Footer from './components/Footer';
 import AnimatedCursor from 'react-animated-cursor';
 import { useEffect, useState } from 'react';
 import Loader from './components/Loader';
+import { useSmoothScroll } from './hooks/useSmoothScroll';
 
 function App() {
+  useSmoothScroll();
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
@@ -30,14 +32,14 @@ function App() {
           <Navbar />
           <AnimatedCursor innerSize={16} outerSize={54} color='244, 196, 48' outerAlpha={0.2} innerScale={0.7} outerScale={4} />
           <Contactbar />
-          <Switch>
-            <Route exact path='/' component={Homepage} />
-            <Route exact path='/work' component={Workpage} />
-            <Route exact path='/about' component={Aboutpage} />
-            <Route exact path='/contact' component={Contactpage} />
-            <Route exact path='/project/:id' component={Projectpage} />
-            <Route exact path='/image' component={ImageReveal} />
-          </Switch>
+          <Routes>
+            <Route path='/' element={<Homepage />} />
+            <Route path='/work' element={<Workpage />} />
+            <Route path='/about' element={<Aboutpage />} />
+            <Route path='/contact' element={<Contactpage />} />
+            <Route path='/project/:id' element={<Projectpage />} />
+            <Route path='/image' element={<ImageReveal />} />
+          </Routes>
           <Footer />
         </>
       )}

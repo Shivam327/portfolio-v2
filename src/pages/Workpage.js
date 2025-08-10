@@ -1,8 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import Moreproject from '../components/Moreproject';
-import { Link } from 'react-router-dom';
 
 const Workpage = () => {
   useEffect(() => {

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Humburger from "./Humburger";
-import { withRouter, Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
-const Navbar = ({ history }) => {
+const Navbar = () => {
+  const location = useLocation();
+  
   // State of our Menu
   const [state, setState] = useState({
     initial: false,
@@ -17,10 +19,8 @@ const Navbar = ({ history }) => {
   //Use Effect
   useEffect(() => {
     //Listening for page changes.
-    history.listen(() => {
-      setState({ clicked: false, menuName: "<Menu />", color: "#191919" });
-    });
-  }, [history]);
+    setState({ clicked: false, menuName: "<Menu />", color: "#191919" });
+  }, [location]);
 
   // Toggle menu
   const handleMenu = () => {
@@ -133,4 +133,4 @@ const Menu = styled.div`
   }
 `;
 
-export default withRouter(Navbar);
+export default Navbar;
