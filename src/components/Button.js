@@ -1,38 +1,52 @@
-import React, { useEffect } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
+import React from "react";
 import styled from "styled-components";
+import { COLORS, SPACING } from '../constants';
 
-const Button = ({ text, color }) => {
-  useEffect(() => {
-    Aos.init({ duration: 1000 });
-  }, []);
-
+const Button = ({ text, color = COLORS.PRIMARY, onClick, disabled = false, variant = 'default' }) => {
   return (
-    <Btn>
-      <h1>... {text}</h1>
+    <Btn 
+      color={color} 
+      onClick={onClick} 
+      disabled={disabled}
+      variant={variant}
+    >
+      <span>{text}</span>
     </Btn>
   );
 };
 
-const Btn = styled.div`
-  margin-top: 2rem;
+const Btn = styled.button`
+  margin-top: ${SPACING.MD};
   background: white;
   border: 1px solid lightgray;
-  padding: 1rem 4rem;
+  padding: ${SPACING.SM} ${SPACING.XL};
   color: #fff;
-  background: linear-gradient(to left, var(--green) 50%, #fff 50%) right;
+  background: linear-gradient(to left, ${props => props.color} 50%, #fff 50%) right;
   background-size: 200%;
   transition: 0.5s ease-out;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
 
-  & > h1 {
+  span {
     font-weight: 400;
+    font-size: 1rem;
   }
 
-  &:hover {
+  &:hover:not(:disabled) {
     background-position: left;
     color: #191919;
-    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    outline: 2px solid ${COLORS.SECONDARY};
+    outline-offset: 2px;
   }
 `;
 

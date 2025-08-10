@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { SPACING, BREAKPOINTS } from '../../constants';
 
 import { staggerReveal, staggerRevealClose } from './Animations';
 
@@ -127,10 +128,10 @@ const Container = styled.div`
   margin: 0 auto;
   height: 100vh;
   display: flex;
-  padding: 3rem;
+  padding: ${SPACING.LG};
 
-  @media (max-width: 1024px) {
-    padding: 5rem;
+  @media (max-width: ${BREAKPOINTS.TABLET}) {
+    padding: ${SPACING.XL};
     flex-direction: column;
   }
 
@@ -143,7 +144,7 @@ const Container = styled.div`
     text-align: left;
     flex-direction: column;
 
-    @media (max-width: 1024px) {
+    @media (max-width: ${BREAKPOINTS.TABLET}) {
       width: 100%;
       height: 100vh;
       align-items: center;
@@ -158,7 +159,7 @@ const Container = styled.div`
       cursor: pointer;
       overflow: hidden;
 
-      @media (max-width: 768px) {
+      @media (max-width: ${BREAKPOINTS.MOBILE}) {
         line-height: 3rem;
         font-size: 2.5rem;
       }
@@ -198,7 +199,7 @@ const Info = styled.div`
   align-items: flex-end;
   flex-direction: column;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${BREAKPOINTS.TABLET}) {
     width: 100%;
     align-items: center;
   }

@@ -98,11 +98,9 @@ const Projectpage = () => {
         <h1>Tech Used</h1>
         <Tech>
           {project &&
-            project.tech.map((t) => (
-              <Circle key={t.id} data-aos='zoom-in' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
-                <i className={t.class}></i>
-                <img src={t.class} alt='' />
-                <span>{t.name}</span>
+            project.tech.map((techName, index) => (
+              <Circle key={index} data-aos='zoom-in' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+                <span>{techName}</span>
               </Circle>
             ))}
         </Tech>
@@ -126,23 +124,23 @@ const Projectpage = () => {
           </Col>
           <Col>
             <Link to='/project/1'>
-              <Moreproject name='Dev.to Clone' id={1} />
-            </Link>
-            <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
-            <Link to='/project/6'>
-              <Moreproject name='Portfolio 2019' id={6} />
-            </Link>
-            <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
-            <Link to='/project/8'>
-              <Moreproject name='Bankist' id={8} />
-            </Link>
-            <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
-            <Link to='/project/5'>
-              <Moreproject name='Netflix Clone' id={5} />
+              <Moreproject name='Infrastructure Monitoring System' id={1} />
             </Link>
             <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
             <Link to='/project/2'>
-              <Moreproject name='TrackerX' id={2} />
+              <Moreproject name='Used Car API' id={2} />
+            </Link>
+            <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
+            <Link to='/project/3'>
+              <Moreproject name='E-commerce Platform' id={3} />
+            </Link>
+            <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
+            <Link to='/project/4'>
+              <Moreproject name='Dashboard Analytics' id={4} />
+            </Link>
+            <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
+            <Link to='/project/5'>
+              <Moreproject name='Task Management App' id={5} />
             </Link>
           </Col>
         </Row>

@@ -1,67 +1,27 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import PageTemplate from '../components/PageTemplate';
+import PageHeader from '../components/layouts/PageHeader';
+import { TESTIMONIALS } from '../data/testimonials';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 
 const TestimonialsPage = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    Aos.init({ duration: 2000 });
-    document.title = 'Shivam Thaker -- Testimonials';
-  }, []);
-
-  const testimonials = [
-    {
-      name: 'Sarah Chen',
-      role: 'CTO, TechStartup Inc.',
-      company: 'TechStartup Inc.',
-      content: 'Shivam delivered our MVP in record time. His understanding of scalable architecture and attention to performance optimization exceeded our expectations. The system handles 10x more traffic than initially planned.',
-      rating: 5,
-      project: 'E-commerce Platform MVP'
-    },
-    {
-      name: 'Michael Rodriguez',
-      role: 'Operations Director',
-      company: 'Manufacturing Corp',
-      content: 'The ERP customization project transformed our workflow efficiency. What used to take 3 days now takes 3 hours. Shivam\'s business process understanding combined with technical expertise is rare.',
-      rating: 5,
-      project: 'ERP Workflow Automation'
-    },
-    {
-      name: 'Priya Patel',
-      role: 'Product Manager',
-      company: 'FinTech Solutions',
-      content: 'Working with Shivam on our API infrastructure was seamless. He implemented robust monitoring, proper error handling, and documentation that our team can easily maintain and extend.',
-      rating: 5,
-      project: 'Financial API Platform'
-    },
-    {
-      name: 'David Kim',
-      role: 'DevOps Engineer',
-      company: 'CloudScale Systems',
-      content: 'Shivam\'s infrastructure monitoring setup using Grafana and Prometheus gave us visibility we never had before. Our system uptime improved from 95% to 99.9% within weeks.',
-      rating: 5,
-      project: 'Infrastructure Monitoring'
-    }
-  ];
-
   const renderStars = (rating) => {
     return '★'.repeat(rating) + '☆'.repeat(5 - rating);
   };
 
   return (
-    <Testimonials>
+    <PageTemplate
+      title="Shivam Thaker | Testimonials | Client Success Stories"
+      description="Real feedback from clients and teams. Testimonials reflecting business impact and technical quality delivered on every project."
+    >
       <Container>
-        <Design>
-          <h1 data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
-            Testimonials
-          </h1>
-          <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
-            &lt;Client Stories /&gt;
-          </h2>
-        </Design>
+        <PageHeader 
+          title="Testimonials" 
+          backgroundText="REVIEWS"
+          subtitle="What clients say about working together"
+        />
         
         <h3 data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
           Real feedback from clients and teams I've worked with. These testimonials reflect 
@@ -69,9 +29,9 @@ const TestimonialsPage = () => {
         </h3>
 
         <TestimonialsGrid>
-          {testimonials.map((testimonial, index) => (
+          {TESTIMONIALS.map((testimonial, index) => (
             <TestimonialCard 
-              key={index} 
+              key={testimonial.id} 
               data-aos="fade-up" 
               data-aos-delay={index * 200} 
               data-aos-duration="1000"
@@ -118,7 +78,7 @@ const TestimonialsPage = () => {
           </div>
         </CTASection>
       </Container>
-    </Testimonials>
+    </PageTemplate>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import "aos/dist/aos.css";
+import { Helmet } from 'react-helmet';
 
 const Aboutpage = () => {
   const [time, setTime] = useState(1000);
@@ -15,6 +16,11 @@ const Aboutpage = () => {
 
   return (
     <About>
+      <Helmet>
+        <title>Shivam Thaker | About | Full-Stack Developer @ Korn Ferry</title>
+        <meta name="description" content="Full-Stack Developer based in Mumbai, specializing in scalable systems, API development, infrastructure monitoring, and ERP solutions. Currently at Korn Ferry and open to freelance projects." />
+        <meta property="og:image" content="/images/pose/pose_m12.png" />
+      </Helmet>
       <Container>
         <Design>
           <h1

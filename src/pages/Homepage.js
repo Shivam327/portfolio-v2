@@ -1,32 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Aos from 'aos';
-import { isMobile } from 'react-device-detect';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import { Helmet } from 'react-helmet';
 import Timeline from '../components/Timeline';
 
 const Homepage = () => {
-  const [offsetY, setOffsetY] = useState(0);
-
-  const handleScroll = () => {
-    if (isMobile) {
-      setOffsetY(0);
-    } else {
-      setOffsetY(window.pageYOffset);
-    }
-  };
-
-  useEffect(() => {
-    if (isMobile) return;
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      if (isMobile) return;
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   useEffect(() => {
     Aos.init({ duration: 2000 });
     document.title = 'Shivam Thaker Portfolio';
@@ -175,57 +155,7 @@ const Container = styled.div`
     margin-left: 5rem;
   }
 `;
-const ContainerLarge = styled(Container)`
-  max-width: 1580px;
-  width: 100%;
-  padding: 10rem 2rem;
-`;
-const Row = styled.div`
-  width: 100%;
-  min-height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-const Col = styled.div`
-  flex: 1;
-  width: 50%;
-  min-height: max-content;
-  margin: 2rem;
-  display: flex;
-  flex-direction: column;
-
-  & > h1 {
-    font-size: 5rem;
-    font-weight: 400;
-    margin: 2rem;
-    margin-bottom: 0;
-  }
-
-  & > img {
-    width: 100%;
-    height: auto;
-
-    @media (max-width: 768px) {
-      width: 50%;
-    }
-  }
-
-  & > h2 {
-    color: gray;
-    font-size: 2rem;
-    font-weight: 400;
-    margin: 0 2rem;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-`;
 const ContainerA = styled.div`
   overflow: hidden;
   width: 100%;
@@ -295,7 +225,7 @@ const Design = styled.div`
 
   & > h2 {
     color: transparent;
-    font-size: 20rem;
+    font-size: 12rem;
     position: absolute;
     z-index: -3;
     -webkit-text-stroke-width: 1px;
@@ -304,12 +234,12 @@ const Design = styled.div`
     left: 0%;
 
     @media (max-width: 768px) {
-      font-size: 13rem;
+      font-size: 8rem;
     }
   }
 
   & > h1 {
-    font-size: 15rem;
+    font-size: 8rem;
     font-weight: 500;
     position: absolute;
     z-index: 0;
@@ -317,22 +247,28 @@ const Design = styled.div`
     left: 0%;
 
     @media (max-width: 768px) {
-      line-height: 13rem;
+      font-size: 5rem;
+      line-height: 6rem;
     }
   }
 `;
 const Container3 = styled(Container)`
-  width: 80%;
-  height: 110vh;
+  width: 90%;
+  height: 100vh;
   position: relative;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 95%;
+    height: 80vh;
+  }
 `;
 
 const Wrapper = styled.div`
-  padding: 3rem;
+  padding: 2rem;
   width: 100%;
   height: 100%;
   display: flex;
@@ -343,26 +279,37 @@ const Wrapper = styled.div`
   & > img {
     position: absolute;
     top: 15%;
-    left: 80%;
+    left: 75%;
     height: auto;
-    width: 50%;
+    width: 45%;
 
     @media (max-width: 768px) {
-      width: 60%;
-      top: 20%;
+      width: 55%;
+      top: 25%;
+      left: 70%;
     }
   }
 
   & > h1 {
-    max-width: 70%;
+    max-width: 75%;
     color: #191919;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 300;
+    line-height: 1.2;
 
     & > span {
       font-weight: 400;
       color: var(--green);
     }
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+      max-width: 85%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
   }
 `;
 

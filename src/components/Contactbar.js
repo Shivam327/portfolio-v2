@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { BREAKPOINTS, SIZES } from '../constants';
 
 const Contactbar = () => {
   return (
@@ -43,6 +44,11 @@ const Bar = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: ${BREAKPOINTS.MOBILE}) {
+    right: 1%;
+    width: 12rem;
+  }
 `;
 
 const Circle = styled.div`
@@ -50,19 +56,21 @@ const Circle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 7vh;
-  width: 7vh;
+  height: ${SIZES.CIRCLE_SMALL};
+  width: ${SIZES.CIRCLE_SMALL};
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
   & > img {
     width: 3vh;
+    height: auto;
   }
 
   &:hover {
-    height: 9vh;
-    width: 9vh;
+    height: ${SIZES.CIRCLE_LARGE};
+    width: ${SIZES.CIRCLE_LARGE};
+    transform: scale(1.1);
   }
 `;
 

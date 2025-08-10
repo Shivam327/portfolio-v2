@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Moreproject from '../components/Moreproject';
 import PROJECTS_DATA from '../projects.data.js';
+import { Helmet } from 'react-helmet';
 
 const Workpage = () => {
   useEffect(() => {
@@ -12,6 +13,11 @@ const Workpage = () => {
 
   return (
     <Work>
+      <Helmet>
+        <title>Shivam Thaker | Work | Full-Stack Developer Portfolio</title>
+        <meta name="description" content="Portfolio of projects including Infrastructure Monitoring, APIs, E-commerce platforms, and business solutions. Built with React, NestJS, Docker, and modern technologies." />
+        <meta property="og:image" content="/images/pose/pose_m18.png" />
+      </Helmet>
       <Container>
         <Design>
           <h1 data-aos='fade-left' data-aos-delay='1000' data-aos-duration='1000'>

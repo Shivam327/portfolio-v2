@@ -1,107 +1,60 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import PageTemplate from '../components/PageTemplate';
+import PageHeader from '../components/layouts/PageHeader';
+import { SERVICES } from '../data/services';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 
 const ServicesPage = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    Aos.init({ duration: 2000 });
-    document.title = 'Shivam Thaker -- Services';
-  }, []);
-
-  const services = [
-    {
-      title: 'Web App Development',
-      description: 'Full-stack web applications using React, Node.js, and modern frameworks. From MVPs to enterprise solutions.',
-      icon: '🌐',
-      features: ['React/Next.js Frontends', 'Node.js/NestJS Backends', 'Responsive Design', 'Performance Optimization']
-    },
-    {
-      title: 'API Development',
-      description: 'RESTful and GraphQL APIs built with NestJS, Express, and best practices for scalability and security.',
-      icon: '🔌',
-      features: ['REST APIs', 'GraphQL', 'Authentication', 'Rate Limiting']
-    },
-    {
-      title: 'Infrastructure Monitoring',
-      description: 'Real-time monitoring solutions using Grafana, Prometheus, Docker, and Kubernetes for production systems.',
-      icon: '📊',
-      features: ['Grafana Dashboards', 'Prometheus Metrics', 'Docker Containers', 'K8s Orchestration']
-    },
-    {
-      title: 'ERP/CRM Customization',
-      description: 'Custom business process automation and workflow tools to streamline operations and improve efficiency.',
-      icon: '🏢',
-      features: ['Process Automation', 'Custom Dashboards', 'Integration APIs', 'Workflow Management']
-    },
-    {
-      title: 'CI/CD & DevOps',
-      description: 'Automated deployment pipelines, containerization, and infrastructure as code for reliable software delivery.',
-      icon: '🚀',
-      features: ['Docker Containers', 'Kubernetes', 'GitHub Actions', 'AWS/Azure']
-    }
-  ];
-
   return (
-    <Services>
+    <PageTemplate
+      title="Shivam Thaker | Services | Full-Stack Development & Infrastructure"
+      description="Professional services including Web App Development, API Development, Infrastructure Monitoring, ERP/CRM Customization, and CI/CD & DevOps solutions."
+    >
       <Container>
-        <Design>
-          <h1 data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
-            Services
-          </h1>
-          <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
-            &lt;What I Do /&gt;
-          </h2>
-        </Design>
+        <PageHeader 
+          title="Services" 
+          backgroundText="SERVICES"
+          subtitle="What I can build for you"
+        />
         
         <h3 data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-          I deliver production-ready solutions that drive business value. From startups to enterprises, 
-          I help organizations build scalable, maintainable systems that grow with their needs.
+          I offer comprehensive development services to help businesses scale efficiently. 
+          From initial concept to production deployment, I handle the entire development lifecycle.
         </h3>
-
+        
         <ServicesGrid>
-          {services.map((service, index) => (
-            <ServiceCard 
-              key={index} 
-              data-aos="fade-up" 
-              data-aos-delay={index * 200} 
-              data-aos-duration="1000"
-            >
+          {SERVICES.map(service => (
+            <ServiceCard key={service.id} data-aos="fade-up" data-aos-delay={service.id * 100}>
               <ServiceIcon>{service.icon}</ServiceIcon>
               <ServiceTitle>{service.title}</ServiceTitle>
               <ServiceDescription>{service.description}</ServiceDescription>
-              <FeaturesList>
-                {service.features.map((feature, idx) => (
-                  <FeatureItem key={idx}>
-                    <CheckIcon>✓</CheckIcon>
-                    {feature}
-                  </FeatureItem>
+              <ServiceFeatures>
+                {service.features.map((feature, index) => (
+                  <Feature key={index}>• {feature}</Feature>
                 ))}
-              </FeaturesList>
+              </ServiceFeatures>
             </ServiceCard>
           ))}
         </ServicesGrid>
-
+        
         <CTASection data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
           <h4>Ready to start your project?</h4>
           <p>Let's discuss how I can help bring your vision to life.</p>
-          <Link to="/contact">
-            <Button text="Get Started" color="var(--green)" />
-          </Link>
+          <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link to="/contact">
+              <Button text="Let's Discuss" color="var(--green)" />
+            </Link>
+            <Link to="/work">
+              <Button text="View My Work" color="var(--yellow)" />
+            </Link>
+          </div>
         </CTASection>
       </Container>
-    </Services>
+    </PageTemplate>
   );
 };
-
-const Services = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-`;
 
 const Container = styled.div`
   overflow: hidden;
@@ -132,44 +85,6 @@ const Container = styled.div`
       margin: 2rem 0;
       width: 90%;
       font-size: 2rem;
-    }
-  }
-`;
-
-const Design = styled.div`
-  position: relative;
-  overflow: hidden;
-  height: 45vh;
-
-  @media (max-width: 1024px) {
-    height: 30vh;
-  }
-
-  & > h2 {
-    color: transparent;
-    font-size: 20rem;
-    position: absolute;
-    z-index: -3;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--yellow);
-    bottom: 10%;
-    left: 0%;
-
-    @media (max-width: 768px) {
-      font-size: 13rem;
-    }
-  }
-
-  & > h1 {
-    font-size: 15rem;
-    font-weight: 500;
-    position: absolute;
-    z-index: 0;
-    bottom: 10%;
-    left: 0%;
-
-    @media (max-width: 768px) {
-      line-height: 13rem;
     }
   }
 `;
@@ -214,45 +129,33 @@ const ServiceCard = styled.div`
 `;
 
 const ServiceIcon = styled.div`
-  font-size: 4rem;
-  margin-bottom: 2rem;
-  display: block;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 `;
 
 const ServiceTitle = styled.h3`
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 600;
+  margin-bottom: 1rem;
   color: var(--dark);
-  margin-bottom: 1.5rem;
-  font-family: 'Dela Gothic One', cursive;
 `;
 
 const ServiceDescription = styled.p`
-  font-size: 1.6rem;
   color: #666;
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
 `;
 
-const FeaturesList = styled.ul`
+const ServiceFeatures = styled.ul`
   list-style: none;
   padding: 0;
-  margin: 0;
 `;
 
-const FeatureItem = styled.li`
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
+const Feature = styled.li`
   color: var(--dark);
-`;
-
-const CheckIcon = styled.span`
-  color: var(--green);
-  font-weight: bold;
-  margin-right: 1rem;
-  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
 `;
 
 const CTASection = styled.div`

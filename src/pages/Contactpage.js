@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import { Helmet } from 'react-helmet';
 
 const Contactpage = () => {
   useEffect(() => {
@@ -12,6 +13,11 @@ const Contactpage = () => {
 
   return (
     <Contact>
+      <Helmet>
+        <title>Shivam Thaker | Contact | Full-Stack Developer Available for Freelance</title>
+        <meta name="description" content="Let's build something impactful. Currently open to freelance & contract-based projects in web, backend, and infrastructure development." />
+        <meta property="og:image" content="/images/pose/pose_m12.png" />
+      </Helmet>
       <Container>
         <Design>
           <h1 data-aos='fade-left' data-aos-delay='1000' data-aos-duration='1000'>
