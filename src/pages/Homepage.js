@@ -1,14 +1,14 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Aos from 'aos';
 import { isMobile } from 'react-device-detect';
-// import Project from "../components/Project";
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
+import { Helmet } from 'react-helmet';
+import Timeline from '../components/Timeline';
 
 const Homepage = () => {
-  const [offesetY, setOffsetY] = useState(0);
+  const [offsetY, setOffsetY] = useState(0);
 
   const handleScroll = () => {
     if (isMobile) {
@@ -21,7 +21,6 @@ const Homepage = () => {
   useEffect(() => {
     if (isMobile) return;
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       if (isMobile) return;
       window.removeEventListener('scroll', handleScroll);
@@ -29,219 +28,94 @@ const Homepage = () => {
   }, []);
 
   useEffect(() => {
-    // window.scrollTo(0, 0)
     Aos.init({ duration: 2000 });
     document.title = 'Shivam Thaker Portfolio';
   }, []);
 
   return (
     <Home>
+      <Helmet>
+        <title>Shivam Thaker | Full-Stack Developer</title>
+        <meta
+          name="description"
+          content="Portfolio of Shivam Thaker - Full-Stack Developer skilled in React, Node.js, NestJS, and cloud-native technologies."
+        />
+        <meta property="og:image" content="/images/pose/pose_m18.png" />
+      </Helmet>
+
       <Container>
         <LeftHero>
-          <h2 data-aos='flip-up' data-aos-duration='1000'>
-            HEY, I'M
-          </h2>
-          <h1 data-aos='flip-up' data-aos-delay='500' data-aos-duration='1000'>
-            SHIVAM THAKER
-          </h1>
-          <h3 data-aos='flip-up' data-aos-delay='1000' data-aos-duration='1000'>
-            A Full-Stack developer from
-            <span style={{ color: 'orange' }}> India</span>.
+          <h2 data-aos="flip-up" data-aos-duration="1000">HEY, I'M</h2>
+          <h1 data-aos="flip-up" data-aos-delay="500" data-aos-duration="1000">SHIVAM THAKER</h1>
+          <h3 data-aos="flip-up" data-aos-delay="1000" data-aos-duration="1000">
+            Full-Stack Developer crafting scalable digital solutions from
+            <span style={{ color: 'orange' }}> Mumbai, India</span>.
           </h3>
-          {/* <Button text="Contact" /> */}
-          <BG style={{ backgroundColor: '#FEECEA' }} data-aos='zoom-in' data-aos-duration='2000'></BG>
-          <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m18.png' alt='' />
+          <Link to="/contact">
+            <Button text="Contact Me" color="var(--green)" />
+          </Link>
+          <BG style={{ backgroundColor: '#FEECEA' }} data-aos="zoom-in" data-aos-duration="2000" />
+          <img
+            loading="lazy"
+            data-aos="zoom-in"
+            data-aos-duration="2000"
+            src="/images/pose/pose_m18.png"
+            alt="Shivam Thaker portrait"
+          />
         </LeftHero>
       </Container>
 
       <ContainerA>
         <Design>
-          <h1 data-aos='fade-left' data-aos-delay='100' data-aos-duration='1000'>
-            Shivam Thaker
-          </h1>
-          <h2 data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000'>
-            &lt;About /&gt;
-          </h2>
+          <h1 data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">Shivam Thaker</h1>
+          <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">&lt;About /&gt;</h2>
         </Design>
-        <h3 data-aos='fade-up' data-aos-delay='300' data-aos-duration='1000'>
-          I am a full-stack creative developer based in Mumbai, India. I am a<span> Computer Science</span> undergraduate from Mumbai University.
-          {/* and also did some coursework in UI/UX and SEO. */}
+        <h3 data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+          I'm a full-stack creative developer with a <span>Computer Science</span> degree from Mumbai University.
         </h3>
-        <h4 data-aos='fade-up' data-aos-delay='450' data-aos-duration='1000'>
-          I enjoy using My Skills to empower people to achieve goals. My development stack is focused on building Scalable & incredible fast websites
-          and WebApps with delightful interactions.
+        <h4 data-aos="fade-up" data-aos-delay="450" data-aos-duration="1000">
+          I build performant and scalable web applications using technologies like React, Node.js, NestJS, and AWS. I love solving real-world problems through clean code and thoughtful design.
         </h4>
-        <Circle data-aos='zoom-in' data-aos-delay='300' data-aos-duration='1000'>
-          <Link to='/about'>
+        <Circle data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+          <Link to="/about">
             <h2>Learn More</h2>
           </Link>
         </Circle>
       </ContainerA>
 
-      <ContainerLarge>
-        <h1>&lt; Selected</h1>
-        <h1>Projects /&gt;</h1>
-        {/* <Row>
-          <Col
-            style={{
-              transform: `translateY(${offesetY * 0.08}px)`,
-            }}
-          >
-            <Link to="/project/1">
-              <Project
-                height="60vh"
-                image="/images/1.jpg"
-                position="left"
-                name="Dev.to Clone"
-                type="WebApp"
-              />
-            </Link>
-          </Col>
-
-          <Col
-            style={{
-              transform: `translateY(-${offesetY * 0.05}px)`,
-            }}
-          >
-            <Link to="/project/5">
-              <Project
-                height="50vh"
-                image="/images/5.jpg"
-                position="left"
-                name="Netflix Clone"
-                type="WebApp"
-              />
-            </Link>
-          </Col>
-        </Row>
-        <Row>
-          <Col
-            style={{
-              transform: `translateY(${offesetY * 0.08}px)`,
-            }}
-          >
-            <Link to="/project/6">
-              <Project
-                height="60vh"
-                image="/images/6.jpg"
-                position="left"
-                name="Portfolio 2019"
-                type="Website"
-              />
-            </Link>
-          </Col>
-          <Col
-            style={{
-              transform: `translateY(-${offesetY * 0.05}px)`,
-            }}
-          >
-            <Link to="/project/2">
-              <Project
-                height="50vh"
-                image="/images/2.jpg"
-                position="left"
-                name="TrackerX"
-                type="WebApp"
-              />
-            </Link>
-          </Col>
-        </Row>
-        <Row>
-          <Col
-            style={{
-              transform: `translateY(${offesetY * 0.08}px)`,
-            }}
-          >
-            <Link to="/project/7">
-              <Project
-                height="50vh"
-                image="/images/7.jpg"
-                position="left"
-                name="TrackIt"
-                type="WebApp"
-              />
-            </Link>
-          </Col>
-          <Col
-            style={{
-              transform: `translateY(-${offesetY * 0.05}px)`,
-            }}
-          >
-            <Link to="/project/4">
-              <Project
-                height="50vh"
-                image="/images/4.jpg"
-                position="left"
-                name="Portfolio 2021"
-                type="WebSite"
-              />
-            </Link>
-          </Col>
-        </Row> */}
-        <Circle data-aos='zoom-in' data-aos-delay='300' data-aos-duration='1000'>
-          <Link to='/work'>
-            <h2>View All</h2>
-          </Link>
-        </Circle>
-      </ContainerLarge>
+    
+      <Timeline />
 
       <Container3>
         <Wrapper>
-          <h1 data-aos='fade-in' data-aos-duration='2000'>
-            I’m currently working with <br /> <span>Korn Ferry</span>.
+          <h1 data-aos="fade-in" data-aos-duration="2000">
+            I’m currently working with <br />
+            <span>Korn Ferry</span>.
           </h1>
-          <h1 data-aos='fade-in' data-aos-duration='2000'>
-            <span>Let’s work together</span> to create something worth sharing.
+          <h1 data-aos="fade-in" data-aos-duration="2000">
+            <span>Let’s collaborate</span> to build something impactful and share-worthy.
           </h1>
           <BG
-            data-aos='zoom-in'
-            data-aos-duration='2000'
-            style={{
-              backgroundColor: 'rgb(49,196,140, 0.2)',
-              top: '15%',
-              left: '60%',
-            }}
-          ></BG>
-          <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m13.png' alt='' />
-          <Link to='/contact'>
-            <Button text='Connect Now' color='var(--green)' />
+            data-aos="zoom-in"
+            data-aos-duration="2000"
+            style={{ backgroundColor: 'rgb(49,196,140, 0.2)', top: '15%', left: '60%' }}
+          />
+          <img
+            loading="lazy"
+            data-aos="zoom-in"
+            data-aos-duration="2000"
+            src="/images/pose/pose_m13.png"
+            alt="Shivam Thaker Working Pose"
+          />
+          <Link to="/contact">
+            <Button text="Connect Now" color="var(--green)" />
           </Link>
         </Wrapper>
       </Container3>
-
-      {/* <Container>
-                <h1>&lt; More Works /&gt;</h1>
-                <Row>
-                    <Col>
-                        <BG style={{ backgroundColor: 'rgb(0,0,0, 0.2)', top: '20%', left: '-15%' }}></BG>
-                        <img src="/images/pose/pose_m14.png" alt="" />
-                    </Col>
-                    <Col>
-                        <Link to="/project/2">
-                            <Moreproject name="TrackIt" />
-                        </Link>
-                        <hr data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000" />
-                        <Link to="/project/2">
-                            <Moreproject name="Portfolio 2019" />
-                        </Link>
-                        <hr data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000" />
-                        <Link to="/project/8">
-                            <Moreproject name="Bankist" />
-                        </Link>
-                        <hr data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000" />
-                        <Link to="/project/2">
-                            <Moreproject name="doubts.com" />
-                        </Link>
-                        <hr data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000" />
-                        <Link to="/project/2">
-                            <Moreproject name="TrackIt" />
-                        </Link>
-                    </Col>
-                </Row>
-            </Container> */}
     </Home>
   );
 };
+
 
 const Circle = styled.div`
   display: flex;
@@ -497,53 +371,62 @@ const LeftHero = styled.div`
   position: relative;
 
   & > h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     background-color: var(--dark);
     color: #fff;
-    font-family: 'Otomanopee One', sans-serif;
-    padding: 0.1rem 1rem;
-    margin: 1rem 0;
     font-family: 'Dela Gothic One', cursive;
+    padding: 0.2rem 1.2rem;
+    margin: 1rem 0;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
   }
 
   & > h2 {
     font-size: 2rem;
-    font-family: 'Otomanopee One', sans-serif;
     font-family: 'Dela Gothic One', cursive;
     margin: 1rem 0;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
   }
 
   & > h3 {
     font-family: 'Dela Gothic One', cursive;
     text-transform: uppercase;
-    font-size: 7rem;
+    font-size: 2rem;
     max-width: 70%;
 
     & > span {
       color: var(--red);
     }
-    /* -webkit-text-stroke-width: 1px; */
-    /* color: transparent; */
-    /* -webkit-text-stroke-color: #000; */
-    /* font-family: 'Otomanopee One', sans-serif; */
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
   }
 
   & > img {
     position: absolute;
-    width: 50%;
+    width: 45%;
     height: auto;
-    left: 70%;
+    left: 65%;
     z-index: -2;
 
     @media (max-width: 769px) {
-      width: 50%;
+      width: 60%;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 
   & > h6 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
-`;
+`
+
 
 const BG = styled.div`
   position: absolute;

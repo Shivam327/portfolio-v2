@@ -13,6 +13,7 @@
     "react-animated-cursor": "^2.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^6.8.1",
     "react-scripts": "^5.0.1",
     "react-tsparticles": "^2.9.3",
