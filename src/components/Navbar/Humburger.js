@@ -44,6 +44,12 @@ const Humburger = ({ state, setState }) => {
               <Link to='/work'>&lt;Works /&gt;</Link>
             </li>
             <li>
+              <Link to='/services'>&lt;Services /&gt;</Link>
+            </li>
+            <li>
+              <Link to='/testimonials'>&lt;Testimonials /&gt;</Link>
+            </li>
+            <li>
               <Link to='/about'>&lt;About Me /&gt;</Link>
             </li>
             <li>
@@ -139,22 +145,22 @@ const Container = styled.div`
 
     @media (max-width: 1024px) {
       width: 100%;
-      height: 200vh;
+      height: 100vh;
       align-items: center;
     }
 
     & > li {
       list-style: none;
-      font-size: 8rem;
-      margin: 2rem 0;
-      line-height: 14rem;
+      font-size: 3rem;
+      margin: 1.5rem 0;
+      line-height: 4rem;
       font-weight: 700;
       cursor: pointer;
       overflow: hidden;
 
       @media (max-width: 768px) {
-        line-height: 7rem;
-        font-size: 5rem;
+        line-height: 3rem;
+        font-size: 2.5rem;
       }
       a {
         color: var(--white);
@@ -174,8 +180,8 @@ const Social = styled.div`
 
   & > a > i {
     color: var(--white);
-    font-size: 5rem;
-    margin: 2rem;
+    font-size: 2.5rem;
+    margin: 1rem;
 
     &:hover {
       color: var(--blue);
@@ -198,7 +204,7 @@ const Info = styled.div`
   }
 
   & > h3 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   & > p {

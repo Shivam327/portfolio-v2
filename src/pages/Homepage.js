@@ -35,10 +35,10 @@ const Homepage = () => {
   return (
     <Home>
       <Helmet>
-        <title>Shivam Thaker | Full-Stack Developer</title>
+        <title>Shivam Thaker | Full-Stack Developer @ Korn Ferry | Freelance Available</title>
         <meta
           name="description"
-          content="Portfolio of Shivam Thaker - Full-Stack Developer skilled in React, Node.js, NestJS, and cloud-native technologies."
+          content="Portfolio of Shivam Thaker — building production-grade systems, APIs, dashboards, and infra tooling."
         />
         <meta property="og:image" content="/images/pose/pose_m18.png" />
       </Helmet>
@@ -48,8 +48,9 @@ const Homepage = () => {
           <h2 data-aos="flip-up" data-aos-duration="1000">HEY, I'M</h2>
           <h1 data-aos="flip-up" data-aos-delay="500" data-aos-duration="1000">SHIVAM THAKER</h1>
           <h3 data-aos="flip-up" data-aos-delay="1000" data-aos-duration="1000">
-            Full-Stack Developer crafting scalable digital solutions from
-            <span style={{ color: 'orange' }}> Mumbai, India</span>.
+            Full-Stack Developer @ <span style={{ color: 'orange' }}>Korn Ferry</span>, building scalable systems from
+            <span style={{ color: 'orange' }}> Mumbai, India</span>.<br/>
+            <strong>Currently open to freelance work in APIs, web, dashboards & infra.</strong>
           </h3>
           <Link to="/contact">
             <Button text="Contact Me" color="var(--green)" />
@@ -107,9 +108,14 @@ const Homepage = () => {
             src="/images/pose/pose_m13.png"
             alt="Shivam Thaker Working Pose"
           />
-          <Link to="/contact">
-            <Button text="Connect Now" color="var(--green)" />
-          </Link>
+          <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <Link to="/contact">
+              <Button text="Connect Now" color="var(--green)" />
+            </Link>
+            <Link to="/services">
+              <Button text="View Services" color="var(--yellow)" />
+            </Link>
+          </div>
         </Wrapper>
       </Container3>
     </Home>

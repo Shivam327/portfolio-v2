@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import Moreproject from '../components/Moreproject';
+import PROJECTS_DATA from '../projects.data.js';
 
 const Workpage = () => {
   useEffect(() => {
@@ -20,72 +23,44 @@ const Workpage = () => {
         </Design>
         <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m19.png' alt='' />
         <h3 data-aos='fade-up' data-aos-delay='2000' data-aos-duration='1000'>
-          A collection of front-end, full-stack Coding. These are a mix of practice and side projects.
+          A collection of production-ready projects showcasing scalable systems, APIs, and infrastructure solutions. 
+          These demonstrate my expertise in building business-critical applications.
         </h3>
       </Container>
 
-      {/* <Container>
+      <Container>
         <Row>
           <Col>
-            <Link to="/project/7">
-              <Moreproject name="TrackIt" id={7} />
-            </Link>
-            <hr
-              data-aos="fade-right"
-              data-aos-delay="100"
-              data-aos-duration="1000"
-            />
-            <Link to="/project/6">
-              <Moreproject name="Portfolio 2019" id={6} />
-            </Link>
-            <hr
-              data-aos="fade-right"
-              data-aos-delay="100"
-              data-aos-duration="1000"
-            />
-            <Link to="/project/8">
-              <Moreproject name="Bankist" id={8} />
-            </Link>
-            <hr
-              data-aos="fade-right"
-              data-aos-delay="100"
-              data-aos-duration="1000"
-            />
-            <Link to="/project/2">
-              <Moreproject name="TrackerX" id={2} />
-            </Link>
+            {PROJECTS_DATA.slice(0, Math.ceil(PROJECTS_DATA.length / 2)).map((project) => (
+              <React.Fragment key={project.id}>
+                <Link to={`/project/${project.id}`}>
+                  <Moreproject name={project.name} id={project.id} />
+                </Link>
+                <hr
+                  data-aos="fade-right"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                />
+              </React.Fragment>
+            ))}
           </Col>
           <Col>
-            <Link to="/project/1">
-              <Moreproject name="Dev.to Clone" id={1} />
-            </Link>
-            <hr
-              data-aos="fade-right"
-              data-aos-delay="100"
-              data-aos-duration="1000"
-            />
-            <Link to="/project/5">
-              <Moreproject name="NetFlix Clone" id={5} />
-            </Link>
-            <hr
-              data-aos="fade-right"
-              data-aos-delay="100"
-              data-aos-duration="1000"
-            />
-            <Link to="/project/4">
-              <Moreproject name="Portflio 2021" id={4} />
-            </Link>
-            <hr
-              data-aos="fade-right"
-              data-aos-delay="100"
-              data-aos-duration="1000"
-            />
-            <Link to="/project/3">
-              <Moreproject name="devFriend.io" id={3} />
-            </Link>
+            {PROJECTS_DATA.slice(Math.ceil(PROJECTS_DATA.length / 2)).map((project) => (
+              <React.Fragment key={project.id}>
+                <Link to={`/project/${project.id}`}>
+                  <Moreproject name={project.name} id={project.id} />
+                </Link>
+                <hr
+                  data-aos="fade-right"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                />
+              </React.Fragment>
+            ))}
           </Col>
         </Row>
-      </Container> */}
+      </Container>
+      
       <BG
         style={{
           backgroundColor: 'rgb(49,196,140, 0.2)',

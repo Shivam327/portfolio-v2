@@ -4,6 +4,8 @@ import Homepage from './pages/Homepage';
 import Workpage from './pages/Workpage';
 import Aboutpage from './pages/Aboutpage';
 import Contactpage from './pages/Contactpage';
+import ServicesPage from './pages/ServicesPage';
+import TestimonialsPage from './pages/TestimonialsPage';
 import Projectpage from './pages/Projectpage';
 import Contactbar from './components/Contactbar';
 import ImageReveal from './components/ImageReveal';
@@ -37,6 +39,8 @@ function App() {
             <Route path='/work' element={<Workpage />} />
             <Route path='/about' element={<Aboutpage />} />
             <Route path='/contact' element={<Contactpage />} />
+            <Route path='/services' element={<ServicesPage />} />
+            <Route path='/testimonials' element={<TestimonialsPage />} />
             <Route path='/project/:id' element={<Projectpage />} />
             <Route path='/image' element={<ImageReveal />} />
           </Routes>

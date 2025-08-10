@@ -37,6 +37,16 @@ const Timeline = () => {
         'Contributed to the development of scalable microservices architecture'
       ],
       icon: '🚀'
+    },
+    {
+      company: 'Self-Employed',
+      title: 'Freelance Developer',
+      period: 'May 2021 – April 2025',
+      contributions: [
+        'Delivered client-facing dashboards & websites',
+        'Built custom ERP tools and admin panels'
+      ],
+      icon: ''
     }
   ];
 

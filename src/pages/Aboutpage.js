@@ -39,10 +39,8 @@ const Aboutpage = () => {
           alt=""
         />
         <h3 data-aos="fade-up" data-aos-delay={time} data-aos-duration="1000">
-          I’m a Full-Stack Creative Developer based in Mumbai,
-          <span> India</span>. I hold a degree in Computer Science and have also
-          explored coursework in
-          <span> SEO</span>.
+          I'm a Full-Stack Developer based in Mumbai, currently working at Korn Ferry. I specialize in scalable systems, API development, infrastructure monitoring, and ERP solutions.
+          <br/>I also take on freelance projects — from startup MVPs to workflow automation tools.
         </h3>
 
         <h4 data-aos="fade-up" data-aos-delay={time} data-aos-duration="1000">

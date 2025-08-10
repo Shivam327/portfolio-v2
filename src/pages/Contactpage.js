@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const Contactpage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    Aos.init({ duration: 2000 });
+    document.title = 'Shivam Thaker -- Contact';
   }, []);
 
   return (
@@ -18,15 +22,11 @@ const Contactpage = () => {
           </h2>
         </Design>
         <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m12.png' alt='' />
-        {/* <span>
-          <a
-            href="https://drive.google.com/file/d/1r5z5b76Gd1xCsxYzIGasYC8snlVN8fpw/view?usp=sharing"
-            target="_blan"
-          >
-            <i class="iconify" data-icon="mdi:file-account"></i>
-            Resume
-          </a>
-        </span> */}
+        
+        <h3 data-aos='fade-up' data-aos-delay='2000' data-aos-duration='1000'>
+          Let's build something impactful. I'm currently open to freelance & contract-based projects in web, backend, and infra.
+        </h3>
+        
         <span>
           <a href='https://github.com/shivam327' target='_blan'>
             <i class='fab fa-github'></i> GitHub
