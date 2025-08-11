@@ -41,7 +41,7 @@
     }
   ],
   "functions": {
-    "app/**/*.js": {
+    "src/**/*.js": {
       "maxDuration": 10
     }
   }
