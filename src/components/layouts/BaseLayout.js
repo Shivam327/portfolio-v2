@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../Navbar/Navbar';
-import Contactbar from '../Contactbar';
 import Footer from '../Footer';
 import AnimatedCursor from 'react-animated-cursor';
 
 const BaseLayout = ({ children, showCursor = true }) => (
   <>
+    <a href="#main-content" className="skip-link">
+      Skip to main content
+    </a>
     <Navbar />
     {showCursor && (
       <AnimatedCursor 
@@ -18,16 +20,16 @@ const BaseLayout = ({ children, showCursor = true }) => (
         outerScale={4} 
       />
     )}
-    <Contactbar />
-    <MainContent>{children}</MainContent>
+    <MainContent id="main-content">{children}</MainContent>
     <Footer />
   </>
 );
 
 const MainContent = styled.main`
   min-height: calc(100vh - 200px);
-  background-color: var(--white); /* Your original light background #f2efe7 */
-  color: var(--dark); /* Your original dark text #191919 */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 `;
 
 export default BaseLayout;

@@ -10,6 +10,8 @@ import ServicesPage from './pages/ServicesPage';
 import Projectpage from './pages/Projectpage';
 import ImageReveal from './components/ImageReveal';
 import TestimonialsPage from './pages/TestimonialsPage';
+import FloatingActionBar from './components/FloatingActionBar';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   useSmoothScroll();
@@ -34,6 +36,9 @@ function App() {
         <Route path="/image" element={<ImageReveal />} />
         <Route path="/testimonials" element={<TestimonialsPage />} />
       </Routes>
+      
+      <FloatingActionBar />
+      <ScrollToTop />
     </Router>
   );
 }

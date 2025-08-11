@@ -23,20 +23,23 @@ const Homepage = () => {
           <h2 data-aos="flip-up" data-aos-duration="1000">HEY, I'M</h2>
           <h1 data-aos="flip-up" data-aos-delay="500" data-aos-duration="1000">SHIVAM THAKER</h1>
           <h3 data-aos="flip-up" data-aos-delay="1000" data-aos-duration="1000">
-            Full-Stack Developer @ <span style={{ color: 'orange' }}>Korn Ferry</span>, building scalable systems from
-            <span style={{ color: 'orange' }}> Mumbai, India</span>.<br/>
+            Full-Stack Developer @ <span style={{ color: 'var(--yellow)' }}>Korn Ferry</span>, building scalable systems from
+            <span style={{ color: 'var(--yellow)' }}> Mumbai, India</span>.<br/>
             <strong>Currently open to freelance work in APIs, web, dashboards & infra.</strong>
           </h3>
           <Link to="/contact">
             <Button text="Contact Me" color="var(--green)" />
           </Link>
-          <BG style={{ backgroundColor: '#FEECEA' }} data-aos="zoom-in" data-aos-duration="2000" />
+          <BG style={{ backgroundColor: 'var(--lightRed)' }} data-aos="zoom-in" data-aos-duration="2000" />
           <img
             loading="lazy"
             data-aos="zoom-in"
             data-aos-duration="2000"
             src="/images/pose/pose_m18.png"
-            alt="Shivam Thaker portrait"
+            alt="Shivam Thaker professional portrait"
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
           />
         </LeftHero>
       </Container>
@@ -74,23 +77,23 @@ const Homepage = () => {
           <BG
             data-aos="zoom-in"
             data-aos-duration="2000"
-            style={{ backgroundColor: 'rgb(49,196,140, 0.2)', top: '15%', left: '60%' }}
+            style={{ backgroundColor: 'var(--green)', opacity: '0.2', top: '15%', left: '60%' }}
           />
           <img
             loading="lazy"
             data-aos="zoom-in"
             data-aos-duration="2000"
             src="/images/pose/pose_m13.png"
-            alt="Shivam Thaker Working Pose"
+            alt="Shivam Thaker working at desk"
           />
-          <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <ButtonContainer>
             <Link to="/contact">
               <Button text="Connect Now" color="var(--green)" />
             </Link>
             <Link to="/services">
               <Button text="View Services" color="var(--yellow)" />
             </Link>
-          </div>
+          </ButtonContainer>
         </Wrapper>
       </Container3>
     </PageTemplate>
@@ -106,10 +109,10 @@ const Circle = styled.div`
   height: 15rem;
   width: 15rem;
   border-radius: 50%;
-  background-color: #191919;
+  background-color: var(--dark);
 
   & > a > h2 {
-    color: #fff;
+    color: var(--white);
     font-size: 2rem;
     font-weight: 600;
     cursor: pointer;
@@ -121,12 +124,7 @@ const Circle = styled.div`
     }
   }
 `;
-const Home = styled.div`
-  width: 100%;
-  min-height: 90vh;
-  position: relative;
-  overflow: hidden;
-`;
+
 const Container = styled.div`
   /* overflow: hidden; */
   width: 100%;
@@ -138,14 +136,14 @@ const Container = styled.div`
   z-index: 0;
 
   & > h1 {
-    color: #191919;
+    color: var(--text-primary);
     font-size: 7rem;
     font-weight: 300;
   }
 
   & > h3 {
     font-weight: 300;
-    color: #fff;
+    color: var(--text-primary);
     font-size: 7rem;
     margin-left: 5rem;
   }
@@ -262,6 +260,14 @@ const Container3 = styled(Container)`
   }
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+`;
+
 const Wrapper = styled.div`
   padding: 2rem;
   width: 100%;
@@ -287,7 +293,7 @@ const Wrapper = styled.div`
 
   & > h1 {
     max-width: 75%;
-    color: #191919;
+    color: var(--text-primary);
     font-size: 4rem;
     font-weight: 300;
     line-height: 1.2;
@@ -373,7 +379,7 @@ const LeftHero = styled.div`
   & > h6 {
     font-size: 1.25rem;
   }
-`
+`;
 
 
 const BG = styled.div`

@@ -90,7 +90,8 @@ const Nav = styled.nav`
   justify-content: space-around;
   align-items: center;
   padding: 0 8rem;
-  color: #fff;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
   transition: all 0.4s ease-in-out;
   box-sizing: border-box;
 

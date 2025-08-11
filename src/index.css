@@ -9,6 +9,32 @@
 body {
   overflow-x: hidden;
   width: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 0.2rem solid var(--green);
+  outline-offset: 0.2rem;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -4rem;
+  left: 0.6rem;
+  background: var(--green);
+  color: white;
+  padding: 0.8rem;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  z-index: 10000;
+}
+
+.skip-link:focus {
+  top: 0.6rem;
 }
 
 ::selection {
@@ -44,6 +70,75 @@ html {
   --green: #31c48c;
   --white: #f2efe7;
   --blue: royalBlue;
+  
+  /* Light theme colors */
+  --bg-primary: #f2efe7;
+  --bg-primary-rgb: 242, 239, 231;
+  --bg-secondary: #ffffff;
+  --text-primary: #191919;
+  --text-primary-rgb: 25, 25, 25;
+  --text-secondary: #666666;
+  --text-secondary-rgb: 102, 102, 102;
+  --border-color: #e0e0e0;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-primary-rgb: 26, 26, 26;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #f2efe7;
+  --text-primary-rgb: 242, 239, 231;
+  --text-secondary: #cccccc;
+  --text-secondary-rgb: 204, 204, 204;
+  --border-color: #404040;
+}
+
+/* Ensure smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme-specific scrollbar colors */
+[data-theme="dark"] ::-webkit-scrollbar {
+  background-color: var(--bg-secondary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background-color: var(--text-secondary);
+}
+
+/* Tooltip styles */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]:hover::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  z-index: 10000;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+[data-tooltip]:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 0.5rem solid transparent;
+  border-top-color: var(--dark);
+  z-index: 10000;
+  margin-bottom: -0.5rem;
 }
 
 @media screen and (max-width: 1024px) {

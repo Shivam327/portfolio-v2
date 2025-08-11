@@ -45,14 +45,15 @@ const Circle = styled.div`
   height: 15rem;
   width: 15rem;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
 
   & > a {
     text-decoration: none;
   }
 
   & > a > h2 {
-    color: #191919;
+    color: var(--text-primary);
     font-size: 2rem;
     font-weight: 600;
     cursor: pointer;
@@ -69,13 +70,15 @@ const Foot = styled.footer`
   height: max-content;
   padding: 5rem;
   margin-top: 5rem;
-  background-color: #191919;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
   width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   & > hr {
     width: 90%;
@@ -105,12 +108,12 @@ const LeftFoot = styled.div`
   /* align-items: flex-start; */
 
   & > h6 {
-    color: #fff;
+    color: var(--text-primary);
     font-weight: 400;
     font-size: 5rem;
   }
   & > h1 {
-    color: #fff;
+    color: var(--text-primary);
     font-weight: 400;
     font-size: 2rem;
   }
