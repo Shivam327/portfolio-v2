@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { Helmet } from 'react-helmet';
+import PageTemplate from '../components/PageTemplate';
 
 const Contactpage = () => {
   useEffect(() => {
@@ -12,44 +12,45 @@ const Contactpage = () => {
   }, []);
 
   return (
-    <Contact>
-      <Helmet>
-        <title>Shivam Thaker | Contact | Full-Stack Developer Available for Freelance</title>
-        <meta name="description" content="Let's build something impactful. Currently open to freelance & contract-based projects in web, backend, and infrastructure development." />
-        <meta property="og:image" content="/images/pose/pose_m12.png" />
-      </Helmet>
-      <Container>
-        <Design>
-          <h1 data-aos='fade-left' data-aos-delay='1000' data-aos-duration='1000'>
-            Let's Discuss
-          </h1>
-          <h2 data-aos='fade-right' data-aos-delay='1000' data-aos-duration='1000'>
-            &lt;Contact /&gt;
-          </h2>
-        </Design>
-        <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m12.png' alt='' />
-        
-        <h3 data-aos='fade-up' data-aos-delay='2000' data-aos-duration='1000'>
-          Let's build something impactful. I'm currently open to freelance & contract-based projects in web, backend, and infra.
-        </h3>
-        
-        <span>
-          <a href='https://github.com/shivam327' target='_blan'>
-            <i class='fab fa-github'></i> GitHub
-          </a>
-        </span>
-        <span>
-          <a href='https://www.linkedin.com/in/thakershivam/' target='_blan'>
-            <i class='fab fa-linkedin'></i> LinkedIn
-          </a>
-        </span>
-        <span>
-          <a href={'mailto: shivamthaker1999@gmail.com'}>
-            <i class='fas fa-envelope'></i> Mail
-          </a>
-        </span>
-      </Container>
-    </Contact>
+    <PageTemplate
+      title="Shivam Thaker | Contact | Full-Stack Developer Available for Freelance"
+      description="Let's build something impactful. Currently open to freelance & contract-based projects in web, backend, and infrastructure development."
+      ogImage="/images/pose/pose_m12.png"
+    >
+      <Contact>
+        <Container>
+          <Design>
+            <h1 data-aos='fade-left' data-aos-delay='1000' data-aos-duration='1000'>
+              Let's Discuss
+            </h1>
+            <h2 data-aos='fade-right' data-aos-delay='1000' data-aos-duration='1000'>
+              &lt;Contact /&gt;
+            </h2>
+          </Design>
+          <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m12.png' alt='' />
+          
+          <h3 data-aos='fade-up' data-aos-delay='2000' data-aos-duration='1000'>
+            Let's build something impactful. I'm currently open to freelance & contract-based projects in web, backend, and infra.
+          </h3>
+          
+          <span>
+            <a href='https://github.com/shivam327' target='_blan'>
+              <i class='fab fa-github'></i> GitHub
+            </a>
+          </span>
+          <span>
+            <a href='https://www.linkedin.com/in/thakershivam/' target='_blan'>
+              <i class='fab fa-linkedin'></i> LinkedIn
+            </a>
+          </span>
+          <span>
+            <a href={'mailto: shivamthaker1999@gmail.com'}>
+              <i class='fas fa-envelope'></i> Mail
+            </a>
+          </span>
+        </Container>
+      </Contact>
+    </PageTemplate>
   );
 };
 
@@ -109,7 +110,7 @@ const Container = styled.div`
   & > span > a {
     font-size: 5rem;
     text-decoration: none;
-    color: #191919;
+    color: var(--text-primary);
 
     &:hover {
       text-decoration: underline;

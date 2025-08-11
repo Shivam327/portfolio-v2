@@ -11,7 +11,7 @@ const Navbar = () => {
     initial: false,
     clicked: null,
     menuName: "<Menu />",
-    color: "#191919",
+    color: "var(--text-primary)",
   });
   // State of our button
   const [disabled, setDisabled] = useState(false);
@@ -19,7 +19,7 @@ const Navbar = () => {
   //Use Effect
   useEffect(() => {
     //Listening for page changes.
-    setState({ clicked: false, menuName: "<Menu />", color: "#191919" });
+    setState({ clicked: false, menuName: "<Menu />", color: "var(--text-primary)" });
   }, [location]);
 
   // Toggle menu
@@ -30,19 +30,19 @@ const Navbar = () => {
         initial: null,
         clicked: true,
         menuName: "<Close />",
-        color: "#f2efe7",
+        color: "var(--bg-primary)",
       });
     } else if (state.clicked === true) {
       setState({
         clicked: !state.clicked,
         menuName: "<Menu />",
-        color: "#191919",
+        color: "var(--text-primary)",
       });
     } else if (state.clicked === false) {
       setState({
         clicked: !state.clicked,
         menuName: "<Close />",
-        color: "#f2efe7",
+        color: "var(--bg-primary)",
       });
     }
   };
@@ -111,7 +111,7 @@ const Logo = styled.div`
     font-family: "Fuggles", cursive;
     font-weight: 600;
     font-size: 5rem;
-    /* color: var(--dark); */
+    color: var(--text-primary);
   }
 
   & > a {
@@ -119,7 +119,7 @@ const Logo = styled.div`
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #fff;
+    color: var(--text-primary);
   }
 
   & > a > img {
@@ -127,11 +127,12 @@ const Logo = styled.div`
     height: 6vh;
   }
 `;
+
 const Menu = styled.div`
   & > button {
     transition: all 1.5s ease-in-out;
     font-weight: 600;
-    /* color: #191919; */
+    color: var(--text-primary);
     background: none;
     border: none;
     font-size: 3rem;

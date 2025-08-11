@@ -98,12 +98,6 @@ const TestimonialsPage = () => {
 };
 
 
-const Testimonials = styled.div`
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-`;
-
 const Container = styled.div`
   overflow: hidden;
   width: 100%;
@@ -133,44 +127,6 @@ const Container = styled.div`
       margin: 2rem 0;
       width: 90%;
       font-size: 2rem;
-    }
-  }
-`;
-
-const Design = styled.div`
-  position: relative;
-  overflow: hidden;
-  height: 45vh;
-
-  @media (max-width: 1024px) {
-    height: 30vh;
-  }
-
-  & > h2 {
-    color: transparent;
-    font-size: 20rem;
-    position: absolute;
-    z-index: -3;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--yellow);
-    bottom: 10%;
-    left: 0%;
-
-    @media (max-width: 768px) {
-      font-size: 13rem;
-    }
-  }
-
-  & > h1 {
-    font-size: 15rem;
-    font-weight: 500;
-    position: absolute;
-    z-index: 0;
-    bottom: 10%;
-    left: 0%;
-
-    @media (max-width: 768px) {
-      line-height: 13rem;
     }
   }
 `;
@@ -243,7 +199,7 @@ const ProjectInfo = styled.div`
 `;
 
 const AuthorInfo = styled.div`
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border-color);
   padding-top: 2rem;
 `;
 
@@ -256,7 +212,7 @@ const AuthorName = styled.h4`
 
 const AuthorRole = styled.p`
   font-size: 1.4rem;
-  color: #666;
+  color: var(--text-secondary);
   margin-bottom: 0.5rem;
 `;
 
@@ -309,7 +265,7 @@ const CTASection = styled.div`
 
   & > p {
     font-size: 1.8rem;
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 3rem;
   }
 `;

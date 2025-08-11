@@ -19,8 +19,8 @@ const Btn = styled.button`
   background: white;
   border: 1px solid lightgray;
   padding: 1rem 3rem;
-  color: #fff;
-  background: linear-gradient(to left, ${props => props.color} 50%, #fff 50%) right;
+  color: var(--text-primary);
+  background: linear-gradient(to left, ${props => props.color} 50%, var(--bg-secondary) 50%) right;
   background-size: 200%;
   transition: 0.5s ease-out;
   cursor: pointer;
@@ -35,7 +35,7 @@ const Btn = styled.button`
 
   &:hover:not(:disabled) {
     background-position: left;
-    color: #191919;
+    color: var(--text-primary);
   }
 
   &:disabled {

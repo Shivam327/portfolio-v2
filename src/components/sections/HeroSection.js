@@ -24,7 +24,7 @@ const Hero = styled.section`
   align-items: center;
   position: relative;
   padding: 5rem 0;
-  background-color: var(--white); /* Your original light background #f2efe7 */
+  background-color: var(--bg-primary);
   
   ${props => props.variant === 'centered' && `
     text-align: center;
@@ -57,7 +57,7 @@ const Title = styled.h1`
   font-size: 15rem;
   font-weight: 500;
   margin-bottom: 2rem;
-  color: var(--dark); /* Your original dark text #191919 */
+  color: var(--text-primary);
   
   @media (max-width: 768px) {
     font-size: 8rem;
@@ -68,7 +68,7 @@ const Title = styled.h1`
 const Subtitle = styled.h3`
   font-size: 2rem;
   font-weight: 400;
-  color: var(--dark); /* Your original dark text #191919 */
+  color: var(--text-primary);
   line-height: 1.4;
   
   @media (max-width: 768px) {

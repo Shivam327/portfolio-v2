@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Aos from 'aos';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
-import { Helmet } from 'react-helmet';
 import Timeline from '../components/Timeline';
 import PageTemplate from '../components/PageTemplate';
 
@@ -327,7 +326,7 @@ const LeftHero = styled.div`
   & > h1 {
     font-size: 3.5rem;
     background-color: var(--dark);
-    color: #fff;
+    color: var(--bg-secondary);
     font-family: 'Dela Gothic One', cursive;
     padding: 0.2rem 1.2rem;
     margin: 1rem 0;

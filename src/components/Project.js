@@ -33,7 +33,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  background: #fff;
+  background: var(--bg-secondary);
   justify-content: space-between;
   align-items: center;
 `;
@@ -59,10 +59,10 @@ const Circle = styled.div`
   height: 8rem;
   width: 8rem;
   border-radius: 50%;
-  background-color: #191919;
+  background-color: var(--text-primary);
 
   & > h2 {
-    color: #fff;
+    color: var(--bg-secondary);
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;

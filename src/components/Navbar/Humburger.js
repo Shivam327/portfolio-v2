@@ -20,6 +20,11 @@ const Humburger = ({ state, setState }) => {
       staggerRevealClose(reveal3, reveal2, reveal1);
       // Set menu to display none
       gsap.to(menuLayer, { duration: 1.5, css: { display: 'none' } });
+      
+      // Dispatch event that menu is closed
+      window.dispatchEvent(new CustomEvent('hamburgerStateChange', { 
+        detail: { isOpen: false } 
+      }));
     } else if (state.clicked === true || (state.clicked === true && state.initial === null)) {
       // setState({ color: "#f2efe7" })
       // Set menu to display block
@@ -31,6 +36,11 @@ const Humburger = ({ state, setState }) => {
         height: '100%',
       });
       staggerReveal(reveal1, reveal2, reveal3);
+      
+      // Dispatch event that menu is open
+      window.dispatchEvent(new CustomEvent('hamburgerStateChange', { 
+        detail: { isOpen: true } 
+      }));
     }
   }, [state]);
 
@@ -191,7 +201,7 @@ const Social = styled.div`
 `;
 
 const Info = styled.div`
-  color: #fff;
+  color: var(--text-primary);
   width: 50%;
   height: 100vh;
   display: flex;
@@ -206,10 +216,12 @@ const Info = styled.div`
 
   & > h3 {
     font-size: 2rem;
+    color: var(--text-primary);
   }
 
   & > p {
     font-size: 1rem;
+    color: var(--text-primary);
   }
 `;
 

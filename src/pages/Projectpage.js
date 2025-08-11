@@ -4,6 +4,7 @@ import PROJECTS_DATA from '../projects.data';
 import styled from 'styled-components';
 import { isMobile } from 'react-device-detect';
 import Moreproject from '../components/Moreproject';
+import PageTemplate from '../components/PageTemplate';
 
 const Projectpage = () => {
   const { id } = useParams();
@@ -43,109 +44,115 @@ const Projectpage = () => {
   }
 
   return (
-    <Home>
-      <Container>
-        <LeftHero>
-          <h3
-            data-aos='fade-in'
-            data-aos-duration='1000'
-            style={{
-              transform: `translateX(${offesetY * 0.5}px)`,
-            }}
-          >
-            {project && project.name}
-          </h3>
-          <img
-            data-aos='fade-in'
-            data-aos-duration='1000'
-            src={project && project.image}
-            alt=''
-            style={{
-              transform: `translateX(-${offesetY * 0.8}px)`,
-            }}
-          />
-          <h2
-            data-aos='fade-in'
-            data-aos-duration='1000'
-            style={{
-              transform: `translateX(${offesetY * 0.5}px)`,
-            }}
-          >
-            {project && project.name}
-          </h2>
-        </LeftHero>
-      </Container>
-
-      <Container>
-        <h1 data-aos='fade-in' data-aos-duration='1000'>
-          {project && project.name}
-        </h1>
-        <h2 data-aos='fade-in' data-aos-duration='1000'>
-          {project && project.desc}
-        </h2>
-        <ProjectContact>
-          <div>
-            <h1>Website Link</h1>
-            <a href={project && project.link} target='_blanc'>
-              <h2>{project && project.link}</h2>
-            </a>
-          </div>
-          <div>
-            <h1>Project Date</h1>
-            <h2>{project && project.date}</h2>
-          </div>
-        </ProjectContact>
-        <h1>Tech Used</h1>
-        <Tech>
-          {project &&
-            project.tech.map((techName, index) => (
-              <Circle key={index} data-aos='zoom-in' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
-                <span>{techName}</span>
-              </Circle>
-            ))}
-        </Tech>
-      </Container>
-      <Container>
-        <h2>
-          It was a fun project to work on. There were almost no constraints (eg. colors, typography, etc.). The communication went very smooth, from
-          initial discovery to branding and through the final revisions and delivery.
-        </h2>
-        <h1>&lt; More Works /&gt;</h1>
-        <Row>
-          <Col>
-            <BG
+    <PageTemplate
+      title={`${project.name} | Project | Shivam Thaker Portfolio`}
+      description={project.desc}
+      ogImage={project.image}
+    >
+      <Home>
+        <Container>
+          <LeftHero>
+            <h3
+              data-aos='fade-in'
+              data-aos-duration='1000'
               style={{
-                backgroundColor: 'rgb(0,0,0, 0.2)',
-                top: '10%',
-                left: '-15%',
+                transform: `translateX(${offesetY * 0.5}px)`,
               }}
-            ></BG>
-            <img src='/images/pose/pose_m14.png' alt='' />
-          </Col>
-          <Col>
-            <Link to='/project/1'>
-              <Moreproject name='Infrastructure Monitoring System' id={1} />
-            </Link>
-            <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
-            <Link to='/project/2'>
-              <Moreproject name='Used Car API' id={2} />
-            </Link>
-            <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
-            <Link to='/project/3'>
-              <Moreproject name='E-commerce Platform' id={3} />
-            </Link>
-            <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
-            <Link to='/project/4'>
-              <Moreproject name='Dashboard Analytics' id={4} />
-            </Link>
-            <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
-            <Link to='/project/5'>
-              <Moreproject name='Task Management App' id={5} />
-            </Link>
-          </Col>
-        </Row>
-      </Container>
-    </Home>
+            >
+              {project && project.name}
+            </h3>
+            <img
+              data-aos='fade-in'
+              data-aos-duration='1000'
+              src={project && project.image}
+              alt=''
+              style={{
+                transform: `translateX(-${offesetY * 0.8}px)`,
+              }}
+            />
+            <h2
+              data-aos='fade-in'
+              data-aos-duration='1000'
+              style={{
+                transform: `translateX(${offesetY * 0.5}px)`,
+              }}
+            >
+              {project && project.name}
+            </h2>
+          </LeftHero>
+        </Container>
+
+        <Container>
+          <h1 data-aos='fade-in' data-aos-duration='1000'>
+            {project && project.name}
+          </h1>
+          <h2 data-aos='fade-in' data-aos-duration='1000'>
+            {project && project.desc}
+          </h2>
+          <ProjectContact>
+            <div>
+              <h1>Website Link</h1>
+              <a href={project && project.link} target='_blanc'>
+                <h2>{project && project.link}</h2>
+              </a>
+            </div>
+            <div>
+              <h1>Project Date</h1>
+              <h2>{project && project.date}</h2>
+            </div>
+          </ProjectContact>
+          <h1>Tech Used</h1>
+          <Tech>
+            {project &&
+              project.tech.map((techName, index) => (
+                <Circle key={index} data-aos='zoom-in' data-aos-duration='1000' style={{ backgroundColor: 'var(--lightBlue)' }}>
+                  <span>{techName}</span>
+                </Circle>
+              ))}
+          </Tech>
+        </Container>
+        <Container>
+          <h2>
+            It was a fun project to work on. There were almost no constraints (eg. colors, typography, etc.). The communication went very smooth, from
+            initial discovery to branding and through the final revisions and delivery.
+          </h2>
+          <h1>&lt; More Works /&gt;</h1>
+          <Row>
+            <Col>
+              <BG
+                style={{
+                  backgroundColor: 'rgb(0,0,0, 0.2)',
+                  top: '10%',
+                  left: '-15%',
+                }}
+              ></BG>
+              <img src='/images/pose/pose_m14.png' alt='' />
+            </Col>
+            <Col>
+              <Link to='/project/1'>
+                <Moreproject name='Infrastructure Monitoring System' id={1} />
+              </Link>
+              <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
+              <Link to='/project/2'>
+                <Moreproject name='Used Car API' id={2} />
+              </Link>
+              <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
+              <Link to='/project/3'>
+                <Moreproject name='E-commerce Platform' id={3} />
+              </Link>
+              <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
+              <Link to='/project/4'>
+                <Moreproject name='Dashboard Analytics' id={4} />
+              </Link>
+              <hr data-aos='fade-right' data-aos-delay='100' data-aos-duration='1000' />
+              <Link to='/project/5'>
+                <Moreproject name='Task Management App' id={5} />
+              </Link>
+            </Col>
+          </Row>
+        </Container>
+      </Home>
+    </PageTemplate>
   );
 };
 
@@ -186,7 +193,7 @@ const ProjectContact = styled.div`
 
   & > div > h1 {
     font-weight: 400;
-    color: #868787;
+    color: var(--text-secondary);
   }
 
   & > div > h2 {
@@ -233,7 +240,7 @@ const LeftHero = styled.div`
     font-size: 15rem;
     -webkit-text-stroke-width: 1px;
     color: transparent;
-    -webkit-text-stroke-color: #000;
+    -webkit-text-stroke-color: var(--text-primary);
     z-index: 2;
 
     @media (max-width: 767px) {

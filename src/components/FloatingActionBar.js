@@ -4,6 +4,7 @@ import { BREAKPOINTS } from '../constants';
 
 const FloatingActionBar = () => {
   const [isDark, setIsDark] = useState(false);
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -11,6 +12,16 @@ const FloatingActionBar = () => {
       setIsDark(true);
       document.documentElement.setAttribute('data-theme', 'dark');
     }
+
+    // Listen for hamburger menu state changes
+    const handleHamburgerChange = (e) => {
+      if (e.detail && typeof e.detail.isOpen === 'boolean') {
+        setIsHamburgerOpen(e.detail.isOpen);
+      }
+    };
+
+    window.addEventListener('hamburgerStateChange', handleHamburgerChange);
+    return () => window.removeEventListener('hamburgerStateChange', handleHamburgerChange);
   }, []);
 
   const toggleTheme = () => {
@@ -25,6 +36,9 @@ const FloatingActionBar = () => {
       localStorage.setItem('theme', 'light');
     }
   };
+
+  // Hide when hamburger menu is open since it already has social icons
+  if (isHamburgerOpen) return null;
 
   return (
     <ActionBar>
@@ -211,40 +225,40 @@ const ActionButton = styled.button`
   backdrop-filter: blur(5px);
 
   /* Default styling */
-  background-color: var(--white);
-  color: var(--dark);
-  border: 0.2rem solid var(--dark);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 0.2rem solid var(--text-primary);
 
   /* Theme toggle specific */
   &.theme-toggle {
-    background-color: var(--white);
-    color: var(--dark);
-    border: 0.2rem solid var(--dark);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 0.2rem solid var(--text-primary);
   }
 
   /* Resume button specific */
   &.resume-btn {
-    background-color: #FEECEA;
-    color: #f44336;
-    border: 0.2rem solid #f44336;
+    background-color: var(--lightRed);
+    color: var(--red);
+    border: 0.2rem solid var(--red);
   }
 
   /* LinkedIn button specific */
   &.linkedin-btn {
-    background-color: #E5F1F8;
-    border: 0.2rem solid #0077B5;
+    background-color: var(--lightBlue);
+    border: 0.2rem solid var(--blue);
   }
 
   /* GitHub button specific */
   &.github-btn {
-    background-color: rgba(0,0,0,0.2);
-    border: 0.2rem solid #333;
+    background-color: rgba(var(--text-primary-rgb, 0, 0, 0), 0.2);
+    border: 0.2rem solid var(--text-primary);
   }
 
   /* Email button specific */
   &.email-btn {
-    background-color: #FEECEA;
-    border: 0.2rem solid #f44336;
+    background-color: var(--lightRed);
+    border: 0.2rem solid var(--red);
   }
 
 

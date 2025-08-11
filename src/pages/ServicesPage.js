@@ -156,7 +156,7 @@ const ServiceTitle = styled.h3`
 `;
 
 const ServiceDescription = styled.p`
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
@@ -189,7 +189,7 @@ const CTASection = styled.div`
 
   & > p {
     font-size: 1.8rem;
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 3rem;
   }
 `;

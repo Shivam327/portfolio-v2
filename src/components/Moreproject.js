@@ -66,10 +66,10 @@ const Circle = styled.div`
   height: 9rem;
   width: 9rem;
   border-radius: 50%;
-  background-color: #191919;
+  background-color: var(--text-primary);
 
   & > h2 {
-    color: #fff;
+    color: var(--bg-secondary);
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;

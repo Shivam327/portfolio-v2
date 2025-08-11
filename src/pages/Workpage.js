@@ -2,79 +2,83 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import Moreproject from '../components/Moreproject';
-import PROJECTS_DATA from '../projects.data.js';
-import { Helmet } from 'react-helmet';
+import { PROJECTS as PROJECTS_DATA } from '../data/projects';
+import PageTemplate from '../components/PageTemplate';
 
 const Workpage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    Aos.init({ duration: 2000 });
   }, []);
 
   return (
-    <Work>
-      <Helmet>
-        <title>Shivam Thaker | Work | Full-Stack Developer Portfolio</title>
-        <meta name="description" content="Portfolio of projects including Infrastructure Monitoring, APIs, E-commerce platforms, and business solutions. Built with React, NestJS, Docker, and modern technologies." />
-        <meta property="og:image" content="/images/pose/pose_m18.png" />
-      </Helmet>
-      <Container>
-        <Design>
-          <h1 data-aos='fade-left' data-aos-delay='1000' data-aos-duration='1000'>
-            Projects
-          </h1>
-          <h2 data-aos='fade-right' data-aos-delay='1000' data-aos-duration='1000'>
-            &lt;Work /&gt;
-          </h2>
-        </Design>
-        <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m19.png' alt='' />
-        <h3 data-aos='fade-up' data-aos-delay='2000' data-aos-duration='1000'>
-          A collection of production-ready projects showcasing scalable systems, APIs, and infrastructure solutions. 
-          These demonstrate my expertise in building business-critical applications.
-        </h3>
-      </Container>
+    <PageTemplate
+      title="Shivam Thaker | Work | Full-Stack Developer Portfolio"
+      description="Portfolio of projects including Infrastructure Monitoring, APIs, E-commerce platforms, and business solutions. Built with React, NestJS, Docker, and modern technologies."
+      ogImage="/images/pose/pose_m18.png"
+    >
+      <Work>
+        <Container>
+          <Design>
+            <h1 data-aos='fade-left' data-aos-delay='1000' data-aos-duration='1000'>
+              Projects
+            </h1>
+            <h2 data-aos='fade-right' data-aos-delay='1000' data-aos-duration='1000'>
+              &lt;Work /&gt;
+            </h2>
+          </Design>
+          <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m19.png' alt='' />
+          <h3 data-aos='fade-up' data-aos-delay='2000' data-aos-duration='1000'>
+            A collection of production-ready projects showcasing scalable systems, APIs, and infrastructure solutions. 
+            These demonstrate my expertise in building business-critical applications.
+          </h3>
+        </Container>
 
-      <Container>
-        <Row>
-          <Col>
-            {PROJECTS_DATA.slice(0, Math.ceil(PROJECTS_DATA.length / 2)).map((project) => (
-              <React.Fragment key={project.id}>
-                <Link to={`/project/${project.id}`}>
-                  <Moreproject name={project.name} id={project.id} />
-                </Link>
-                <hr
-                  data-aos="fade-right"
-                  data-aos-delay="100"
-                  data-aos-duration="1000"
-                />
-              </React.Fragment>
-            ))}
-          </Col>
-          <Col>
-            {PROJECTS_DATA.slice(Math.ceil(PROJECTS_DATA.length / 2)).map((project) => (
-              <React.Fragment key={project.id}>
-                <Link to={`/project/${project.id}`}>
-                  <Moreproject name={project.name} id={project.id} />
-                </Link>
-                <hr
-                  data-aos="fade-right"
-                  data-aos-delay="100"
-                  data-aos-duration="1000"
-                />
-              </React.Fragment>
-            ))}
-          </Col>
-        </Row>
-      </Container>
-      
-      <BG
-        style={{
-          backgroundColor: 'rgb(49,196,140, 0.2)',
-          top: '10%',
-          left: '55%',
-        }}
-      ></BG>
-    </Work>
+        <Container>
+          <Row>
+            <Col>
+              {PROJECTS_DATA.slice(0, Math.ceil(PROJECTS_DATA.length / 2)).map((project) => (
+                <React.Fragment key={project.id}>
+                  <Link to={`/project/${project.id}`}>
+                    <Moreproject name={project.name} id={project.id} />
+                  </Link>
+                  <hr
+                    data-aos="fade-right"
+                    data-aos-delay="100"
+                    data-aos-duration="1000"
+                  />
+                </React.Fragment>
+              ))}
+            </Col>
+            <Col>
+              {PROJECTS_DATA.slice(Math.ceil(PROJECTS_DATA.length / 2)).map((project) => (
+                <React.Fragment key={project.id}>
+                  <Link to={`/project/${project.id}`}>
+                    <Moreproject name={project.name} id={project.id} />
+                  </Link>
+                  <hr
+                    data-aos="fade-right"
+                    data-aos-delay="100"
+                    data-aos-duration="1000"
+                  />
+                </React.Fragment>
+              ))}
+            </Col>
+          </Row>
+        </Container>
+        
+        <BG
+          style={{
+            backgroundColor: 'rgb(49,196,140, 0.2)',
+            top: '10%',
+            left: '55%',
+          }}
+        ></BG>
+      </Work>
+    </PageTemplate>
   );
 };
 
@@ -132,6 +136,10 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
 
+  @media (max-width: 1024px) {
+    min-height: 80vh;
+  }
+
   & > img {
     position: absolute;
     width: 50%;
@@ -142,10 +150,6 @@ const Container = styled.div`
     @media (max-width: 768px) {
       width: 80%;
     }
-  }
-
-  @media (max-width: 1024px) {
-    min-height: 80vh;
   }
 
   & > h3 {
@@ -173,6 +177,7 @@ const Row = styled.div`
     flex-direction: column;
   }
 `;
+
 const Col = styled.div`
   flex: 1;
   width: 50%;

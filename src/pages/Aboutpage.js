@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import "aos/dist/aos.css";
-import { Helmet } from 'react-helmet';
+import PageTemplate from '../components/PageTemplate';
 
 const Aboutpage = () => {
   const [time, setTime] = useState(1000);
@@ -15,266 +15,267 @@ const Aboutpage = () => {
   }, []);
 
   return (
-    <About>
-      <Helmet>
-        <title>Shivam Thaker | About | Full-Stack Developer @ Korn Ferry</title>
-        <meta name="description" content="Full-Stack Developer based in Mumbai, specializing in scalable systems, API development, infrastructure monitoring, and ERP solutions. Currently at Korn Ferry and open to freelance projects." />
-        <meta property="og:image" content="/images/pose/pose_m12.png" />
-      </Helmet>
-      <Container>
-        <Design>
-          <h1
-            data-aos="fade-left"
-            data-aos-delay={time}
-            data-aos-duration="1000"
-          >
-            Shivam Thaker
-          </h1>
-          <h2
-            data-aos="fade-right"
-            data-aos-delay={time}
-            data-aos-duration="1000"
-          >
-            &lt;About /&gt;
-          </h2>
-        </Design>
-        <img
-          data-aos="zoom-in"
-          data-aos-duration="2000"
-          src="/images/pose/pose_m12.png"
-          alt=""
-        />
-        <h3 data-aos="fade-up" data-aos-delay={time} data-aos-duration="1000">
-          I'm a Full-Stack Developer based in Mumbai, currently working at Korn Ferry. I specialize in scalable systems, API development, infrastructure monitoring, and ERP solutions.
-          <br/>I also take on freelance projects — from startup MVPs to workflow automation tools.
-        </h3>
+    <PageTemplate
+      title="Shivam Thaker | About | Full-Stack Developer @ Korn Ferry"
+      description="Full-Stack Developer based in Mumbai, specializing in scalable systems, API development, infrastructure monitoring, and ERP solutions. Currently at Korn Ferry and open to freelance projects."
+      ogImage="/images/pose/pose_m12.png"
+    >
+      <About>
+        <Container>
+          <Design>
+            <h1
+              data-aos="fade-left"
+              data-aos-delay={time}
+              data-aos-duration="1000"
+            >
+              Shivam Thaker
+            </h1>
+            <h2
+              data-aos="fade-right"
+              data-aos-delay={time}
+              data-aos-duration="1000"
+            >
+              &lt;About /&gt;
+            </h2>
+          </Design>
+          <img
+            data-aos="zoom-in"
+            data-aos-duration="2000"
+            src="/images/pose/pose_m12.png"
+            alt=""
+          />
+          <h3 data-aos="fade-up" data-aos-delay={time} data-aos-duration="1000">
+            I'm a Full-Stack Developer based in Mumbai, currently working at Korn Ferry. I specialize in scalable systems, API development, infrastructure monitoring, and ERP solutions.
+            <br/>I also take on freelance projects — from startup MVPs to workflow automation tools.
+          </h3>
 
-        <h4 data-aos="fade-up" data-aos-delay={time} data-aos-duration="1000">
-          I enjoy using my skill set to help people achieve their goals through
-          technology. My development stack emphasizes
-          <span> performance</span>, <span> accessibility</span>, and seamless,
-          delightful user experiences.
-          {/* I build blazing-fast WebApps and Websites using the <span>MERN</span> stack, powered by ReactJS. */}
-        </h4>
+          <h4 data-aos="fade-up" data-aos-delay={time} data-aos-duration="1000">
+            I enjoy using my skill set to help people achieve their goals through
+            technology. My development stack emphasizes
+            <span> performance</span>, <span> accessibility</span>, and seamless,
+            delightful user experiences.
+            {/* I build blazing-fast WebApps and Websites using the <span>MERN</span> stack, powered by ReactJS. */}
+          </h4>
 
-        <BG
-          style={{
-            backgroundColor: "rgb(248,224,142, 0.3)",
-            top: "10%",
-            left: "55%",
-          }}
-        ></BG>
-      </Container>
-
-      <Container>
-        <Design2>
-          <h1
-            data-aos="fade-left"
-            data-aos-delay="100"
-            data-aos-duration="1000"
-          >
-            ToolBox
-          </h1>
-          <h2
-            data-aos="fade-right"
-            data-aos-delay="100"
-            data-aos-duration="1000"
-          >
-            TECH
-          </h2>
-          <img src="/images/pose/pose_m14.png" alt="" />
           <BG
-            style={{ backgroundColor: "#E5F1F8", top: "10%", left: "57%" }}
+            style={{
+              backgroundColor: "rgb(248,224,142, 0.3)",
+              top: "10%",
+              left: "55%",
+            }}
           ></BG>
-        </Design2>
-        <ToolBox>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="3500"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/html5.svg" alt="" />
-            <span>HTML</span>
-          </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="3700"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/css.svg" alt="" />
-            <span>CSS</span>
-          </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="3900"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/sass.svg" alt="" />
-            <span>SASS</span>
-          </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="3700"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/react.svg" alt="" />
-            <span>REACT</span>
-          </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="3700"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/redux.svg" alt="" />
-            <span>REDUX</span>
-          </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="4100"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/nodejs.svg" alt="" />
-            <span>NODEJS</span>
-          </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="4100"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/expressjs.svg" alt="" />
-            <span>EXPRESSJS</span>
-          </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="4500"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/javascript.svg" alt="" />
-            <span>JS</span>
-          </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="4700"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/mongodb.svg" alt="" />
-            <span>MONGODB</span>
-          </Circle>
-          {/* <Circle data-aos='zoom-in' data-aos-delay='4700' data-aos-duration='1000' style={{ backgroundColor: '#E5F1F8' }}>
+        </Container>
+
+        <Container>
+          <Design2>
+            <h1
+              data-aos="fade-left"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+            >
+              ToolBox
+            </h1>
+            <h2
+              data-aos="fade-right"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+            >
+              TECH
+            </h2>
+            <img src="/images/pose/pose_m14.png" alt="" />
+            <BG
+              style={{ backgroundColor: "var(--lightBlue)", top: "10%", left: "57%" }}
+            ></BG>
+          </Design2>
+          <ToolBox>
+            <Circle
+              data-aos="zoom-in"
+              data-aos-delay="3500"
+              data-aos-duration="1000"
+              style={{ backgroundColor: "var(--lightBlue)" }}
+            >
+              <img src="/images/html5.svg" alt="" />
+              <span>HTML</span>
+            </Circle>
+            <Circle
+              data-aos="zoom-in"
+              data-aos-delay="3700"
+              data-aos-duration="1000"
+              style={{ backgroundColor: "var(--lightBlue)" }}
+            >
+              <img src="/images/css.svg" alt="" />
+              <span>CSS</span>
+            </Circle>
+            <Circle
+              data-aos="zoom-in"
+              data-aos-delay="3900"
+              data-aos-duration="1000"
+              style={{ backgroundColor: "var(--lightBlue)" }}
+            >
+              <img src="/images/sass.svg" alt="" />
+              <span>SASS</span>
+            </Circle>
+            <Circle
+              data-aos="zoom-in"
+              data-aos-delay="3700"
+              data-aos-duration="1000"
+              style={{ backgroundColor: "var(--lightBlue)" }}
+            >
+              <img src="/images/react.svg" alt="" />
+              <span>REACT</span>
+            </Circle>
+            <Circle
+              data-aos="zoom-in"
+              data-aos-delay="3700"
+              data-aos-duration="1000"
+              style={{ backgroundColor: "var(--lightBlue)" }}
+            >
+              <img src="/images/redux.svg" alt="" />
+              <span>REDUX</span>
+            </Circle>
+            <Circle
+              data-aos="zoom-in"
+              data-aos-delay="4100"
+              data-aos-duration="1000"
+              style={{ backgroundColor: "var(--lightBlue)" }}
+            >
+              <img src="/images/nodejs.svg" alt="" />
+              <span>NODEJS</span>
+            </Circle>
+            <Circle
+              data-aos="zoom-in"
+              data-aos-delay="4100"
+              data-aos-duration="1000"
+              style={{ backgroundColor: "var(--lightBlue)" }}
+            >
+              <img src="/images/expressjs.svg" alt="" />
+              <span>EXPRESSJS</span>
+            </Circle>
+            <Circle
+              data-aos="zoom-in"
+              data-aos-delay="4500"
+              data-aos-duration="1000"
+              style={{ backgroundColor: "var(--lightBlue)" }}
+            >
+              <img src="/images/javascript.svg" alt="" />
+              <span>JS</span>
+            </Circle>
+            <Circle
+              data-aos="zoom-in"
+              data-aos-delay="4700"
+              data-aos-duration="1000"
+              style={{ backgroundColor: "var(--lightBlue)" }}
+            >
+              <img src="/images/mongodb.svg" alt="" />
+              <span>MONGODB</span>
+            </Circle>
+            {/* <Circle data-aos='zoom-in' data-aos-delay='4700' data-aos-duration='1000' style={{ backgroundColor: 'var(--lightBlue)' }}>
             <img src='/images/nextjs.svg' alt='' />
             <span>NEXTJS</span>
           </Circle> */}
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="4900"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/getbootstrap.svg" alt="" />
-            <span>BOOTSTRAP</span>
-          </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="5200"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/nestjs.svg" alt="" />
-            <span>NestJS</span>
-          </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="5500"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/laravel.svg" alt="" />
-            <span>Laravel</span>
-          </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="5700"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/firebase.svg" alt="" />
-            <span>Firebase</span>
-          </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="5800"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/docker.svg" alt="" />
-            <span>Docker</span>
-          </Circle>
-          <Circle
-            data-aos="zoom-in"
-            data-aos-delay="5900"
-            data-aos-duration="1000"
-            style={{ backgroundColor: "#E5F1F8" }}
-          >
-            <img src="/images/kubernetes.svg" alt="" />
-            <span>Kubernetes</span>
-          </Circle>
-        </ToolBox>
-      </Container>
+            <Circle
+              data-aos="zoom-in"
+              data-aos-delay="4900"
+              data-aos-duration="1000"
+              style={{ backgroundColor: "var(--lightBlue)" }}
+            >
+              <img src="/images/getbootstrap.svg" alt="" />
+              <span>BOOTSTRAP</span>
+            </Circle>
+            <Circle
+              data-aos="zoom-in"
+              data-aos-delay="5200"
+              data-aos-duration="1000"
+              style={{ backgroundColor: "var(--lightBlue)" }}
+            >
+              <img src="/images/nestjs.svg" alt="" />
+              <span>NestJS</span>
+            </Circle>
+            <Circle
+              data-aos="zoom-in"
+              data-aos-delay="5500"
+              data-aos-duration="1000"
+              style={{ backgroundColor: "var(--lightBlue)" }}
+            >
+              <img src="/images/laravel.svg" alt="" />
+              <span>Laravel</span>
+            </Circle>
+            <Circle
+              data-aos="zoom-in"
+              data-aos-delay="5700"
+              data-aos-duration="1000"
+              style={{ backgroundColor: "var(--lightBlue)" }}
+            >
+              <img src="/images/firebase.svg" alt="" />
+              <span>Firebase</span>
+            </Circle>
+            <Circle
+              data-aos="zoom-in"
+              data-aos-delay="5800"
+              data-aos-duration="1000"
+              style={{ backgroundColor: "var(--lightBlue)" }}
+            >
+              <img src="/images/docker.svg" alt="" />
+              <span>Docker</span>
+            </Circle>
+            <Circle
+              data-aos="zoom-in"
+              data-aos-delay="5900"
+              data-aos-duration="1000"
+              style={{ backgroundColor: "var(--lightBlue)" }}
+            >
+              <img src="/images/kubernetes.svg" alt="" />
+              <span>Kubernetes</span>
+            </Circle>
+          </ToolBox>
+        </Container>
 
-      <Container>
-        <Design2>
-          <h1
-            data-aos="fade-left"
-            data-aos-delay="100"
-            data-aos-duration="1000"
-          >
-            Why Me?
-          </h1>
-          <h2
+        <Container>
+          <Design2>
+            <h1
+              data-aos="fade-left"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+            >
+              Why Me?
+            </h1>
+            <h2
+              data-aos="fade-right"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+            >
+              About Me
+            </h2>
+            <img src="/images/pose/pose_m22.png" alt="My profile pose" />
+            <BG
+              style={{ backgroundColor: "var(--lightBlue)", top: "10%", left: "57%" }}
+            ></BG>
+          </Design2>
+
+          <h4 data-aos="fade-left" data-aos-duration="1000">
+            There’s nothing more rewarding than developing clean, impactful web
+            applications and software for the industry. I believe people should
+            pursue what they’re passionate about—and for me, that's
+            <span style={{ color: "var(--green)" }}> software development</span>.
+          </h4>
+
+          <h4
             data-aos="fade-right"
-            data-aos-delay="100"
             data-aos-duration="1000"
+            style={{ marginBottom: "2rem" }}
           >
-            About Me
-          </h2>
-          <img src="/images/pose/pose_m22.png" alt="My profile pose" />
-          <BG
-            style={{ backgroundColor: "#E5F1F8", top: "10%", left: "57%" }}
-          ></BG>
-        </Design2>
+            Over the years, I’ve dedicated myself to honing my craft. While I know
+            perfection is a moving target, I strive to come as close as possible
+            with every line of code I write.
+          </h4>
 
-        <h4 data-aos="fade-left" data-aos-duration="1000">
-          There’s nothing more rewarding than developing clean, impactful web
-          applications and software for the industry. I believe people should
-          pursue what they’re passionate about—and for me, that's
-          <span style={{ color: "#31c48c" }}> software development</span>.
-        </h4>
-
-        <h4
-          data-aos="fade-right"
-          data-aos-duration="1000"
-          style={{ marginBottom: "2rem" }}
-        >
-          Over the years, I’ve dedicated myself to honing my craft. While I know
-          perfection is a moving target, I strive to come as close as possible
-          with every line of code I write.
-        </h4>
-
-        <h3 data-aos="fade-left" data-aos-duration="1000">
-          If you have a project in mind, let's connect—I’d love to help bring
-          your ideas to life!
-        </h3>
-      </Container>
-    </About>
+          <h3 data-aos="fade-left" data-aos-duration="1000">
+            If you have a project in mind, let's connect—I’d love to help bring
+            your ideas to life!
+          </h3>
+        </Container>
+      </About>
+    </PageTemplate>
   );
 };
 

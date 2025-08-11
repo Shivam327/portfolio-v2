@@ -70,6 +70,7 @@ html {
   --green: #31c48c;
   --white: #f2efe7;
   --blue: royalBlue;
+  --lightBlue: #E5F1F8;
   
   /* Light theme colors */
   --bg-primary: #f2efe7;
@@ -96,6 +97,29 @@ html {
 /* Ensure smooth transitions for theme changes */
 * {
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Set default theme */
+html {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* Debug theme indicator */
+html::before {
+  content: 'Theme: ' attr(data-theme);
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--green);
+  color: var(--white);
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  z-index: 10001;
+  font-family: monospace;
 }
 
 /* Theme-specific scrollbar colors */
