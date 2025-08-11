@@ -39,10 +39,6 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "src/**/*.js": {
-      "maxDuration": 10
-    }
-  }
+  ]
+
 }
