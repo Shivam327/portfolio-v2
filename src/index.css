@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 ::selection {
   color: #31c48c;
 }

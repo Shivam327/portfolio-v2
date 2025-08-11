@@ -92,10 +92,15 @@ const Nav = styled.nav`
   padding: 0 8rem;
   color: #fff;
   transition: all 0.4s ease-in-out;
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
     padding: 0 4rem;
     justify-content: space-between;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0 2rem;
   }
 `;
 
