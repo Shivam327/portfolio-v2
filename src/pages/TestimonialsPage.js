@@ -11,6 +11,10 @@ const TestimonialsPage = () => {
     return '★'.repeat(rating) + '☆'.repeat(5 - rating);
   };
 
+  // Add debugging
+  console.log('TESTIMONIALS data:', TESTIMONIALS);
+  console.log('TESTIMONIALS length:', TESTIMONIALS?.length);
+
   return (
     <PageTemplate
       title="Shivam Thaker | Testimonials | Client Success Stories"
@@ -28,26 +32,37 @@ const TestimonialsPage = () => {
           the business impact and technical quality I deliver on every project.
         </h3>
 
+        {/* Add debugging display */}
+        <div style={{ color: 'white', margin: '2rem 0' }}>
+          Debug: {TESTIMONIALS ? `${TESTIMONIALS.length} testimonials loaded` : 'No testimonials data'}
+        </div>
+
         <TestimonialsGrid>
-          {TESTIMONIALS.map((testimonial, index) => (
-            <TestimonialCard 
-              key={testimonial.id} 
-              data-aos="fade-up" 
-              data-aos-delay={index * 200} 
-              data-aos-duration="1000"
-            >
-              <Rating>{renderStars(testimonial.rating)}</Rating>
-              <Content>"{testimonial.content}"</Content>
-              <ProjectInfo>
-                <span>Project: {testimonial.project}</span>
-              </ProjectInfo>
-              <AuthorInfo>
-                <AuthorName>{testimonial.name}</AuthorName>
-                <AuthorRole>{testimonial.role}</AuthorRole>
-                <Company>{testimonial.company}</Company>
-              </AuthorInfo>
-            </TestimonialCard>
-          ))}
+          {TESTIMONIALS && TESTIMONIALS.length > 0 ? (
+            TESTIMONIALS.map((testimonial, index) => (
+              <TestimonialCard 
+                key={testimonial.id} 
+                data-aos="fade-up" 
+                data-aos-delay={index * 200} 
+                data-aos-duration="1000"
+              >
+                <Rating>{renderStars(testimonial.rating)}</Rating>
+                <Content>"{testimonial.content}"</Content>
+                <ProjectInfo>
+                  <span>Project: {testimonial.project}</span>
+                </ProjectInfo>
+                <AuthorInfo>
+                  <AuthorName>{testimonial.name}</AuthorName>
+                  <AuthorRole>{testimonial.role}</AuthorRole>
+                  <Company>{testimonial.company}</Company>
+                </AuthorInfo>
+              </TestimonialCard>
+            ))
+          ) : (
+            <div style={{ color: 'white', textAlign: 'center', padding: '2rem' }}>
+              No testimonials data available
+            </div>
+          )}
         </TestimonialsGrid>
 
         <StatsSection data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
@@ -81,6 +96,7 @@ const TestimonialsPage = () => {
     </PageTemplate>
   );
 };
+
 
 const Testimonials = styled.div`
   width: 100%;

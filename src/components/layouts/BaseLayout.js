@@ -25,7 +25,9 @@ const BaseLayout = ({ children, showCursor = true }) => (
 );
 
 const MainContent = styled.main`
-  min-height: calc(100vh - 200px); // Adjust based on your header/footer heights
+  min-height: calc(100vh - 200px);
+  background-color: var(--white); /* Your original light background #f2efe7 */
+  color: var(--dark); /* Your original dark text #191919 */
 `;
 
 export default BaseLayout;

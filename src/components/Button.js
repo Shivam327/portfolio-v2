@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { COLORS, SPACING } from '../constants';
 
-const Button = ({ text, color = COLORS.PRIMARY, onClick, disabled = false, variant = 'default' }) => {
+const Button = ({ text, color = 'var(--green)', onClick, disabled = false, variant = 'default' }) => {
   return (
     <Btn 
       color={color} 
@@ -16,10 +15,10 @@ const Button = ({ text, color = COLORS.PRIMARY, onClick, disabled = false, varia
 };
 
 const Btn = styled.button`
-  margin-top: ${SPACING.MD};
+  margin-top: 1.5rem;
   background: white;
   border: 1px solid lightgray;
-  padding: ${SPACING.SM} ${SPACING.XL};
+  padding: 1rem 3rem;
   color: #fff;
   background: linear-gradient(to left, ${props => props.color} 50%, #fff 50%) right;
   background-size: 200%;
@@ -45,7 +44,7 @@ const Btn = styled.button`
   }
 
   &:focus {
-    outline: 2px solid ${COLORS.SECONDARY};
+    outline: 2px solid var(--green);
     outline-offset: 2px;
   }
 `;

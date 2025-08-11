@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLORS, SPACING } from '../../constants';
 
 const HeroSection = ({ 
   title, 
@@ -24,7 +23,8 @@ const Hero = styled.section`
   display: flex;
   align-items: center;
   position: relative;
-  padding: ${SPACING.XXL} 0;
+  padding: 5rem 0;
+  background-color: var(--white); /* Your original light background #f2efe7 */
   
   ${props => props.variant === 'centered' && `
     text-align: center;
@@ -38,7 +38,7 @@ const BackgroundText = styled.h2`
   position: absolute;
   z-index: -3;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: ${COLORS.SECONDARY};
+  -webkit-text-stroke-color: var(--yellow); /* Your original yellow */
   bottom: 10%;
   left: 0%;
   
@@ -56,7 +56,8 @@ const Content = styled.div`
 const Title = styled.h1`
   font-size: 15rem;
   font-weight: 500;
-  margin-bottom: ${SPACING.LG};
+  margin-bottom: 2rem;
+  color: var(--dark); /* Your original dark text #191919 */
   
   @media (max-width: 768px) {
     font-size: 8rem;
@@ -67,7 +68,7 @@ const Title = styled.h1`
 const Subtitle = styled.h3`
   font-size: 2rem;
   font-weight: 400;
-  color: ${COLORS.TEXT_SECONDARY};
+  color: var(--dark); /* Your original dark text #191919 */
   line-height: 1.4;
   
   @media (max-width: 768px) {

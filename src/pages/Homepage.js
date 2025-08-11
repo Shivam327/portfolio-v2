@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import { Helmet } from 'react-helmet';
 import Timeline from '../components/Timeline';
+import PageTemplate from '../components/PageTemplate';
 
 const Homepage = () => {
   useEffect(() => {
@@ -13,16 +14,10 @@ const Homepage = () => {
   }, []);
 
   return (
-    <Home>
-      <Helmet>
-        <title>Shivam Thaker | Full-Stack Developer @ Korn Ferry | Freelance Available</title>
-        <meta
-          name="description"
-          content="Portfolio of Shivam Thaker — building production-grade systems, APIs, dashboards, and infra tooling."
-        />
-        <meta property="og:image" content="/images/pose/pose_m18.png" />
-      </Helmet>
-
+    <PageTemplate
+      title="Shivam Thaker | Full-Stack Developer @ Korn Ferry | Freelance Available"
+      description="Portfolio of Shivam Thaker — building production-grade systems, APIs, dashboards, and infra tooling."
+    >
       <Container>
         <LeftHero>
           <h2 data-aos="flip-up" data-aos-duration="1000">HEY, I'M</h2>
@@ -98,7 +93,7 @@ const Homepage = () => {
           </div>
         </Wrapper>
       </Container3>
-    </Home>
+    </PageTemplate>
   );
 };
 

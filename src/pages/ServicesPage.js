@@ -7,6 +7,10 @@ import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 
 const ServicesPage = () => {
+  // Add debugging
+  console.log('SERVICES data:', SERVICES);
+  console.log('SERVICES length:', SERVICES?.length);
+
   return (
     <PageTemplate
       title="Shivam Thaker | Services | Full-Stack Development & Infrastructure"
@@ -24,19 +28,30 @@ const ServicesPage = () => {
           From initial concept to production deployment, I handle the entire development lifecycle.
         </h3>
         
+        {/* Add debugging display */}
+        <div style={{ color: 'white', margin: '2rem 0' }}>
+          Debug: {SERVICES ? `${SERVICES.length} services loaded` : 'No services data'}
+        </div>
+        
         <ServicesGrid>
-          {SERVICES.map(service => (
-            <ServiceCard key={service.id} data-aos="fade-up" data-aos-delay={service.id * 100}>
-              <ServiceIcon>{service.icon}</ServiceIcon>
-              <ServiceTitle>{service.title}</ServiceTitle>
-              <ServiceDescription>{service.description}</ServiceDescription>
-              <ServiceFeatures>
-                {service.features.map((feature, index) => (
-                  <Feature key={index}>• {feature}</Feature>
-                ))}
-              </ServiceFeatures>
-            </ServiceCard>
-          ))}
+          {SERVICES && SERVICES.length > 0 ? (
+            SERVICES.map(service => (
+              <ServiceCard key={service.id} data-aos="fade-up" data-aos-delay={service.id * 100}>
+                <ServiceIcon>{service.icon}</ServiceIcon>
+                <ServiceTitle>{service.title}</ServiceTitle>
+                <ServiceDescription>{service.description}</ServiceDescription>
+                <ServiceFeatures>
+                  {service.features.map((feature, index) => (
+                    <Feature key={index}>• {feature}</Feature>
+                  ))}
+                </ServiceFeatures>
+              </ServiceCard>
+            ))
+          ) : (
+            <div style={{ color: 'white', textAlign: 'center', padding: '2rem' }}>
+              No services data available
+            </div>
+          )}
         </ServicesGrid>
         
         <CTASection data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">

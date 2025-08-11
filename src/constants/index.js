@@ -12,17 +12,24 @@ export const BREAKPOINTS = {
   DESKTOP: '1200px'
 };
 
-// Color variables
+// Color variables - RESTORED TO YOUR ORIGINAL THEME
 export const COLORS = {
   PRIMARY: '#191919',
-  SECONDARY: '#F4C430',
-  ACCENT: '#31C48C',
-  WHITE: '#FFFFFF',
-  DARK: '#191919',
+  SECONDARY: '#f8e08e', // Your original yellow
+  ACCENT: '#31c48c',   // Your original green
+  WHITE: '#f2efe7',    // Your original white
+  DARK: '#191919',     // Your original dark
   TEXT_PRIMARY: '#191919',
   TEXT_SECONDARY: '#666666',
-  SURFACE: '#F8F9FA',
-  BACKGROUND: '#FFFFFF'
+  SURFACE: '#f2efe7',
+  BACKGROUND: '#191919',
+  // Add your original CSS variables
+  RED: '#f44336',
+  LIGHT_RED: '#feecea',
+  YELLOW: '#f8e08e',
+  DARK_YELLOW: '#f8d76a',
+  GREEN: '#31c48c',
+  BLUE: 'royalBlue'
 };
 
 // Common spacing values

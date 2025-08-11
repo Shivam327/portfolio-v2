@@ -40,8 +40,8 @@ const PageTemplate = ({
 const PageContainer = styled.div`
   min-height: 100vh;
   padding: 0;
-  background-color: var(--dark);
-  color: var(--white);
+  background-color: var(--white); /* Your original light background #f2efe7 */
+  color: var(--dark); /* Your original dark text #191919 */
 `;
 
 export default PageTemplate;
