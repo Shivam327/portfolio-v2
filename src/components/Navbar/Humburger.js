@@ -54,12 +54,12 @@ const Humburger = ({ state, setState }) => {
             <li>
               <Link to='/work'>&lt;Works /&gt;</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to='/services'>&lt;Services /&gt;</Link>
             </li>
             <li>
               <Link to='/testimonials'>&lt;Testimonials /&gt;</Link>
-            </li>
+            </li> */}
             <li>
               <Link to='/about'>&lt;About Me /&gt;</Link>
             </li>
@@ -93,8 +93,9 @@ const Humburger = ({ state, setState }) => {
 const Burger = styled.div`
   display: none;
   position: fixed;
-  z-index: 100;
+  z-index: 999;
   top: 0;
+  left: 0;
   height: 100vh;
   width: 100%;
 
@@ -134,15 +135,22 @@ const Burger = styled.div`
 
 const Container = styled.div`
   max-width: 1280px;
-  width: 1280px;
+  width: 100%;
   margin: 0 auto;
   height: 100vh;
   display: flex;
-  padding: ${SPACING.LG};
+  padding: ${SPACING.MD};
+  box-sizing: border-box;
 
   @media (max-width: ${BREAKPOINTS.TABLET}) {
-    padding: ${SPACING.XL};
+    padding: ${SPACING.LG};
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: ${BREAKPOINTS.MOBILE}) {
+    padding: ${SPACING.MD};
   }
 
   ul {
@@ -156,8 +164,9 @@ const Container = styled.div`
 
     @media (max-width: ${BREAKPOINTS.TABLET}) {
       width: 100%;
-      height: 100vh;
+      height: auto;
       align-items: center;
+      margin-bottom: ${SPACING.XL};
     }
 
     & > li {
@@ -169,13 +178,23 @@ const Container = styled.div`
       cursor: pointer;
       overflow: hidden;
 
+      @media (max-width: ${BREAKPOINTS.TABLET}) {
+        line-height: 3.5rem;
+        font-size: 2.8rem;
+        margin: 1rem 0;
+      }
+
       @media (max-width: ${BREAKPOINTS.MOBILE}) {
         line-height: 3rem;
         font-size: 2.5rem;
+        margin: 0.8rem 0;
       }
+
       a {
         color: var(--white);
         text-decoration: none;
+        transition: color 0.3s ease;
+        
         &:hover {
           color: var(--yellow);
         }
@@ -188,14 +207,21 @@ const Social = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 
   & > a > i {
     color: var(--white);
     font-size: 2.5rem;
-    margin: 1rem;
+    margin: 0.5rem;
+    transition: color 0.3s ease;
 
     &:hover {
       color: var(--blue);
+    }
+
+    @media (max-width: ${BREAKPOINTS.MOBILE}) {
+      font-size: 2rem;
+      margin: 0.3rem;
     }
   }
 `;
@@ -212,11 +238,18 @@ const Info = styled.div`
   @media (max-width: ${BREAKPOINTS.TABLET}) {
     width: 100%;
     align-items: center;
+    height: auto;
   }
 
   & > h3 {
     font-size: 2rem;
     color: var(--text-primary);
+    margin-bottom: ${SPACING.MD};
+
+    @media (max-width: ${BREAKPOINTS.MOBILE}) {
+      font-size: 1.8rem;
+      margin-bottom: ${SPACING.SM};
+    }
   }
 
   & > p {

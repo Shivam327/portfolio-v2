@@ -1,20 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useSmoothScroll } from './hooks/useSmoothScroll';
-import Loader from './components/Loader';
-import Homepage from './pages/Homepage';
-import Workpage from './pages/Workpage';
-import Aboutpage from './pages/Aboutpage';
-import Contactpage from './pages/Contactpage';
-import ServicesPage from './pages/ServicesPage';
-import Projectpage from './pages/Projectpage';
-import ImageReveal from './components/ImageReveal';
-import TestimonialsPage from './pages/TestimonialsPage';
-import FloatingActionBar from './components/FloatingActionBar';
-import ScrollToTop from './components/ScrollToTop';
+import React, { useState, useEffect, Suspense, lazy } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
+import { useSmoothScroll } from "./hooks/useSmoothScroll";
+import usePerformance from "./hooks/usePerformance";
+import ErrorBoundary from "./components/ErrorBoundary";
+import Loader from "./components/Loader";
+
+// Lazy load pages for code splitting
+const Homepage = lazy(() => import("./pages/Homepage"));
+const Workpage = lazy(() => import("./pages/Workpage"));
+const Aboutpage = lazy(() => import("./pages/Aboutpage"));
+const Contactpage = lazy(() => import("./pages/Contactpage"));
+// const ServicesPage = lazy(() => import("./pages/ServicesPage"));
+const Projectpage = lazy(() => import("./pages/Projectpage"));
+const ImageReveal = lazy(() => import("./components/ImageReveal"));
+// const TestimonialsPage = lazy(() => import("./pages/TestimonialsPage"));
+const FloatingActionBar = lazy(() => import("./components/FloatingActionBar"));
+const ScrollToTop = lazy(() => import("./components/ScrollToTop"));
 
 function App() {
   useSmoothScroll();
+  usePerformance(); // Monitor Core Web Vitals
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -25,21 +31,27 @@ function App() {
   if (isLoading) return <Loader />;
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/work" element={<Workpage />} />
-        <Route path="/about" element={<Aboutpage />} />
-        <Route path="/contact" element={<Contactpage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/project/:id" element={<Projectpage />} />
-        <Route path="/image" element={<ImageReveal />} />
-        <Route path="/testimonials" element={<TestimonialsPage />} />
-      </Routes>
-      
-      <FloatingActionBar />
-      <ScrollToTop />
-    </Router>
+    <ErrorBoundary>
+      <HelmetProvider>
+        <Router>
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/work" element={<Workpage />} />
+              <Route path="/about" element={<Aboutpage />} />
+              <Route path="/contact" element={<Contactpage />} />
+              {/* <Route path="/services" element={<ServicesPage />} /> */}
+              <Route path="/project/:id" element={<Projectpage />} />
+              <Route path="/image" element={<ImageReveal />} />
+              {/* <Route path="/testimonials" element={<TestimonialsPage />} /> */}
+            </Routes>
+
+            <FloatingActionBar />
+            <ScrollToTop />
+          </Suspense>
+        </Router>
+      </HelmetProvider>
+    </ErrorBoundary>
   );
 }
 
