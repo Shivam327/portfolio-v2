@@ -1,39 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { tablet } from '../styles/mixins';
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { tablet } from "../styles/mixins";
 
 const FloatingActionBar = () => {
   const [isDark, setIsDark] = useState(false);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
       setIsDark(true);
-      document.documentElement.setAttribute('data-theme', 'dark');
+      document.documentElement.setAttribute("data-theme", "dark");
     }
 
     // Listen for hamburger menu state changes
     const handleHamburgerChange = (e) => {
-      if (e.detail && typeof e.detail.isOpen === 'boolean') {
+      if (e.detail && typeof e.detail.isOpen === "boolean") {
         setIsHamburgerOpen(e.detail.isOpen);
       }
     };
 
-    window.addEventListener('hamburgerStateChange', handleHamburgerChange);
-    return () => window.removeEventListener('hamburgerStateChange', handleHamburgerChange);
+    window.addEventListener("hamburgerStateChange", handleHamburgerChange);
+    return () =>
+      window.removeEventListener("hamburgerStateChange", handleHamburgerChange);
   }, []);
 
   const toggleTheme = () => {
     const newTheme = !isDark;
     setIsDark(newTheme);
-    
+
     if (newTheme) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
+      document.documentElement.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
     } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      localStorage.setItem('theme', 'light');
+      document.documentElement.setAttribute("data-theme", "light");
+      localStorage.setItem("theme", "light");
     }
   };
 
@@ -47,12 +48,12 @@ const FloatingActionBar = () => {
         <SectionLabel>Theme</SectionLabel>
         <ActionButton
           onClick={toggleTheme}
-          aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
-          title={`Switch to ${isDark ? 'light' : 'dark'} theme`}
-          data-tooltip={`Switch to ${isDark ? 'light' : 'dark'} theme`}
+          aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
+          title={`Switch to ${isDark ? "light" : "dark"} theme`}
+          data-tooltip={`Switch to ${isDark ? "light" : "dark"} theme`}
           className="theme-toggle"
         >
-          {isDark ? '☀️' : '🌙'}
+          {isDark ? "☀️" : "🌙"}
         </ActionButton>
       </Section>
 
@@ -60,7 +61,7 @@ const FloatingActionBar = () => {
       <Divider />
 
       {/* Resume Section */}
-      <Section>
+      {/* <Section>
         <SectionLabel>Resume</SectionLabel>
         <ActionButton
           as="a"
@@ -73,10 +74,10 @@ const FloatingActionBar = () => {
         >
           📄
         </ActionButton>
-      </Section>
+      </Section> */}
 
       {/* Divider */}
-      <Divider />
+      {/* <Divider /> */}
 
       {/* Social Section */}
       <Section>
@@ -113,7 +114,6 @@ const FloatingActionBar = () => {
           <img src="/images/mail.svg" alt="Email" />
         </ActionButton>
       </Section>
-
     </ActionBar>
   );
 };
@@ -168,9 +168,15 @@ const Section = styled.div`
   animation: fadeInUp 0.8s ease-out;
   animation-fill-mode: both;
 
-  &:nth-child(1) { animation-delay: 0.1s; }
-  &:nth-child(3) { animation-delay: 0.2s; }
-  &:nth-child(5) { animation-delay: 0.3s; }
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(5) {
+    animation-delay: 0.3s;
+  }
 
   @keyframes fadeInUp {
     from {
@@ -192,7 +198,7 @@ const SectionLabel = styled.span`
   letter-spacing: 0.1rem;
   opacity: 0.9;
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
-  
+
   ${tablet} {
     font-size: 1rem;
   }
