@@ -31,9 +31,9 @@ const Homepage = () => {
             scalable systems from
             <span style={{ color: "var(--yellow)" }}> Mumbai, India</span>.
             <br />
-            <strong>
+            {/* <strong>
               Currently open to freelance work in APIs, web, dashboards & infra.
-            </strong>
+            </strong> */}
           </h3>
           <Link to="/contact">
             <Button text="Contact Me" color="var(--green)" />

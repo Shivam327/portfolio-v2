@@ -14,7 +14,8 @@ const Contactpage = () => {
   return (
     <PageTemplate
       title="Shivam Thaker | Contact | Full-Stack Developer Available for Freelance"
-      description="Let's build something impactful. Currently open to freelance & contract-based projects in web, backend, and infrastructure development."
+      // description="Let's build something impactful. Currently open to freelance & contract-based projects in web, backend, and infrastructure development."
+      description="Let's build something impactful."
       ogImage="/images/pose/pose_m12.png"
     >
       <Contact>
@@ -30,7 +31,8 @@ const Contactpage = () => {
           <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m12.png' alt='' />
           
           <h3 data-aos='fade-up' data-aos-delay='2000' data-aos-duration='1000'>
-            Let's build something impactful. I'm currently open to freelance & contract-based projects in web, backend, and infra.
+            {/* Let's build something impactful. I'm currently open to freelance & contract-based projects in web, backend, and infra. */}
+            Let's build something impactful.
           </h3>
           
           <span>

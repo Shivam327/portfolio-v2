@@ -40,7 +40,7 @@ public/
 ```jsx
 <h3>
   Full-Stack Developer @ <span>Korn Ferry</span>, building scalable systems from Mumbai, India.<br/>
-  <strong>Currently open to freelance work in APIs, web, dashboards & infra.</strong>
+  // <strong>Currently open to freelance work in APIs, web, dashboards & infra.</strong>
 </h3>
 ```
 - 🎯 Helmet SEO:
