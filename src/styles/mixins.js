@@ -1,42 +1,13 @@
 import { css } from 'styled-components';
 import { BREAKPOINTS, SPACING } from '../constants';
 
-// Mobile-first media queries
-export const mobile = css`
-  @media (min-width: ${BREAKPOINTS.MOBILE}) {
-    ${props => props}
-  }
-`;
-
-export const tablet = css`
-  @media (min-width: ${BREAKPOINTS.TABLET}) {
-    ${props => props}
-  }
-`;
-
-export const desktop = css`
-  @media (min-width: ${BREAKPOINTS.DESKTOP}) {
-    ${props => props}
-  }
-`;
-
-export const large = css`
-  @media (min-width: ${BREAKPOINTS.LARGE}) {
-    ${props => props}
-  }
-`;
-
-export const landscape = css`
-  @media (orientation: landscape) {
-    ${props => props}
-  }
-`;
-
-export const portrait = css`
-  @media (orientation: portrait) {
-    ${props => props}
-  }
-`;
+// Mobile-first media queries (used as `${tablet} { ... }` in styled-components)
+export const mobile = `@media (min-width: ${BREAKPOINTS.MOBILE})`;
+export const tablet = `@media (min-width: ${BREAKPOINTS.TABLET})`;
+export const desktop = `@media (min-width: ${BREAKPOINTS.DESKTOP})`;
+export const large = `@media (min-width: ${BREAKPOINTS.LARGE})`;
+export const landscape = `@media (orientation: landscape)`;
+export const portrait = `@media (orientation: portrait)`;
 
 // Responsive typography mixin
 export const responsiveText = (mobileSize, tabletSize, desktopSize) => css`

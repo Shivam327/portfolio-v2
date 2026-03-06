@@ -572,7 +572,6 @@ const ModalOverlay = styled.div`
   align-items: center;
   z-index: 1000;
   padding: 2rem;
-  overflow: hidden;
   
   @media (max-width: 768px) {
     padding: 1rem;
@@ -694,8 +693,10 @@ const CloseButton = styled.button`
 const ModalBody = styled.div`
   padding: 2.5rem;
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
+  overscroll-behavior: contain;
   
   /* Custom scrollbar */
   &::-webkit-scrollbar {
