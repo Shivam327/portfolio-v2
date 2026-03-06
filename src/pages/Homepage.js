@@ -14,7 +14,8 @@ const Homepage = () => {
 
   return (
     <PageTemplate
-      title="Shivam Thaker | Full-Stack Developer @ Korn Ferry | Freelance Available"
+      title="Shivam Thaker | Full-Stack Developer @ Korn Ferry"
+      // title="Shivam Thaker | Full-Stack Developer @ Korn Ferry | Freelance Available"
       description="Portfolio of Shivam Thaker — building production-grade systems, APIs, dashboards, and infra tooling."
     >
       <Container>
