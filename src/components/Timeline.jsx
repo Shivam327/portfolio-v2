@@ -203,7 +203,7 @@ const Timeline = () => {
             data-aos-delay={index * 200} 
             data-aos-duration="1000"
             onClick={() => openModal(job)}
-            clickable
+            $clickable={true}
           >
             <TimelineDot>
               <TimelineIcon>{job.icon}</TimelineIcon>
@@ -409,7 +409,7 @@ const TimelineItem = styled.div`
   position: relative;
   margin-bottom: 4rem;
   padding-left: 8rem;
-  cursor: ${props => props.clickable ? 'pointer' : 'default'};
+  cursor: ${props => props.$clickable ? 'pointer' : 'default'};
   
   @media (max-width: 768px) {
     padding-left: 6rem;
@@ -570,7 +570,7 @@ const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 1000;
   padding: 2rem;
   overflow: hidden;
   

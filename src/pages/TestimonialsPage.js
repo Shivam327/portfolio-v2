@@ -1,104 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
 import PageTemplate from '../components/PageTemplate';
-import PageHeader from '../components/layouts/PageHeader';
 import { TESTIMONIALS } from '../data/testimonials';
-import Button from '../components/Button';
-import { Link } from 'react-router-dom';
 
 const TestimonialsPage = () => {
-  const renderStars = (rating) => {
-    return '★'.repeat(rating) + '☆'.repeat(5 - rating);
-  };
-
-  // Add debugging
-  console.log('TESTIMONIALS data:', TESTIMONIALS);
-  console.log('TESTIMONIALS length:', TESTIMONIALS?.length);
-
   return (
     <PageTemplate
-      title="Shivam Thaker | Testimonials | Client Success Stories"
-      description="Real feedback from clients and teams. Testimonials reflecting business impact and technical quality delivered on every project."
+      title="Testimonials - Shivam Thaker"
+      description="Client testimonials and feedback about Shivam Thaker's work"
     >
-      <Container>
-        <PageHeader 
-          title="Testimonials" 
-          backgroundText="REVIEWS"
-          subtitle="What clients say about working together"
-        />
+      <TestimonialsContainer>
+        <TestimonialsHeader>
+          <h1>&lt;Testimonials /&gt;</h1>
+          <p>What clients say about my work</p>
+        </TestimonialsHeader>
         
-        <h3 data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-          Real feedback from clients and teams I've worked with. These testimonials reflect 
-          the business impact and technical quality I deliver on every project.
-        </h3>
-
-        {/* Add debugging display */}
-        <div style={{ color: 'white', margin: '2rem 0' }}>
-          Debug: {TESTIMONIALS ? `${TESTIMONIALS.length} testimonials loaded` : 'No testimonials data'}
-        </div>
-
         <TestimonialsGrid>
-          {TESTIMONIALS && TESTIMONIALS.length > 0 ? (
-            TESTIMONIALS.map((testimonial, index) => (
-              <TestimonialCard 
-                key={testimonial.id} 
-                data-aos="fade-up" 
-                data-aos-delay={index * 200} 
-                data-aos-duration="1000"
-              >
-                <Rating>{renderStars(testimonial.rating)}</Rating>
-                <Content>"{testimonial.content}"</Content>
-                <ProjectInfo>
-                  <span>Project: {testimonial.project}</span>
-                </ProjectInfo>
-                <AuthorInfo>
-                  <AuthorName>{testimonial.name}</AuthorName>
-                  <AuthorRole>{testimonial.role}</AuthorRole>
-                  <Company>{testimonial.company}</Company>
-                </AuthorInfo>
-              </TestimonialCard>
-            ))
-          ) : (
-            <div style={{ color: 'white', textAlign: 'center', padding: '2rem' }}>
-              No testimonials data available
-            </div>
-          )}
+          {TESTIMONIALS.map((testimonial, index) => (
+            <TestimonialCard key={index}>
+              <TestimonialContent>
+                <QuoteIcon>"</QuoteIcon>
+                <TestimonialText>{testimonial.content}</TestimonialText>
+              </TestimonialContent>
+              <TestimonialAuthor>
+                <AuthorName>{testimonial.name}</AuthorName>
+                <AuthorRole>{testimonial.role}</AuthorRole>
+                <AuthorCompany>{testimonial.company}</AuthorCompany>
+              </TestimonialAuthor>
+            </TestimonialCard>
+          ))}
         </TestimonialsGrid>
-
-        <StatsSection data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
-          <StatItem>
-            <StatNumber>100%</StatNumber>
-            <StatLabel>Client Satisfaction</StatLabel>
-          </StatItem>
-          <StatItem>
-            <StatNumber>50+</StatNumber>
-            <StatLabel>Projects Delivered</StatLabel>
-          </StatItem>
-          <StatItem>
-            <StatNumber>99.9%</StatNumber>
-            <StatLabel>System Uptime</StatLabel>
-          </StatItem>
-        </StatsSection>
-
-        <CTASection data-aos="fade-up" data-aos-delay="1200" data-aos-duration="1000">
-          <h4>Ready to join these success stories?</h4>
-          <p>Let's discuss how I can help deliver similar results for your project.</p>
-          <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/contact">
-              <Button text="Start Project" color="var(--green)" />
-            </Link>
-            <Link to="/services">
-              <Button text="View Services" color="var(--yellow)" />
-            </Link>
-          </div>
-        </CTASection>
-      </Container>
+      </TestimonialsContainer>
     </PageTemplate>
   );
 };
 
 
-const Container = styled.div`
+const TestimonialsContainer = styled.div`
   overflow: hidden;
   width: 100%;
   max-width: 1580px;
@@ -115,7 +53,7 @@ const Container = styled.div`
     min-height: 80vh;
   }
 
-  & > h3 {
+  & > h1 {
     margin: 2rem 0;
     width: 60%;
     text-align: left;
@@ -128,6 +66,17 @@ const Container = styled.div`
       width: 90%;
       font-size: 2rem;
     }
+  }
+`;
+
+const TestimonialsHeader = styled.div`
+  text-align: center;
+  margin-bottom: 5rem;
+
+  & > p {
+    font-size: 1.8rem;
+    color: var(--text-secondary);
+    margin-top: 1rem;
   }
 `;
 
@@ -170,35 +119,29 @@ const TestimonialCard = styled.div`
   }
 `;
 
-const Rating = styled.div`
-  font-size: 2.4rem;
-  color: var(--yellow);
+const TestimonialContent = styled.div`
+  position: relative;
   margin-bottom: 2rem;
-  letter-spacing: 0.2rem;
 `;
 
-const Content = styled.p`
+const QuoteIcon = styled.span`
+  font-size: 4rem;
+  color: var(--yellow);
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  opacity: 0.3;
+`;
+
+const TestimonialText = styled.p`
   font-size: 1.8rem;
   color: var(--dark);
   line-height: 1.6;
-  margin-bottom: 2rem;
   font-style: italic;
+  padding-left: 2rem;
 `;
 
-const ProjectInfo = styled.div`
-  margin-bottom: 2rem;
-  
-  & > span {
-    background: var(--green);
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 2rem;
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
-`;
-
-const AuthorInfo = styled.div`
+const TestimonialAuthor = styled.div`
   border-top: 1px solid var(--border-color);
   padding-top: 2rem;
 `;
@@ -216,7 +159,7 @@ const AuthorRole = styled.p`
   margin-bottom: 0.5rem;
 `;
 
-const Company = styled.p`
+const AuthorCompany = styled.p`
   font-size: 1.4rem;
   color: var(--green);
   font-weight: 500;

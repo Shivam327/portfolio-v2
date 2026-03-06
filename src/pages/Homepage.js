@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
-import Aos from 'aos';
-import { Link } from 'react-router-dom';
-import Button from '../components/Button';
-import Timeline from '../components/Timeline';
-import PageTemplate from '../components/PageTemplate';
+import React, { useEffect } from "react";
+import styled from "styled-components";
+import Aos from "aos";
+import { Link } from "react-router-dom";
+import Button from "../components/Button";
+import Timeline from "../components/Timeline";
+import PageTemplate from "../components/PageTemplate";
 
 const Homepage = () => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
-    document.title = 'Shivam Thaker Portfolio';
+    document.title = "Shivam Thaker Portfolio";
   }, []);
 
   return (
@@ -19,17 +19,30 @@ const Homepage = () => {
     >
       <Container>
         <LeftHero>
-          <h2 data-aos="flip-up" data-aos-duration="1000">HEY, I'M</h2>
-          <h1 data-aos="flip-up" data-aos-delay="500" data-aos-duration="1000">SHIVAM THAKER</h1>
+          <h2 data-aos="flip-up" data-aos-duration="1000">
+            HEY, I'M
+          </h2>
+          <h1 data-aos="flip-up" data-aos-delay="500" data-aos-duration="1000">
+            SHIVAM THAKER
+          </h1>
           <h3 data-aos="flip-up" data-aos-delay="1000" data-aos-duration="1000">
-            Full-Stack Developer @ <span style={{ color: 'var(--yellow)' }}>Korn Ferry</span>, building scalable systems from
-            <span style={{ color: 'var(--yellow)' }}> Mumbai, India</span>.<br/>
-            <strong>Currently open to freelance work in APIs, web, dashboards & infra.</strong>
+            Full-Stack Developer @{" "}
+            <span style={{ color: "var(--yellow)" }}>Korn Ferry</span>, building
+            scalable systems from
+            <span style={{ color: "var(--yellow)" }}> Mumbai, India</span>.
+            <br />
+            <strong>
+              Currently open to freelance work in APIs, web, dashboards & infra.
+            </strong>
           </h3>
           <Link to="/contact">
             <Button text="Contact Me" color="var(--green)" />
           </Link>
-          <BG style={{ backgroundColor: 'var(--lightRed)' }} data-aos="zoom-in" data-aos-duration="2000" />
+          <BG
+            style={{ backgroundColor: "var(--lightRed)" }}
+            data-aos="zoom-in"
+            data-aos-duration="2000"
+          />
           <img
             loading="lazy"
             data-aos="zoom-in"
@@ -37,7 +50,7 @@ const Homepage = () => {
             src="/images/pose/pose_m18.png"
             alt="Shivam Thaker professional portrait"
             onError={(e) => {
-              e.target.style.display = 'none';
+              e.target.style.display = "none";
             }}
           />
         </LeftHero>
@@ -45,23 +58,41 @@ const Homepage = () => {
 
       <ContainerA>
         <Design>
-          <h1 data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">Shivam Thaker</h1>
-          <h2 data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">&lt;About /&gt;</h2>
+          <h1
+            data-aos="fade-left"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+          >
+            Shivam Thaker
+          </h1>
+          <h2
+            data-aos="fade-right"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+          >
+            &lt;About /&gt;
+          </h2>
         </Design>
         <h3 data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-          I'm a full-stack creative developer with a <span>Computer Science</span> degree from Mumbai University.
+          I'm a full-stack creative developer with a{" "}
+          <span>Computer Science</span> degree from Mumbai University.
         </h3>
         <h4 data-aos="fade-up" data-aos-delay="450" data-aos-duration="1000">
-          I build performant and scalable web applications using technologies like React, Node.js, NestJS, and AWS. I love solving real-world problems through clean code and thoughtful design.
+          I build performant and scalable web applications using technologies
+          like React, Node.js, NestJS, and AWS. I love solving real-world
+          problems through clean code and thoughtful design.
         </h4>
-        <Circle data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000">
+        <Circle
+          data-aos="zoom-in"
+          data-aos-delay="300"
+          data-aos-duration="1000"
+        >
           <Link to="/about">
             <h2>Learn More</h2>
           </Link>
         </Circle>
       </ContainerA>
 
-    
       <Timeline />
 
       <Container3>
@@ -71,12 +102,18 @@ const Homepage = () => {
             <span>Korn Ferry</span>.
           </h1>
           <h1 data-aos="fade-in" data-aos-duration="2000">
-            <span>Let’s collaborate</span> to build something impactful and share-worthy.
+            <span>Let’s collaborate</span> to build something impactful and
+            share-worthy.
           </h1>
           <BG
             data-aos="zoom-in"
             data-aos-duration="2000"
-            style={{ backgroundColor: 'var(--green)', opacity: '0.2', top: '15%', left: '60%' }}
+            style={{
+              backgroundColor: "var(--green)",
+              opacity: "0.2",
+              top: "15%",
+              left: "60%",
+            }}
           />
           <img
             loading="lazy"
@@ -89,16 +126,15 @@ const Homepage = () => {
             <Link to="/contact">
               <Button text="Connect Now" color="var(--green)" />
             </Link>
-            <Link to="/services">
+            {/* <Link to="/services">
               <Button text="View Services" color="var(--yellow)" />
-            </Link>
+            </Link> */}
           </ButtonContainer>
         </Wrapper>
       </Container3>
     </PageTemplate>
   );
 };
-
 
 const Circle = styled.div`
   display: flex;
@@ -327,7 +363,7 @@ const LeftHero = styled.div`
     font-size: 3.5rem;
     background-color: var(--dark);
     color: var(--bg-secondary);
-    font-family: 'Dela Gothic One', cursive;
+    font-family: "Dela Gothic One", cursive;
     padding: 0.2rem 1.2rem;
     margin: 1rem 0;
 
@@ -338,7 +374,7 @@ const LeftHero = styled.div`
 
   & > h2 {
     font-size: 2rem;
-    font-family: 'Dela Gothic One', cursive;
+    font-family: "Dela Gothic One", cursive;
     margin: 1rem 0;
 
     @media (max-width: 768px) {
@@ -347,7 +383,7 @@ const LeftHero = styled.div`
   }
 
   & > h3 {
-    font-family: 'Dela Gothic One', cursive;
+    font-family: "Dela Gothic One", cursive;
     text-transform: uppercase;
     font-size: 2rem;
     max-width: 70%;
@@ -379,7 +415,6 @@ const LeftHero = styled.div`
     font-size: 1.25rem;
   }
 `;
-
 
 const BG = styled.div`
   position: absolute;

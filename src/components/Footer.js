@@ -3,6 +3,8 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { SPACING } from "../constants";
+import { tablet, desktop } from "../styles/mixins";
 
 const Footer = () => {
   useEffect(() => {
@@ -42,11 +44,21 @@ const Circle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 15rem;
-  width: 15rem;
+  height: 10rem;
+  width: 10rem;
   border-radius: 50%;
   background-color: var(--bg-primary);
   transition: background-color 0.3s ease;
+  
+  ${tablet} {
+    height: 12rem;
+    width: 12rem;
+  }
+  
+  ${desktop} {
+    height: 15rem;
+    width: 15rem;
+  }
 
   & > a {
     text-decoration: none;
@@ -54,10 +66,19 @@ const Circle = styled.div`
 
   & > a > h2 {
     color: var(--text-primary);
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    text-align: center;
+    
+    ${tablet} {
+      font-size: 1.75rem;
+    }
+    
+    ${desktop} {
+      font-size: 2rem;
+    }
 
     &:hover {
       transform: rotate(-30deg);
@@ -68,8 +89,8 @@ const Circle = styled.div`
 
 const Foot = styled.footer`
   height: max-content;
-  padding: 5rem;
-  margin-top: 5rem;
+  padding: ${SPACING.MOBILE_MD};
+  margin-top: ${SPACING.MOBILE_MD};
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   width: 100%;
@@ -79,43 +100,89 @@ const Foot = styled.footer`
   align-items: center;
   position: relative;
   transition: background-color 0.3s ease, color 0.3s ease;
+  
+  ${tablet} {
+    padding: ${SPACING.LG};
+    margin-top: ${SPACING.LG};
+  }
+  
+  ${desktop} {
+    padding: ${SPACING.XXL};
+    margin-top: ${SPACING.XXL};
+  }
 
   & > hr {
     width: 90%;
   }
 
   & > img {
-    height: 30vh;
+    height: 20vh;
     position: absolute;
     bottom: 10%;
     right: 10%;
-
-    @media (max-width: 768px) {
-      top: 20%;
-      height: 20vh;
+    
+    ${tablet} {
+      height: 25vh;
+    }
+    
+    ${desktop} {
+      height: 30vh;
     }
   }
 `;
 
 const LeftFoot = styled.div`
-  padding: 5rem;
+  padding: ${SPACING.MOBILE_MD};
   height: 100%;
-  max-width: 1280px;
+  max-width: 100%;
   width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  /* align-items: flex-start; */
+  flex-direction: column;
+  gap: ${SPACING.MOBILE_MD};
+  
+  ${tablet} {
+    padding: ${SPACING.LG};
+    max-width: 90%;
+    flex-direction: row;
+    gap: ${SPACING.LG};
+  }
+  
+  ${desktop} {
+    padding: ${SPACING.XXL};
+    max-width: 1280px;
+    gap: ${SPACING.XL};
+  }
 
   & > h6 {
     color: var(--text-primary);
     font-weight: 400;
-    font-size: 5rem;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    
+    ${tablet} {
+      font-size: 3.5rem;
+    }
+    
+    ${desktop} {
+      font-size: 5rem;
+    }
   }
+  
   & > h1 {
     color: var(--text-primary);
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    
+    ${tablet} {
+      font-size: 1.75rem;
+    }
+    
+    ${desktop} {
+      font-size: 2rem;
+    }
   }
 `;
 

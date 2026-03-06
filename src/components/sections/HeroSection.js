@@ -1,78 +1,155 @@
-import React from 'react';
+import React, { memo, useCallback } from 'react';
 import styled from 'styled-components';
+import { responsiveText, responsiveSpacing, container, tablet, desktop, large } from '../../styles/mixins';
+import { TYPOGRAPHY, SPACING } from '../../constants';
 
-const HeroSection = ({ 
+const HeroSection = memo(({ 
   title, 
   subtitle, 
   backgroundText, 
   children,
   variant = 'default' 
-}) => (
-  <Hero variant={variant}>
-    {backgroundText && <BackgroundText>{backgroundText}</BackgroundText>}
-    <Content>
-      <Title>{title}</Title>
-      {subtitle && <Subtitle>{subtitle}</Subtitle>}
-      {children}
-    </Content>
-  </Hero>
-);
+}) => {
+  const handleAnimationComplete = useCallback(() => {
+    // Performance tracking for animations
+    if (window.performance && window.performance.mark) {
+      window.performance.mark('hero-animation-complete');
+    }
+  }, []);
+
+  return (
+    <Hero variant={variant}>
+      {backgroundText && (
+        <BackgroundText 
+          onAnimationEnd={handleAnimationComplete}
+          aria-hidden="true"
+        >
+          {backgroundText}
+        </BackgroundText>
+      )}
+      <Content>
+        <Title>{title}</Title>
+        {subtitle && <Subtitle>{subtitle}</Subtitle>}
+        {children}
+      </Content>
+    </Hero>
+  );
+});
+
+HeroSection.displayName = 'HeroSection';
 
 const Hero = styled.section`
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
-  padding: 5rem 0;
+  padding: ${SPACING.MOBILE_MD} 0;
   background-color: var(--bg-primary);
+  overflow: hidden;
+  will-change: transform; // Optimize for animations
   
   ${props => props.variant === 'centered' && `
     text-align: center;
     justify-content: center;
   `}
+  
+  ${tablet} {
+    padding: ${SPACING.LG} 0;
+  }
+  
+  ${desktop} {
+    padding: ${SPACING.XXL} 0;
+  }
+
+  // High contrast mode support
+  @media (prefers-contrast: high) {
+    border: 2px solid currentColor;
+  }
+
+  // Reduced motion support
+  @media (prefers-reduced-motion: reduce) {
+    will-change: auto;
+  }
 `;
 
 const BackgroundText = styled.h2`
   color: transparent;
-  font-size: 20rem;
+  font-size: 8rem;
   position: absolute;
   z-index: -3;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--yellow); /* Your original yellow */
+  -webkit-text-stroke-color: var(--yellow);
   bottom: 10%;
-  left: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  will-change: transform; // Optimize for animations
   
-  @media (max-width: 768px) {
-    font-size: 13rem;
+  ${tablet} {
+    font-size: 12rem;
+    left: 0%;
+    transform: none;
+  }
+  
+  ${desktop} {
+    font-size: 16rem;
+  }
+  
+  ${large} {
+    font-size: 20rem;
+  }
+
+  // Reduced motion support
+  @media (prefers-reduced-motion: reduce) {
+    will-change: auto;
+    animation: none;
   }
 `;
 
 const Content = styled.div`
   position: relative;
   z-index: 1;
-  max-width: 60%;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 ${SPACING.MOBILE_MD};
+  
+  ${tablet} {
+    max-width: 80%;
+    padding: 0 ${SPACING.LG};
+  }
+  
+  ${desktop} {
+    max-width: 60%;
+    padding: 0 ${SPACING.XL};
+  }
 `;
 
 const Title = styled.h1`
-  font-size: 15rem;
+  ${responsiveText(TYPOGRAPHY.H1.MOBILE, TYPOGRAPHY.H1.TABLET, TYPOGRAPHY.H1.DESKTOP)};
   font-weight: 500;
-  margin-bottom: 2rem;
+  margin-bottom: ${SPACING.MOBILE_MD};
   color: var(--text-primary);
+  line-height: 1.1;
   
-  @media (max-width: 768px) {
-    font-size: 8rem;
-    line-height: 8rem;
+  ${tablet} {
+    margin-bottom: ${SPACING.LG};
+  }
+
+  // High contrast mode support
+  @media (prefers-contrast: high) {
+    text-shadow: 1px 1px 0 currentColor;
   }
 `;
 
 const Subtitle = styled.h3`
-  font-size: 2rem;
+  ${responsiveText(TYPOGRAPHY.BODY.MOBILE, TYPOGRAPHY.BODY.TABLET, TYPOGRAPHY.BODY.DESKTOP)};
   font-weight: 400;
   color: var(--text-primary);
   line-height: 1.4;
+  margin-bottom: ${SPACING.MOBILE_MD};
   
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
+  ${tablet} {
+    margin-bottom: ${SPACING.LG};
   }
 `;
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { initializeAOS, scrollToTop } from '../utils/animations';
 import BaseLayout from './layouts/BaseLayout';
 

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { BREAKPOINTS } from '../constants';
+import { tablet } from '../styles/mixins';
 
 const FloatingActionBar = () => {
   const [isDark, setIsDark] = useState(false);
@@ -120,19 +120,20 @@ const FloatingActionBar = () => {
 
 const ActionBar = styled.div`
   position: fixed;
-  right: 2rem;
-  top: 25%;
+  right: 1rem;
+  top: 20%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  z-index: 1000;
-  background: rgba(var(--bg-primary-rgb, 255, 255, 255), 0.1);
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(var(--bg-secondary-rgb, 255, 255, 255), 0.1);
   backdrop-filter: blur(10px);
-  padding: 1.5rem;
   border-radius: 2rem;
-  border: 1px solid rgba(var(--text-primary-rgb, 0, 0, 0), 0.2);
+  border: 0.1rem solid rgba(var(--text-primary-rgb, 0, 0, 0), 0.1);
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+  z-index: 1000;
   transition: all 0.3s ease;
-  animation: slideInRight 0.6s ease-out;
+  animation: slideInRight 0.8s ease-out;
 
   @keyframes slideInRight {
     from {
@@ -145,11 +146,12 @@ const ActionBar = styled.div`
     }
   }
 
-  @media (max-width: ${BREAKPOINTS.MOBILE}) {
-    right: 1rem;
-    top: 20%;
-    gap: 1rem;
-    padding: 1rem;
+  ${tablet} {
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    gap: 1.5rem;
+    padding: 1.5rem;
   }
 
   &:hover {
@@ -183,7 +185,7 @@ const Section = styled.div`
 `;
 
 const SectionLabel = styled.span`
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--text-secondary);
   text-transform: uppercase;
@@ -191,8 +193,8 @@ const SectionLabel = styled.span`
   opacity: 0.9;
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
   
-  @media (max-width: ${BREAKPOINTS.MOBILE}) {
-    font-size: 0.8rem;
+  ${tablet} {
+    font-size: 1rem;
   }
 `;
 
@@ -209,15 +211,15 @@ const Divider = styled.div`
 `;
 
 const ActionButton = styled.button`
-  width: 4rem;
-  height: 4rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 50%;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   transition: all 0.3s ease;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
   text-decoration: none;
@@ -261,12 +263,10 @@ const ActionButton = styled.button`
     border: 0.2rem solid var(--red);
   }
 
-
-
   /* Image styling */
   & > img {
-    width: 2rem;
-    height: 2rem;
+    width: 1.8rem;
+    height: 1.8rem;
   }
 
   &:hover {
@@ -279,14 +279,14 @@ const ActionButton = styled.button`
     outline-offset: 0.2rem;
   }
 
-  @media (max-width: ${BREAKPOINTS.MOBILE}) {
-    width: 3.5rem;
-    height: 3.5rem;
-    font-size: 1.6rem;
+  ${tablet} {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.8rem;
 
     & > img {
-      width: 1.8rem;
-      height: 1.8rem;
+      width: 2rem;
+      height: 2rem;
     }
   }
 `;
