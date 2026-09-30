@@ -45,8 +45,6 @@ Button.displayName = 'Button';
 
 const Btn = styled.button`
   margin-top: 1.5rem;
-  background: white;
-  border: 1px solid lightgray;
   padding: 1rem 3rem;
   color: var(--text-primary);
   background: linear-gradient(to left, ${props => props.color} 50%, var(--bg-secondary) 50%) right;
@@ -57,9 +55,9 @@ const Btn = styled.button`
   outline: none;
   font-family: inherit;
   border-radius: 0.5rem;
-  font-size: 1rem;
+  font-size: max(1rem, 14px);
   font-weight: 500;
-  min-height: 44px; // Accessibility: minimum touch target size
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -107,8 +105,8 @@ const Btn = styled.button`
 
   span {
     font-weight: 400;
-    font-size: 1rem;
-    pointer-events: none; // Prevents text selection issues
+    font-size: max(1rem, 14px);
+    pointer-events: none;
   }
 `;
 

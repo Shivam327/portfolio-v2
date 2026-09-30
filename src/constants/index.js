@@ -7,44 +7,23 @@ export const ANIMATION_DURATIONS = {
 
 // Mobile-first breakpoints
 export const BREAKPOINTS = {
-  MOBILE: '480px',      // Small mobile
-  TABLET: '768px',      // Tablet
-  DESKTOP: '1024px',    // Desktop
-  LARGE: '1200px'       // Large desktop
-};
-
-// Color variables - RESTORED TO YOUR ORIGINAL THEME
-export const COLORS = {
-  PRIMARY: '#191919',
-  SECONDARY: '#f8e08e', // Your original yellow
-  ACCENT: '#31c48c',   // Your original green
-  WHITE: '#f2efe7',    // Your original white
-  DARK: '#191919',     // Your original dark
-  TEXT_PRIMARY: '#191919',
-  TEXT_SECONDARY: '#666666',
-  SURFACE: '#f2efe7',
-  BACKGROUND: '#191919',
-  // Add your original CSS variables
-  RED: '#f44336',
-  LIGHT_RED: '#feecea',
-  YELLOW: '#f8e08e',
-  DARK_YELLOW: '#f8d76a',
-  GREEN: '#31c48c',
-  BLUE: 'royalBlue'
+  MOBILE: '480px',
+  TABLET: '768px',
+  DESKTOP: '1024px',
+  LARGE: '1200px'
 };
 
 // Responsive spacing values
 export const SPACING = {
-  XS: '0.5rem',         // 8px
-  SM: '1rem',           // 16px
-  MD: '1.5rem',         // 24px
-  LG: '2rem',           // 32px
-  XL: '3rem',           // 48px
-  XXL: '5rem',          // 80px
-  // Mobile-specific spacing
-  MOBILE_XS: '0.25rem', // 4px
-  MOBILE_SM: '0.75rem', // 12px
-  MOBILE_MD: '1.25rem'  // 20px
+  XS: '0.5rem',
+  SM: '1rem',
+  MD: '1.5rem',
+  LG: '2rem',
+  XL: '3rem',
+  XXL: '5rem',
+  MOBILE_XS: '0.25rem',
+  MOBILE_SM: '0.75rem',
+  MOBILE_MD: '1.25rem'
 };
 
 // Common sizes
@@ -56,18 +35,18 @@ export const SIZES = {
 // Typography scale
 export const TYPOGRAPHY = {
   H1: {
-    MOBILE: '2.5rem',   // 40px
-    TABLET: '3.5rem',   // 56px
-    DESKTOP: '4.5rem'   // 72px
+    MOBILE: '2.5rem',
+    TABLET: '3.5rem',
+    DESKTOP: '4.5rem'
   },
   H2: {
-    MOBILE: '2rem',     // 32px
-    TABLET: '2.5rem',   // 40px
-    DESKTOP: '3rem'     // 48px
+    MOBILE: '2rem',
+    TABLET: '2.5rem',
+    DESKTOP: '3rem'
   },
   BODY: {
-    MOBILE: '1rem',     // 16px
-    TABLET: '1.125rem', // 18px
-    DESKTOP: '1.25rem'  // 20px
+    MOBILE: '1rem',
+    TABLET: '1.125rem',
+    DESKTOP: '1.25rem'
   }
 };

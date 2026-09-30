@@ -161,7 +161,7 @@ const RetryButton = styled(Button)`
   color: white;
   
   &:hover {
-    background-color: #2ba876;
+    background-color: var(--green-text);
   }
 `;
 
@@ -170,7 +170,7 @@ const HomeButton = styled(Button)`
   color: var(--text-primary);
   
   &:hover {
-    background-color: #f0d67a;
+    background-color: var(--darkYellow);
   }
 `;
 

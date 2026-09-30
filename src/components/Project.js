@@ -160,7 +160,7 @@ const Circle = styled.div`
 
     &:hover {
       transform: rotate(-30deg);
-      color: var(--yellow);
+      color: var(--yellow-text);
     }
 
     // Reduced motion support

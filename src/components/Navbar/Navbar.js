@@ -97,9 +97,9 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 0 ${SPACING.MOBILE_MD};
-  color: #191919;
-  background-color: #f2efe7;
-  border-bottom: 2px solid #191919;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  border-bottom: 2px solid var(--text-primary);
   transition: all 0.4s ease-in-out;
   box-sizing: border-box;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -142,7 +142,7 @@ const Logo = styled.div`
     font-family: "Fuggles", cursive;
     font-weight: 600;
     font-size: 2.8rem;
-    color: #191919;
+    color: var(--text-primary);
     margin: 0;
     line-height: 1;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -170,7 +170,7 @@ const Logo = styled.div`
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #191919;
+    color: var(--text-primary);
     height: 100%;
     padding: 0.5rem 0;
     min-height: 44px; /* Touch target minimum */
@@ -196,9 +196,9 @@ const Menu = styled.div`
   & > button {
     transition: all 1.5s ease-in-out;
     font-weight: 600;
-    color: #191919;
+    color: var(--text-primary);
     background-color: rgba(0, 0, 0, 0.1);
-    border: 2px solid #191919;
+    border: 2px solid var(--text-primary);
     font-size: 1.4rem;
     font-family: inherit;
     padding: 8px 12px;
@@ -216,7 +216,7 @@ const Menu = styled.div`
     }
     
     &:focus {
-      outline: 3px solid #f8e08e;
+      outline: 3px solid var(--yellow);
       outline-offset: 2px;
     }
     

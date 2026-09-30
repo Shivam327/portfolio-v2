@@ -1,41 +1,42 @@
-
-
 export const SERVICES = [
   {
-    id: 1,
     title: 'Web App Development',
-    description: 'Full-stack web applications with modern frameworks and responsive design',
-    icon: '',
-    features: ['React/Next.js frontends', 'Node.js backends', 'Database design', 'API integration']
+    description: 'Full-stack TypeScript applications with React frontends and NestJS backends',
+    icon: '💻',
+    features: ['React / NestJS / TypeScript', 'PostgreSQL / MongoDB / Redis', 'REST & GraphQL APIs', 'Responsive design']
   },
   {
-    id: 2,
-    title: 'API Development',
-    description: 'Robust backend APIs and microservices architecture',
-    icon: '',
-    features: ['RESTful APIs', 'GraphQL', 'Authentication', 'Rate limiting']
+    title: 'API & Microservices',
+    description: 'Production-grade backend APIs and distributed service architecture',
+    icon: '🔌',
+    features: ['NestJS microservices', 'RabbitMQ / Kafka messaging', 'Redis caching strategies', 'Auth & rate limiting']
   },
   {
-    id: 3,
-    title: 'Infrastructure Monitoring',
-    description: 'Real-time monitoring and alerting systems',
-    icon: '',
-    features: ['Grafana dashboards', 'Prometheus metrics', 'Docker monitoring', 'K8s insights']
+    title: 'Observability & Monitoring',
+    description: 'End-to-end production visibility — metrics, logging, and alerting from scratch',
+    icon: '📊',
+    features: ['Prometheus + Grafana stacks', 'OpenTelemetry instrumentation', 'Structured logging', 'Real-time alerting']
   },
   {
-    id: 4,
-    title: 'ERP/CRM Customization',
-    description: 'Custom business process automation and workflow tools',
-    icon: '',
-    features: ['Process automation', 'Custom dashboards', 'Integration APIs', 'User management']
+    title: 'ERP & Process Automation',
+    description: 'Custom business tools, ERPNext deployments, and Python automation pipelines',
+    icon: '⚙️',
+    features: ['ERPNext / Frappe customization', 'Python automation pipelines', 'Pentaho ETL', 'Custom admin dashboards']
   },
   {
-    id: 5,
     title: 'CI/CD & DevOps',
-    description: 'Automated deployment pipelines and infrastructure as code',
-    icon: '',
-    features: ['Docker containers', 'Kubernetes orchestration', 'GitHub Actions', 'AWS/Azure setup']
+    description: 'Automated pipelines, containerized deployments, and infrastructure as code',
+    icon: '🚀',
+    features: ['GitHub Actions / GitLab CI', 'Docker + Kubernetes', 'Terraform IaC', 'AWS (S3, EC2, RDS, Lambda)']
   }
 ];
 
-export const getServiceById = (id) => SERVICES.find(service => service.id === id);
+/** Normalize services — auto id from index so adding a row is enough */
+export const getServices = () =>
+  SERVICES.map((service, index) => ({
+    ...service,
+    id: index + 1,
+    icon: service.icon || '🛠️',
+  }));
+
+export const getServiceById = (id) => getServices().find((service) => service.id === id);

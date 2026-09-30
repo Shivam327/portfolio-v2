@@ -15,15 +15,37 @@ export const useSmoothScroll = () => {
       infinite: false,
     });
 
+    let rafId = 0;
+
     function raf(time) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
+
+    const handleLenisStop = () => lenis.stop();
+    const handleLenisStart = () => lenis.start();
+    const handleHamburgerChange = (e) => {
+      if (e.detail && typeof e.detail.isOpen === 'boolean') {
+        if (e.detail.isOpen) {
+          lenis.stop();
+        } else {
+          lenis.start();
+        }
+      }
+    };
+
+    window.addEventListener('lenis:stop', handleLenisStop);
+    window.addEventListener('lenis:start', handleLenisStart);
+    window.addEventListener('hamburgerStateChange', handleHamburgerChange);
 
     return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener('lenis:stop', handleLenisStop);
+      window.removeEventListener('lenis:start', handleLenisStart);
+      window.removeEventListener('hamburgerStateChange', handleHamburgerChange);
       lenis.destroy();
     };
   }, []);
-}; 
+};

@@ -14,9 +14,8 @@ const Homepage = () => {
 
   return (
     <PageTemplate
-      title="Shivam Thaker | Full-Stack Developer @ Korn Ferry"
-      // title="Shivam Thaker | Full-Stack Developer @ Korn Ferry | Freelance Available"
-      description="Portfolio of Shivam Thaker — building production-grade systems, APIs, dashboards, and infra tooling."
+      title="Shivam Thaker | Backend Engineer @ Korn Ferry | Freelance Available"
+      description="Portfolio of Shivam Thaker — 25s-to-1s API optimization, 50k+ record batch pipelines, AI developer tooling. TypeScript, NestJS, PostgreSQL, AWS."
     >
       <Container>
         <LeftHero>
@@ -27,14 +26,15 @@ const Homepage = () => {
             SHIVAM THAKER
           </h1>
           <h3 data-aos="flip-up" data-aos-delay="1000" data-aos-duration="1000">
-            Full-Stack Developer @{" "}
-            <span style={{ color: "var(--yellow)" }}>Korn Ferry</span>, building
-            scalable systems from
-            <span style={{ color: "var(--yellow)" }}> Mumbai, India</span>.
+            Backend Engineer @{" "}
+            <span style={{ color: "var(--yellow-text)" }}>Korn Ferry</span> — cut API
+            latency from 25s to under 1s, built 50+ AI developer tools, and
+            architect batch pipelines processing 50,000+ records from
+            <span style={{ color: "var(--yellow-text)" }}> Mumbai, India</span>.
             <br />
-            {/* <strong>
-              Currently open to freelance work in APIs, web, dashboards & infra.
-            </strong> */}
+            <strong>
+              Open to freelance — TypeScript, React, Node.js, and DevOps.
+            </strong>
           </h3>
           <Link to="/contact">
             <Button text="Contact Me" color="var(--green)" />
@@ -75,13 +75,17 @@ const Homepage = () => {
           </h2>
         </Design>
         <h3 data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-          I'm a full-stack creative developer with a{" "}
-          <span>Computer Science</span> degree from Mumbai University.
+          From sole backend engineer at a startup, through fintech at{" "}
+          <span>PhillipCapital</span>, to enterprise HR analytics at{" "}
+          <span>Korn Ferry</span> — with a{" "}
+          <span>B.E. Computer Engineering</span> from Shree L.R. Tiwari
+          College of Engineering.
         </h3>
         <h4 data-aos="fade-up" data-aos-delay="450" data-aos-duration="1000">
-          I build performant and scalable web applications using technologies
-          like React, Node.js, NestJS, and AWS. I love solving real-world
-          problems through clean code and thoughtful design.
+          TypeScript and NestJS daily. PostgreSQL stored functions, Redis
+          caching, RabbitMQ pipelines, Terraform IaC, and Prometheus
+          observability when the system demands it. See the work, then reach
+          out if it fits.
         </h4>
         <Circle
           data-aos="zoom-in"
@@ -99,12 +103,12 @@ const Homepage = () => {
       <Container3>
         <Wrapper>
           <h1 data-aos="fade-in" data-aos-duration="2000">
-            I’m currently working with <br />
+            Currently building at <br />
             <span>Korn Ferry</span>.
           </h1>
           <h1 data-aos="fade-in" data-aos-duration="2000">
-            <span>Let’s collaborate</span> to build something impactful and
-            share-worthy.
+            Have a project in mind?{" "}
+            <span>Let's talk</span> — APIs, performance bottlenecks, or infra.
           </h1>
           <BG
             data-aos="zoom-in"
@@ -127,9 +131,9 @@ const Homepage = () => {
             <Link to="/contact">
               <Button text="Connect Now" color="var(--green)" />
             </Link>
-            {/* <Link to="/services">
+            <Link to="/services">
               <Button text="View Services" color="var(--yellow)" />
-            </Link> */}
+            </Link>
           </ButtonContainer>
         </Wrapper>
       </Container3>
@@ -145,10 +149,10 @@ const Circle = styled.div`
   height: 15rem;
   width: 15rem;
   border-radius: 50%;
-  background-color: var(--dark);
+  background-color: var(--text-primary);
 
   & > a > h2 {
-    color: var(--white);
+    color: var(--cream);
     font-size: 2rem;
     font-weight: 600;
     cursor: pointer;
@@ -156,7 +160,7 @@ const Circle = styled.div`
 
     &:hover {
       transform: rotate(-30deg);
-      color: var(--yellow);
+      color: var(--yellow-text);
     }
   }
 `;
@@ -209,9 +213,10 @@ const ContainerA = styled.div`
     text-align: left;
     font-weight: 400;
     font-size: 3rem;
+    overflow-wrap: break-word;
 
     & > span {
-      color: var(--darkYellow);
+      color: var(--yellow-text);
       font-weight: 600;
     }
 
@@ -228,9 +233,10 @@ const ContainerA = styled.div`
     text-align: left;
     font-weight: 400;
     font-size: 2rem;
+    overflow-wrap: break-word;
 
     & > span {
-      color: var(--green);
+      color: var(--green-text);
     }
 
     @media (max-width: 768px) {
@@ -254,30 +260,32 @@ const Design = styled.div`
 
   & > h2 {
     color: transparent;
-    font-size: 12rem;
+    font-size: min(12rem, 14vw);
     position: absolute;
     z-index: -3;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--yellow);
-    bottom: 10%;
+    bottom: 15%;
     left: 0%;
+    white-space: nowrap;
 
     @media (max-width: 768px) {
-      font-size: 8rem;
+      font-size: min(8rem, 12vw);
+      bottom: 20%;
     }
   }
 
   & > h1 {
-    font-size: 8rem;
+    font-size: min(8rem, 10vw);
     font-weight: 500;
     position: absolute;
     z-index: 0;
-    bottom: 10%;
+    bottom: 5%;
     left: 0%;
 
     @media (max-width: 768px) {
-      font-size: 5rem;
-      line-height: 6rem;
+      font-size: min(5rem, 8vw);
+      line-height: 1.2;
     }
   }
 `;
@@ -336,7 +344,7 @@ const Wrapper = styled.div`
 
     & > span {
       font-weight: 400;
-      color: var(--green);
+      color: var(--green-text);
     }
 
     @media (max-width: 768px) {
@@ -361,32 +369,32 @@ const LeftHero = styled.div`
   position: relative;
 
   & > h1 {
-    font-size: 3.5rem;
-    background-color: var(--dark);
+    font-size: max(3.5rem, 22px);
+    background-color: var(--text-primary);
     color: var(--bg-secondary);
     font-family: "Dela Gothic One", cursive;
     padding: 0.2rem 1.2rem;
     margin: 1rem 0;
 
     @media (max-width: 768px) {
-      font-size: 2.5rem;
+      font-size: max(2.5rem, 20px);
     }
   }
 
   & > h2 {
-    font-size: 2rem;
+    font-size: max(2rem, 16px);
     font-family: "Dela Gothic One", cursive;
     margin: 1rem 0;
 
     @media (max-width: 768px) {
-      font-size: 1.5rem;
+      font-size: max(1.5rem, 14px);
     }
   }
 
   & > h3 {
     font-family: "Dela Gothic One", cursive;
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: max(2rem, 14px);
     max-width: 70%;
 
     & > span {
@@ -394,7 +402,8 @@ const LeftHero = styled.div`
     }
 
     @media (max-width: 768px) {
-      font-size: 1.5rem;
+      font-size: max(1.5rem, 13px);
+      max-width: 100%;
     }
   }
 

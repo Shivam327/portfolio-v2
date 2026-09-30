@@ -1,19 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 const usePerformance = () => {
   useEffect(() => {
     // Only run in development mode
-    if (process.env.NODE_ENV !== 'development') return;
+    if (process.env.NODE_ENV !== "development") return;
 
     // Monitor Largest Contentful Paint (LCP)
     const observer = new PerformanceObserver((list) => {
       const entries = list.getEntries();
       const lastEntry = entries[entries.length - 1];
-      console.log('LCP:', lastEntry?.startTime);
+      console.log("LCP:", lastEntry?.startTime);
     });
 
     try {
-      observer.observe({ entryTypes: ['largest-contentful-paint'] });
+      observer.observe({ entryTypes: ["largest-contentful-paint"] });
     } catch (e) {
       // Browser doesn't support this API
     }
@@ -22,12 +22,12 @@ const usePerformance = () => {
     const fidObserver = new PerformanceObserver((list) => {
       const entries = list.getEntries();
       entries.forEach((entry) => {
-        console.log('FID:', entry.processingStart - entry.startTime);
+        console.log("FID:", entry.processingStart - entry.startTime);
       });
     });
 
     try {
-      fidObserver.observe({ entryTypes: ['first-input'] });
+      fidObserver.observe({ entryTypes: ["first-input"] });
     } catch (e) {
       // Browser doesn't support this API
     }
@@ -40,11 +40,10 @@ const usePerformance = () => {
           clsValue += entry.value;
         }
       }
-      console.log('CLS:', clsValue);
     });
 
     try {
-      clsObserver.observe({ entryTypes: ['layout-shift'] });
+      clsObserver.observe({ entryTypes: ["layout-shift"] });
     } catch (e) {
       // Browser doesn't support this API
     }
@@ -53,12 +52,12 @@ const usePerformance = () => {
     const ttiObserver = new PerformanceObserver((list) => {
       const entries = list.getEntries();
       entries.forEach((entry) => {
-        console.log('TTI:', entry.startTime);
+        console.log("TTI:", entry.startTime);
       });
     });
 
     try {
-      ttiObserver.observe({ entryTypes: ['interaction'] });
+      ttiObserver.observe({ entryTypes: ["interaction"] });
     } catch (e) {
       // Browser doesn't support this API
     }
@@ -67,7 +66,7 @@ const usePerformance = () => {
     const measureObserver = new PerformanceObserver((list) => {
       const entries = list.getEntries();
       entries.forEach((entry) => {
-        if (entry.entryType === 'measure') {
+        if (entry.entryType === "measure") {
           const name = entry.name;
           const measure = performance.getEntriesByName(name)[0];
           console.log(`${name}:`, measure?.duration);
@@ -76,9 +75,9 @@ const usePerformance = () => {
     });
 
     try {
-      measureObserver.observe({ entryTypes: ['measure'] });
+      measureObserver.observe({ entryTypes: ["measure"] });
     } catch (e) {
-      console.warn('Performance measure observer not supported');
+      console.warn("Performance measure observer not supported");
     }
 
     // Cleanup

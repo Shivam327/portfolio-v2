@@ -13,7 +13,7 @@ const Loader = () => {
     <Load>
               <BG style={{ backgroundColor: 'var(--lightRed)', top: '50%', left: '70%' }}></BG>
 
-              <h1 style={{ color: 'var(--yellow)' }} data-aos='fade-up'>
+              <h1 style={{ color: "var(--yellow-text)" }} data-aos='fade-up'>
         वसुधैव कुटुम्बकम् 🙏
       </h1>
 

@@ -14,19 +14,17 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Focus styles for accessibility */
 *:focus {
   outline: 0.2rem solid var(--green);
   outline-offset: 0.2rem;
 }
 
-/* Skip to main content link for accessibility */
 .skip-link {
   position: absolute;
   top: -4rem;
   left: 0.6rem;
   background: var(--green);
-  color: var(--white);
+  color: var(--text-on-accent);
   padding: 0.8rem;
   text-decoration: none;
   border-radius: 0.4rem;
@@ -38,7 +36,8 @@ body {
 }
 
 ::selection {
-  color: #31c48c;
+  color: var(--text-on-accent);
+  background-color: var(--green);
 }
 
 a {
@@ -49,75 +48,95 @@ a {
 html {
   font-family: "Poppins", sans-serif;
   font-size: 62.5%;
+  color-scheme: light;
 }
 
 ::-webkit-scrollbar {
   width: 1rem;
-  background-color: #f2efe7;
+  background-color: var(--bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
   width: 1rem;
-  background-color: #191919;
+  background-color: var(--border-color);
+  border-radius: 5px;
+  border: 2px solid var(--bg-primary);
 }
 
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-secondary);
+}
+
+/*
+ * Design system — single source of truth.
+ * Accent fills (--green, --yellow, --red, --blue): decorative / on-dark text.
+ * Accent text (--green-text, --yellow-text, --red): WCAG AA on --bg-primary.
+ */
 :root {
-  --red: #f44336;
+  --red: #c62828;
   --lightRed: #feecea;
   --dark: #191919;
   --yellow: #f8e08e;
   --darkYellow: #f8d76a;
   --green: #31c48c;
-  --white: #f2efe7;
-  --blue: royalBlue;
-  --lightBlue: #E5F1F8;
-  
-  /* Light theme colors */
+  --cream: #f2efe7;
+  --white: #ffffff;
+  --blue: #2b5dab;
+  --lightBlue: #e5f1f8;
+
+  --green-text: #1f7b58;
+  --yellow-text: #7a5c00;
+  --text-on-accent: #191919;
+
   --bg-primary: #f2efe7;
   --bg-primary-rgb: 242, 239, 231;
   --bg-secondary: #ffffff;
+  --bg-secondary-rgb: 255, 255, 255;
   --text-primary: #191919;
   --text-primary-rgb: 25, 25, 25;
   --text-secondary: #666666;
   --text-secondary-rgb: 102, 102, 102;
   --border-color: #e0e0e0;
+  --surface: #f8f9fa;
 }
 
 [data-theme="dark"] {
   --bg-primary: #1a1a1a;
   --bg-primary-rgb: 26, 26, 26;
   --bg-secondary: #2d2d2d;
+  --bg-secondary-rgb: 45, 45, 45;
   --text-primary: #f2efe7;
   --text-primary-rgb: 242, 239, 231;
   --text-secondary: #cccccc;
   --text-secondary-rgb: 204, 204, 204;
   --border-color: #404040;
-}
-
-/* Ensure smooth transitions for theme changes */
-* {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Set default theme */
-html {
-  color-scheme: light;
+  --surface: #2a2a2a;
+  --cream: #f2efe7;
+  --lightBlue: #1e3a4c;
+  --lightRed: #3d2a28;
+  --green-text: #31c48c;
+  --yellow-text: #f8e08e;
+  --text-on-accent: #191919;
 }
 
 html[data-theme="dark"] {
   color-scheme: dark;
 }
 
-/* Theme-specific scrollbar colors */
 [data-theme="dark"] ::-webkit-scrollbar {
   background-color: var(--bg-secondary);
 }
 
 [data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 5px;
+  border: 2px solid var(--bg-secondary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
   background-color: var(--text-secondary);
 }
 
-/* Tooltip styles */
 [data-tooltip] {
   position: relative;
 }
@@ -128,8 +147,8 @@ html[data-theme="dark"] {
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--dark);
-  color: var(--white);
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
   padding: 0.5rem 1rem;
   border-radius: 0.4rem;
   font-size: 1.2rem;
@@ -140,31 +159,31 @@ html[data-theme="dark"] {
 }
 
 [data-tooltip]:hover::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
   border: 0.5rem solid transparent;
-  border-top-color: var(--dark);
+  border-top-color: var(--text-primary);
   z-index: 100;
   margin-bottom: -0.5rem;
 }
 
 @media screen and (max-width: 1024px) {
   html {
-    font-size: 50%;
+    font-size: 55%;
   }
 }
 
 @media screen and (max-width: 768px) {
   html {
-    font-size: 40%;
+    font-size: 50%;
   }
 }
 
 @media screen and (max-width: 480px) {
   html {
-    font-size: 30%;
+    font-size: 50%;
   }
 }

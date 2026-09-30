@@ -131,8 +131,8 @@ const ActionBar = styled.div`
   border-radius: 2rem;
   border: 0.1rem solid rgba(var(--text-primary-rgb, 0, 0, 0), 0.1);
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  transition: all 0.3s ease;
+  z-index: 900;
+  transition: box-shadow 0.3s ease;
   animation: slideInRight 0.8s ease-out;
 
   @keyframes slideInRight {
@@ -155,7 +155,6 @@ const ActionBar = styled.div`
   }
 
   &:hover {
-    transform: translateX(-0.5rem);
     box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.15);
   }
 `;
@@ -191,7 +190,7 @@ const Section = styled.div`
 `;
 
 const SectionLabel = styled.span`
-  font-size: 0.8rem;
+  font-size: max(0.8rem, 10px);
   font-weight: 600;
   color: var(--text-secondary);
   text-transform: uppercase;
@@ -200,7 +199,7 @@ const SectionLabel = styled.span`
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
 
   ${tablet} {
-    font-size: 1rem;
+    font-size: max(1rem, 11px);
   }
 `;
 
@@ -217,16 +216,16 @@ const Divider = styled.div`
 `;
 
 const ActionButton = styled.button`
-  width: 3.5rem;
-  height: 3.5rem;
+  width: max(3.5rem, 40px);
+  height: max(3.5rem, 40px);
   border-radius: 50%;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
-  transition: all 0.3s ease;
+  font-size: max(1.6rem, 16px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
   text-decoration: none;
   color: inherit;
@@ -271,8 +270,8 @@ const ActionButton = styled.button`
 
   /* Image styling */
   & > img {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: max(1.8rem, 18px);
+    height: max(1.8rem, 18px);
   }
 
   &:hover {
@@ -286,13 +285,13 @@ const ActionButton = styled.button`
   }
 
   ${tablet} {
-    width: 4rem;
-    height: 4rem;
-    font-size: 1.8rem;
+    width: max(4rem, 44px);
+    height: max(4rem, 44px);
+    font-size: max(1.8rem, 18px);
 
     & > img {
-      width: 2rem;
-      height: 2rem;
+      width: max(2rem, 20px);
+      height: max(2rem, 20px);
     }
   }
 `;

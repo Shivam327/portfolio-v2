@@ -16,8 +16,8 @@ const Workpage = () => {
 
   return (
     <PageTemplate
-      title="Shivam Thaker | Work | Full-Stack Developer Portfolio"
-      description="Portfolio of projects including Infrastructure Monitoring, APIs, E-commerce platforms, and business solutions. Built with React, NestJS, Docker, and modern technologies."
+      title="Shivam Thaker | Work | Backend Engineer Portfolio"
+      description="Projects across fintech, HR analytics, microservices, and infrastructure. Built with TypeScript, NestJS, PostgreSQL, Docker, Kubernetes, and modern technologies."
       ogImage="/images/pose/pose_m18.png"
     >
       <Work>
@@ -30,10 +30,11 @@ const Workpage = () => {
               &lt;Work /&gt;
             </h2>
           </Design>
-          <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m19.png' alt='' />
-          <h3 data-aos='fade-up' data-aos-delay='2000' data-aos-duration='1000'>
-            A collection of production-ready projects showcasing scalable systems, APIs, and infrastructure solutions. 
-            These demonstrate my expertise in building business-critical applications.
+          <img data-aos='zoom-in' data-aos-duration='2000' src='/images/pose/pose_m19.png' alt='Shivam Thaker work portrait' />
+          <h3 data-aos='fade-up' data-aos-delay='200' data-aos-duration='1000'>
+            From fintech trading platforms to enterprise HR analytics to microservices
+            architecture. Some have public repos; others are private client work
+            marked Coming Soon.
           </h3>
         </Container>
 
@@ -96,29 +97,32 @@ const Design = styled.div`
 
   & > h2 {
     color: transparent;
-    font-size: 20rem;
+    font-size: min(20rem, 22vw);
     position: absolute;
     z-index: -3;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--green);
-    bottom: 10%;
+    bottom: 15%;
     left: 0%;
+    white-space: nowrap;
 
     @media (max-width: 768px) {
-      font-size: 13rem;
+      font-size: min(13rem, 16vw);
+      bottom: 20%;
     }
   }
 
   & > h1 {
-    font-size: 15rem;
+    font-size: min(15rem, 17vw);
     font-weight: 500;
     position: absolute;
     z-index: 0;
-    bottom: 10%;
+    bottom: 5%;
     left: 0%;
 
     @media (max-width: 768px) {
-      line-height: 13rem;
+      font-size: min(10rem, 12vw);
+      line-height: 1.2;
     }
   }
 `;
@@ -158,6 +162,7 @@ const Container = styled.div`
     text-align: left;
     font-weight: 400;
     font-size: 3rem;
+    overflow-wrap: break-word;
 
     @media (max-width: 768px) {
       margin: 2rem 0;

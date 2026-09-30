@@ -16,9 +16,8 @@ const Aboutpage = () => {
 
   return (
     <PageTemplate
-      title="Shivam Thaker | About | Full-Stack Developer @ Korn Ferry"
-      description="Full-Stack Developer based in Mumbai, specializing in scalable systems, API development, infrastructure monitoring, and ERP solutions. Currently at Korn Ferry."
-      // description="Full-Stack Developer based in Mumbai, specializing in scalable systems, API development, infrastructure monitoring, and ERP solutions. Currently at Korn Ferry and open to freelance projects."
+      title="Shivam Thaker | About | Backend Engineer @ Korn Ferry"
+      description="Backend Engineer at Korn Ferry. 25s-to-1s API optimization, 50k+ batch pipelines, 50+ AI tools. Previously fintech at PhillipCapital, microservices at Bellex. Open to freelance."
       ogImage="/images/pose/pose_m12.png"
     >
       <About>
@@ -43,19 +42,22 @@ const Aboutpage = () => {
             data-aos="zoom-in"
             data-aos-duration="2000"
             src="/images/pose/pose_m12.png"
-            alt=""
+            alt="Shivam Thaker about portrait"
           />
           <h3 data-aos="fade-up" data-aos-delay={time} data-aos-duration="1000">
-            I'm a Full-Stack Developer based in Mumbai, currently working at Korn Ferry. I specialize in scalable systems, API development, infrastructure monitoring, and ERP solutions.
-            {/* <br/>I also take on freelance projects — from startup MVPs to workflow automation tools. */}
+            Backend Engineer at Korn Ferry, building the Pay Equity product —
+            50k+ record batch pipelines, 15+ PostgreSQL stored functions, and a
+            custom MCP server with 50+ AI tools. Previously: fintech workflows
+            at PhillipCapital and microservices architecture at Bellex.
+            <br />
+            Freelance side: MVPs, workflow automation, and ERP customization.
           </h3>
 
           <h4 data-aos="fade-up" data-aos-delay={time} data-aos-duration="1000">
-            I enjoy using my skill set to help people achieve their goals through
-            technology. My development stack emphasizes
-            <span> performance</span>, <span> accessibility</span>, and seamless,
-            delightful user experiences.
-            {/* I build blazing-fast WebApps and Websites using the <span>MERN</span> stack, powered by ReactJS. */}
+            Stack: TypeScript, NestJS, PostgreSQL, Redis, RabbitMQ, Docker,
+            Kubernetes, AWS, Terraform. Also: Python, Grafana, Prometheus,
+            OpenTelemetry, Kafka, Angular, and React Native —{" "}
+            <span>picking whatever ships the feature cleanly</span>.
           </h4>
 
           <BG
@@ -254,10 +256,12 @@ const Aboutpage = () => {
           </Design2>
 
           <h4 data-aos="fade-left" data-aos-duration="1000">
-            There’s nothing more rewarding than developing clean, impactful web
-            applications and software for the industry. I believe people should
-            pursue what they’re passionate about—and for me, that's
-            <span style={{ color: "var(--green)" }}> software development</span>.
+            I care about understanding{" "}
+            <span style={{ color: "var(--green-text)" }}>why something works</span> —
+            not just making it work. At Korn Ferry, an API took 25 seconds.
+            Instead of scaling the server, I mapped the data flow, redesigned
+            the caching, and got it under 1 second. The problem wasn't
+            compute — it was architecture.
           </h4>
 
           <h4
@@ -265,14 +269,22 @@ const Aboutpage = () => {
             data-aos-duration="1000"
             style={{ marginBottom: "2rem" }}
           >
-            Over the years, I’ve dedicated myself to honing my craft. While I know
-            perfection is a moving target, I strive to come as close as possible
-            with every line of code I write.
+            Four years across fintech, HR analytics, and early-stage startups.
+            I write for the next developer who touches the code — including
+            future me. I mentor developers not just on how to build, but on
+            how to think about building.
+          </h4>
+
+          <h4 data-aos="fade-left" data-aos-duration="1000">
+            Education: B.E. Computer Engineering, Shree L.R. Tiwari College of
+            Engineering (2018–2022). Certifications: Full-Stack React, Google
+            IT Automation with Python, Project Management, and Digital Product
+            Management (Coursera).
           </h4>
 
           <h3 data-aos="fade-left" data-aos-duration="1000">
-            If you have a project in mind, let's connect—I’d love to help bring
-            your ideas to life!
+            Project brief ready? Reach out — happy to scope APIs, performance
+            bottlenecks, or backend systems.
           </h3>
         </Container>
       </About>
@@ -293,24 +305,31 @@ const Circle = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 13rem;
-  width: 13rem;
+  height: max(13rem, 96px);
+  width: max(13rem, 96px);
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
+  &:hover {
+    transform: scale(1.06);
+  }
+
   & > img {
     height: auto;
     width: 30%;
+    min-width: 24px;
+    min-height: 24px;
   }
 
   & > span {
-    font-size: 1.5rem;
+    font-size: max(1.5rem, 12px);
     font-weight: 400;
+    color: var(--text-primary);
   }
 
   & > i {
-    font-size: 3rem;
+    font-size: max(3rem, 24px);
   }
 `;
 
@@ -321,16 +340,18 @@ const Design = styled.div`
 
   & > h2 {
     color: transparent;
-    font-size: 20rem;
+    font-size: min(20rem, 22vw);
     position: absolute;
     z-index: -3;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--yellow);
-    bottom: 10%;
+    bottom: 15%;
     left: 0%;
+    white-space: nowrap;
 
     @media (max-width: 768px) {
-      font-size: 10rem;
+      font-size: min(10rem, 14vw);
+      bottom: 20%;
     }
   }
 
@@ -342,15 +363,16 @@ const Design = styled.div`
   }
 
   & > h1 {
-    font-size: 15rem;
+    font-size: min(15rem, 17vw);
     font-weight: 500;
     position: absolute;
     z-index: 2;
-    bottom: 10%;
+    bottom: 5%;
     left: 0%;
 
     @media (max-width: 768px) {
-      line-height: 13rem;
+      font-size: min(10rem, 12vw);
+      line-height: 1.2;
     }
   }
 `;
@@ -391,6 +413,7 @@ const Container = styled.div`
     text-align: left;
     font-weight: 400;
     font-size: 3rem;
+    overflow-wrap: break-word;
 
     @media (max-width: 768px) {
       margin: 2rem 0;
@@ -405,6 +428,7 @@ const Container = styled.div`
     font-weight: 400;
     font-size: 2rem;
     margin: 2rem 0;
+    overflow-wrap: break-word;
 
     @media (max-width: 768px) {
       margin: 2rem 0;
@@ -423,21 +447,22 @@ const Design2 = styled(Design)`
 
   & > h2 {
     color: transparent;
-    font-size: 20rem;
+    font-size: min(20rem, 22vw);
     position: absolute;
     z-index: -3;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--yellow);
     left: 0%;
+    white-space: nowrap;
 
     @media (max-width: 768px) {
-      left: 10%;
-      font-size: 13rem;
+      left: 5%;
+      font-size: min(13rem, 16vw);
     }
   }
 
   & > h1 {
-    font-size: 15rem;
+    font-size: min(15rem, 17vw);
     font-weight: 500;
     position: absolute;
     z-index: 2;
@@ -445,7 +470,8 @@ const Design2 = styled(Design)`
 
     @media (max-width: 768px) {
       left: 5%;
-      line-height: 13rem;
+      font-size: min(10rem, 12vw);
+      line-height: 1.2;
     }
   }
 `;

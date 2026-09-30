@@ -11,20 +11,23 @@ const Homepage = lazy(() => import("./pages/Homepage"));
 const Workpage = lazy(() => import("./pages/Workpage"));
 const Aboutpage = lazy(() => import("./pages/Aboutpage"));
 const Contactpage = lazy(() => import("./pages/Contactpage"));
-// const ServicesPage = lazy(() => import("./pages/ServicesPage"));
+const ServicesPage = lazy(() => import("./pages/ServicesPage"));
+const BlogPage = lazy(() => import("./pages/BlogPage"));
+const BlogDetailPage = lazy(() => import("./pages/BlogDetailPage"));
 const Projectpage = lazy(() => import("./pages/Projectpage"));
 const ImageReveal = lazy(() => import("./components/ImageReveal"));
-// const TestimonialsPage = lazy(() => import("./pages/TestimonialsPage"));
 const FloatingActionBar = lazy(() => import("./components/FloatingActionBar"));
 const ScrollToTop = lazy(() => import("./components/ScrollToTop"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 function App() {
   useSmoothScroll();
-  usePerformance(); // Monitor Core Web Vitals
+  usePerformance();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000);
+    // Short first-paint splash only — Suspense handles route loads
+    const timer = setTimeout(() => setIsLoading(false), 600);
     return () => clearTimeout(timer);
   }, []);
 
@@ -40,10 +43,12 @@ function App() {
               <Route path="/work" element={<Workpage />} />
               <Route path="/about" element={<Aboutpage />} />
               <Route path="/contact" element={<Contactpage />} />
-              {/* <Route path="/services" element={<ServicesPage />} /> */}
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/blog/:id" element={<BlogDetailPage />} />
               <Route path="/project/:id" element={<Projectpage />} />
               <Route path="/image" element={<ImageReveal />} />
-              {/* <Route path="/testimonials" element={<TestimonialsPage />} /> */}
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
 
             <FloatingActionBar />

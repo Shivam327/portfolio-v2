@@ -20,13 +20,13 @@ const Humburger = ({ state, setState }) => {
       staggerRevealClose(reveal3, reveal2, reveal1);
       // Set menu to display none
       gsap.to(menuLayer, { duration: 1.5, css: { display: 'none' } });
+      document.body.style.overflow = '';
       
       // Dispatch event that menu is closed
       window.dispatchEvent(new CustomEvent('hamburgerStateChange', { 
         detail: { isOpen: false } 
       }));
     } else if (state.clicked === true || (state.clicked === true && state.initial === null)) {
-      // setState({ color: "#f2efe7" })
       // Set menu to display block
       gsap.to(menuLayer, { duration: 0, css: { display: 'block' } });
       //Allow menu to have height of 100%
@@ -36,6 +36,7 @@ const Humburger = ({ state, setState }) => {
         height: '100%',
       });
       staggerReveal(reveal1, reveal2, reveal3);
+      document.body.style.overflow = 'hidden';
       
       // Dispatch event that menu is open
       window.dispatchEvent(new CustomEvent('hamburgerStateChange', { 
@@ -52,19 +53,19 @@ const Humburger = ({ state, setState }) => {
         <Container>
           <ul>
             <li>
-              <Link to='/work'>&lt;Works /&gt;</Link>
-            </li>
-            {/* <li>
-              <Link to='/services'>&lt;Services /&gt;</Link>
+              <Link to='/work' onClick={() => setState({ clicked: false, menuName: '<Menu />', color: 'var(--text-primary)' })}>&lt;Works /&gt;</Link>
             </li>
             <li>
-              <Link to='/testimonials'>&lt;Testimonials /&gt;</Link>
-            </li> */}
-            <li>
-              <Link to='/about'>&lt;About Me /&gt;</Link>
+              <Link to='/services' onClick={() => setState({ clicked: false, menuName: '<Menu />', color: 'var(--text-primary)' })}>&lt;Services /&gt;</Link>
             </li>
             <li>
-              <Link to='/contact'>&lt;Contact Me /&gt;</Link>
+              <Link to='/blog' onClick={() => setState({ clicked: false, menuName: '<Menu />', color: 'var(--text-primary)' })}>&lt;Blog /&gt;</Link>
+            </li>
+            <li>
+              <Link to='/about' onClick={() => setState({ clicked: false, menuName: '<Menu />', color: 'var(--text-primary)' })}>&lt;About Me /&gt;</Link>
+            </li>
+            <li>
+              <Link to='/contact' onClick={() => setState({ clicked: false, menuName: '<Menu />', color: 'var(--text-primary)' })}>&lt;Contact Me /&gt;</Link>
             </li>
           </ul>
           <Info>
@@ -73,13 +74,13 @@ const Humburger = ({ state, setState }) => {
               {/* <a href='#' target='_blan'>
                 <i class='far fa-file'></i>
               </a> */}
-              <a href='https://www.linkedin.com/in/thakershivam/' target='_blan'>
+              <a href='https://www.linkedin.com/in/thakershivam/' target='_blank' rel='noopener noreferrer'>
                 <i className='fab fa-linkedin-in'></i>
               </a>
-              <a href='https://github.com/shivam327' target='_blan'>
+              <a href='https://github.com/shivam327' target='_blank' rel='noopener noreferrer'>
                 <i className='fab fa-github'></i>
               </a>
-              <a href={'mailto: shivamthaker1999@gmail.com'}>
+              <a href='mailto:shivamthaker1999@gmail.com'>
                 <i className='fas fa-envelope'></i>
               </a>
             </Social>
@@ -191,7 +192,7 @@ const Container = styled.div`
       }
 
       a {
-        color: var(--white);
+        color: var(--cream);
         text-decoration: none;
         transition: color 0.3s ease;
         
@@ -210,8 +211,8 @@ const Social = styled.div`
   gap: 1rem;
 
   & > a > i {
-    color: var(--white);
-    font-size: 2.5rem;
+    color: var(--cream);
+    font-size: max(2.5rem, 20px);
     margin: 0.5rem;
     transition: color 0.3s ease;
 
@@ -220,7 +221,7 @@ const Social = styled.div`
     }
 
     @media (max-width: ${BREAKPOINTS.MOBILE}) {
-      font-size: 2rem;
+      font-size: max(2rem, 20px);
       margin: 0.3rem;
     }
   }

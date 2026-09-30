@@ -59,7 +59,7 @@ const TestimonialsContainer = styled.div`
     text-align: left;
     font-weight: 400;
     font-size: 2.5rem;
-    color: var(--dark);
+    color: var(--text-primary);
 
     @media (max-width: 768px) {
       margin: 2rem 0;
@@ -94,7 +94,7 @@ const TestimonialsGrid = styled.div`
 `;
 
 const TestimonialCard = styled.div`
-  background: var(--white);
+  background: var(--cream);
   border-radius: 1.5rem;
   padding: 3rem;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
@@ -126,7 +126,7 @@ const TestimonialContent = styled.div`
 
 const QuoteIcon = styled.span`
   font-size: 4rem;
-  color: var(--yellow);
+  color: var(--yellow-text);
   position: absolute;
   top: -1rem;
   left: -1rem;
@@ -135,7 +135,7 @@ const QuoteIcon = styled.span`
 
 const TestimonialText = styled.p`
   font-size: 1.8rem;
-  color: var(--dark);
+  color: var(--text-primary);
   line-height: 1.6;
   font-style: italic;
   padding-left: 2rem;
@@ -149,7 +149,7 @@ const TestimonialAuthor = styled.div`
 const AuthorName = styled.h4`
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--dark);
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 `;
 
@@ -161,7 +161,7 @@ const AuthorRole = styled.p`
 
 const AuthorCompany = styled.p`
   font-size: 1.4rem;
-  color: var(--green);
+  color: var(--green-text);
   font-weight: 500;
 `;
 
@@ -182,13 +182,13 @@ const StatItem = styled.div`
 const StatNumber = styled.div`
   font-size: 4rem;
   font-weight: 700;
-  color: var(--green);
+  color: var(--green-text);
   margin-bottom: 1rem;
 `;
 
 const StatLabel = styled.div`
   font-size: 1.6rem;
-  color: var(--dark);
+  color: var(--text-primary);
   font-weight: 500;
 `;
 
@@ -202,7 +202,7 @@ const CTASection = styled.div`
   & > h4 {
     font-size: 3rem;
     font-weight: 600;
-    color: var(--dark);
+    color: var(--text-primary);
     margin-bottom: 1rem;
   }
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS, SIZES, SPACING } from '../constants';
+import { SIZES, SPACING } from '../constants';
 
 export const FlexCenter = styled.div`
   display: flex;
@@ -22,17 +22,17 @@ export const CircleButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: ${props => props.size || SIZES.BUTTON_HEIGHT};
-  width: ${props => props.size || SIZES.BUTTON_WIDTH};
+  height: ${props => props.size || SIZES.CIRCLE_LARGE};
+  width: ${props => props.size || SIZES.CIRCLE_LARGE};
   border-radius: 50%;
-  background-color: ${COLORS.DARK};
+  background-color: var(--text-primary);
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
   &:hover {
     transform: rotate(-30deg);
-    color: ${COLORS.SECONDARY};
+    color: var(--yellow-text);
   }
 `;
 
@@ -55,8 +55,17 @@ export const Heading = styled.h1`
 `;
 
 export const SubHeading = styled.h2`
-  color: ${COLORS.GRAY};
+  color: var(--text-secondary);
   font-size: 1.5rem;
   font-weight: 400;
   margin: 0;
+`;
+
+export const DecorativeBG = styled.div`
+  position: absolute;
+  left: 53%;
+  width: 70rem;
+  height: 70rem;
+  border-radius: 50%;
+  z-index: -5;
 `;

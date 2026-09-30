@@ -44,8 +44,8 @@ const ToggleButton = styled.button`
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background-color: var(--white);
-  color: var(--dark);
+  background-color: var(--cream);
+  color: var(--text-primary);
   border: 0.2rem solid var(--dark);
   cursor: pointer;
   font-size: 1.8rem;
@@ -54,8 +54,8 @@ const ToggleButton = styled.button`
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
 
   &:hover {
-    background-color: var(--dark);
-    color: var(--white);
+    background-color: var(--text-primary);
+    color: var(--cream);
     transform: scale(1.1);
   }
 

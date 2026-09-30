@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { initializeAOS, scrollToTop } from '../utils/animations';
-import { COLORS, SPACING } from '../constants';
+import { SPACING } from '../constants';
 
 /**
  * ComponentTemplate - A template for creating consistent components
@@ -29,8 +29,8 @@ const ComponentTemplate = ({ title, children, className }) => {
 const Container = styled.div`
   min-height: 100vh;
   padding: ${SPACING.XL} 0;
-  background-color: ${COLORS.DARK};
-  color: ${COLORS.WHITE};
+  background-color: var(--dark);
+  color: var(--cream);
 `;
 
 export default ComponentTemplate;

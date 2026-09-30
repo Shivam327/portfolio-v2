@@ -1,33 +1,28 @@
-import React, { useEffect } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
+import React from "react";
 import styled from "styled-components";
-import PROJECTS_DATA from "../projects.data";
+import { getProjectById } from "../data/projects";
 
 const Moreproject = ({ name, id }) => {
-  const data = PROJECTS_DATA.find((e) => e.id === id);
-
-  useEffect(() => {
-    Aos.init({ duration: 2000 });
-  }, []);
+  const data = getProjectById(id);
+  if (!data) return null;
+  const visitLabel = data.hasLink ? "Let's Visit" : "Coming Soon";
 
   return (
-    <>
-      <Wrapper
-        data-aos="fade-right"
-        data-aos-delay="100"
-        data-aos-duration="1000"
-        image={data.image}
-      >
-        <Info>
-          <h2>{data.type}</h2>
-          <h1>{name}</h1>
-        </Info>
-        <Circle>
-          <h2>Let's Visit</h2>
-        </Circle>
-      </Wrapper>
-    </>
+    <Wrapper
+      data-aos="fade-right"
+      data-aos-delay="100"
+      data-aos-duration="1000"
+      image={data.image}
+      $hasLink={data.hasLink}
+    >
+      <Info>
+        <h2>{data.type}</h2>
+        <h1>{name || data.name}</h1>
+      </Info>
+      <Circle $muted={!data.hasLink}>
+        <h2>{visitLabel}</h2>
+      </Circle>
+    </Wrapper>
   );
 };
 
@@ -41,19 +36,23 @@ const Wrapper = styled.div`
   transition: all 1s ease-in-out;
 
   &:hover {
-    background: url(${(props) => props.image});
+    background: ${(props) =>
+      props.$hasLink ? `url(${props.image})` : "transparent"};
+    background-size: cover;
+    background-position: center;
   }
 `;
+
 const Info = styled.div`
   & > h1 {
-    font-size: 3rem;
+    font-size: max(3rem, 18px);
     font-weight: 400;
-    line-height: 5rem;
+    line-height: 1.3;
   }
 
   & > h2 {
-    color: gray;
-    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-size: max(1.5rem, 12px);
     font-weight: 400;
   }
 `;
@@ -63,22 +62,27 @@ const Circle = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  height: 9rem;
-  width: 9rem;
+  height: max(9rem, 72px);
+  width: max(9rem, 72px);
   border-radius: 50%;
-  background-color: var(--text-primary);
+  background-color: ${(props) =>
+    props.$muted ? "var(--text-secondary)" : "var(--text-primary)"};
+  flex-shrink: 0;
 
   & > h2 {
     color: var(--bg-secondary);
-    font-size: 1rem;
+    font-size: max(1rem, 11px);
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    text-align: center;
+    padding: 0.5rem;
 
     &:hover {
       transform: rotate(-30deg);
-      color: var(--yellow);
+      color: var(--yellow-text);
     }
   }
 `;
+
 export default Moreproject;
