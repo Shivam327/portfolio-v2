@@ -3,7 +3,7 @@ import { useEffect } from "react";
 const usePerformance = () => {
   useEffect(() => {
     // Only run in development mode
-    if (process.env.NODE_ENV !== "development") return;
+    if (import.meta.env.PROD) return;
 
     // Monitor Largest Contentful Paint (LCP)
     const observer = new PerformanceObserver((list) => {

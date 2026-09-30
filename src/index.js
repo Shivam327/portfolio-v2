@@ -14,12 +14,12 @@ root.render(
 // Register service worker
 serviceWorkerRegistration.register({
   onUpdate: registration => {
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       console.log('SW registered: ', registration);
     }
   },
   onError: registrationError => {
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       console.log('SW registration failed: ', registrationError);
     }
   }

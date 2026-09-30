@@ -27,7 +27,7 @@ class ErrorBoundary extends React.Component {
     });
 
     // Log error to console for development
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       console.error('Error caught by boundary:', error, errorInfo);
     }
 
@@ -50,7 +50,7 @@ class ErrorBoundary extends React.Component {
             </ErrorMessage>
             <ErrorDetails>
               <ErrorId>Error ID: {this.state.errorId}</ErrorId>
-              {process.env.NODE_ENV === 'development' && this.state.error && (
+              {import.meta.env.DEV && this.state.error && (
                 <ErrorStack>
                   <strong>Error:</strong> {this.state.error.toString()}
                 </ErrorStack>
